@@ -1,34 +1,22 @@
-"""Welcome to Reflex! This file outlines the steps to create a basic app."""
-
 from rxconfig import config
 
 import reflex as rx
 
-docs_url = "https://reflex.dev/docs/getting-started/introduction/"
-filename = f"{config.app_name}/{config.app_name}.py"
 
-
-class State(rx.State):
-    """The app state."""
-
-
-def index() -> rx.Component:
+@rx.page(title="Consent form")
+def index():
     return rx.center(
-        rx.theme_panel(),
         rx.vstack(
-            rx.heading("Welcome to Reflex!", size="9"),
-            rx.text("Get started by editing ", rx.code(filename)),
-            rx.button(
-                "Check out our docs!",
-                on_click=lambda: rx.redirect(docs_url),
-                size="4",
+            rx.box(
+                rx.heading("My digital consent form", font_size="2em"),
+                padding_top="20px",
             ),
-            rx.logo(),
-            align="center",
-            spacing="7",
-            font_size="2em",
+            rx.text("This is where I build the consent form"),
+            spacing="4",
         ),
-        height="100vh",
+        width="100%",
+        justify_content="center",
+        align_items="center",
     )
 
 
