@@ -122,7 +122,7 @@ def index():
     )
 ```
 
-* You might have to restart `Reflex` when you add the Forms class.
+* You might have to restart `Reflex` when you add the Forms class. Stop Reflex with `CTRL-C`.
 
 ## First form
 
@@ -175,3 +175,30 @@ def index():
 ```
 
 ## Add a database
+
+* Stop Reflex with `CTRL-C`.
+
+```{.python filename="module-2.py" code-line-numbers="true"}
+class User(rx.Model, table=True):
+    username: str
+    email: str
+    password: str
+```
+
+* Make initialise the database
+
+```.bash
+reflex db init
+```
+
+* Update the alembic schema (after every database change)
+
+```.bash
+reflex db makemigrations --message 'started'  
+```
+
+* Make the migrations
+
+```.bash
+reflex db migrate
+```
