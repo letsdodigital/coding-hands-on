@@ -1,0 +1,8 @@
+*.db
+*.py[cod]
+.DS_Store
+.venv
+.web
+/.quarto/
+__pycache__/
+venv/
