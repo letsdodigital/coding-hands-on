@@ -4,6 +4,14 @@ from rxconfig import (
 
 import reflex as rx
 
+from consent_types import (
+    consent_keys,
+    get_full_description,
+    get_intended_benefits,
+    get_potential_risks,
+)
+from users import users
+
 
 class User(
     rx.Model,
@@ -18,6 +26,11 @@ class FormState(rx.State):
     name: str
     users: list[User]
     form_data: dict = {}
+    select_state = ""
+    procedure = ""
+    full_description = ""
+    intended_benefits = ""
+    potential_risks = ""
 
     def handle_submit(
         self,
@@ -42,18 +55,14 @@ class FormState(rx.State):
 
         # print(self.users)
 
-        def database_all(
-            self,
-        ):
-            return self.users
+        self.update()
 
-
-"""class database_management(rx.State):
-    name: str
-    users: list[User]
-
-    def __init__(self):
-        return"""
+    def update(self, procedure=""):
+        self.procedure = procedure
+        self.full_description = get_full_description(self.procedure)
+        self.intended_benefits = get_intended_benefits(self.procedure)
+        self.potential_risks = get_potential_risks(self.procedure)
+        return
 
 
 def db_all():
@@ -139,6 +148,108 @@ def index():
                             **style_main,
                         ),
                     ),
+                    rx.form.field(
+                        rx.flex(
+                            rx.form.label("Hospital number"),
+                            rx.form.control(
+                                rx.input.input(
+                                    type="text",
+                                    **style_text,
+                                ),
+                                as_child=True,
+                            ),
+                            rx.form.message(
+                                "Please enter a hospital number!",
+                                match="typeMismatch",
+                            ),
+                            name="hospital_number",
+                            **style_main,
+                        ),
+                    ),
+                    rx.form.field(
+                        rx.flex(
+                            rx.form.label("Date of birth"),
+                            rx.form.control(
+                                rx.input.input(
+                                    type="date",
+                                ),
+                                as_child=True,
+                            ),
+                            rx.form.message(
+                                "Please enter a valid date of birth!",
+                                match="typeMismatch",
+                            ),
+                            name="date_of_birth",
+                            **style_main,
+                        ),
+                    ),
+                    rx.form.field(
+                        rx.flex(
+                            rx.form.label("Consent for"),
+                            rx.select(
+                                consent_keys(),
+                                value=FormState.procedure,
+                                placeholder="type",
+                                on_change=FormState.update,
+                            ),
+                            rx.form.message(
+                                "A consent type must be provided",
+                                match="typeMismatch",
+                            ),
+                            name="consent_type",
+                            **style_main,
+                        ),
+                    ),
+                    rx.form.field(
+                        rx.flex(
+                            rx.form.label("Full description"),
+                            rx.text_area(
+                                value=FormState.full_description,
+                                **style_text,
+                                disabled=True,
+                            ),
+                            name="full_description",
+                            **style_main,
+                        ),
+                    ),
+                    rx.form.field(
+                        rx.flex(
+                            rx.form.label("Intended benefits"),
+                            rx.text_area(
+                                value=FormState.intended_benefits,
+                                **style_text,
+                                disabled=True,
+                            ),
+                            name="intended_benefits",
+                            **style_main,
+                        ),
+                    ),
+                    rx.form.field(
+                        rx.flex(
+                            rx.form.label("Potential risks"),
+                            rx.text_area(
+                                value=FormState.potential_risks,
+                                **style_text,
+                                disabled=True,
+                            ),
+                            name="potential_risks",
+                            **style_main,
+                        ),
+                    ),
+                    rx.form.field(
+                        rx.flex(
+                            rx.form.label("Signed by"),
+                            rx.select(
+                                users,
+                            ),
+                            rx.form.message(
+                                "A signature is needed!",
+                                match="typeMismatch",
+                            ),
+                            name="signed_by",
+                            **style_main,
+                        ),
+                    ),
                     rx.flex(
                         rx.form.submit(
                             rx.button("Submit"),
@@ -153,39 +264,11 @@ def index():
                 reset_on_submit=True,
                 **style_main,
             ),
-        ),
-    )
-
-    """return rx.center(
-        rx.vstack(
-            rx.box(
-                rx.heading("My digital consent form", font_size="2em"),
-                padding_top="20px",
-            ),
-            rx.form(
-                rx.vstack(
-                    rx.text("Patient"),
-                    rx.input(
-                        name="first_name",
-                        label="First name",
-                        max_length="100",
-                        required=True,
-                    ),
-                    rx.button("Submit", type="submit"),
-                    spacing="4",
-                ),
-                on_submit=FormState.handle_submit,
-                reset_on_submit=True,
-            ),
             rx.divider(),
             rx.heading("Results"),
             rx.html(db_all()),
-            spacing="4",
         ),
-        width="100%",
-        justify_content="center",
-        align_items="center",
-    )"""
+    )
 
 
 app = rx.App()
