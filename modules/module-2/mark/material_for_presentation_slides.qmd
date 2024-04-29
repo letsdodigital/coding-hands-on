@@ -1,3 +1,9 @@
+---
+format: html
+filters: 
+  - line-highlight
+---
+
 # Material to pull across to the presentation slides
 
 ## Lesson 1
@@ -37,15 +43,16 @@ reflex init
 
 ## Update port so you do not conflict with other people
 
-* We need to find a way to give everyone their own port.
-* add `frontend_port=8000,` as line 5 below:
+/* TODO #1 We need to find a way to give everyone their own port
+
+* add `frontend_port=<your port number>,` as line 5 below:
 
 ```{.python filename="rxconfig.py" code-line-numbers="true"}
 import reflex as rx
 
 config = rx.Config(
     app_name="module_2",
-    frontend_port=8000,
+    frontend_port=3001,
 )
 ```
 
@@ -53,4 +60,34 @@ config = rx.Config(
 
 ```.bash
 reflex run
+```
+
+* Press and hold on the CTRL/CMD key and click on http://localhost:<your port>, and this will open up your basic web app.
+* You should see a browser that looks like this
+<add picture of basic browser view>
+
+## Start editing
+
+* In the navigation window (the column on the left) open up `users/<your username>/modules/module-2/module-2/`.
+* Open up the python file `module-2.py`.
+
+```{.python filename="module-2.py" code-line-numbers="true" code-line-numbers="2"}
+def index() -> rx.Component:
+    return rx.center(
+        rx.theme_panel(),
+        rx.vstack(
+            rx.heading("Welcome to Reflex!", size="9"),
+            rx.text("Get started by editing ", rx.code(filename)),
+            rx.button(
+                "Check out our docs!",
+                on_click=lambda: rx.redirect(docs_url),
+                size="4",
+            ),
+            rx.logo(),
+            align="center",
+            spacing="7",
+            font_size="2em",
+        ),
+        height="100vh",
+    )
 ```
