@@ -36,5 +36,15 @@ def index() -> rx.Component:
     )
 
 
+@rx.page(route='/help')
+def help() -> rx.Component:
+    return rx.center(
+        rx.tooltip(
+            common.help_tooltip(),
+            content = "This is a help tooltip",
+        )
+    )
+
+
 app = rx.App()
 app.add_page(index)
