@@ -11,6 +11,8 @@ This is based on MoqUps!
 * What is a python virtual environment?
 * What is OOP?
 
+### Build a consent form
+
 ## Install reflex (if we have not already done this for the student)
 
 * See [here](https://reflex.dev/docs/getting-started/installation/) for further details
@@ -29,6 +31,22 @@ cd users/<your name>/module-2/
 
 ```.bash
 reflex init
+```
+
+* Chose template 0
+
+## Update port so you do not conflict with other people
+
+* We need to find a way to give everyone their own port.
+* add `frontend_port=8000,` as line 5 below:
+
+```{.python filename="rxconfig.py" code-line-numbers="true"}
+import reflex as rx
+
+config = rx.Config(
+    app_name="module_2",
+    frontend_port=8000,
+)
 ```
 
 ## Run the app
