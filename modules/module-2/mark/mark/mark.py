@@ -81,7 +81,9 @@ class FormState(rx.State):
         self.reset()
 
     def print_state(self):
+        print("blah")
         return "blah"
+        
 
         """state_str = ""
         for key, value in self.form_data.items():
@@ -103,7 +105,7 @@ def db_all():
     for user in users:
         return_str += f"{ user }</br>"
 
-    return return_str
+    return "yeah"
 
 
 style_main = {
@@ -329,7 +331,7 @@ def index():
                 ),
                 rx.divider(),
                 rx.heading("Results"),
-                rx.html(db_all()),
+                # rx.html(db_all()),
                 # rx.html(FormState.print_state()),
             ),
             padding_top="6em",
