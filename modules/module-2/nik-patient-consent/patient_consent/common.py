@@ -25,10 +25,21 @@ def menu() -> rx.Component:
 
     return menu
 
-
 def navbar() -> rx.Component:
     return rx.hstack(
         rx.spacer(),
         menu(),
         width="100%",
     )
+
+
+def help_tooltip(message: str="Help") -> rx.Component:
+    tooltip = rx.badge(
+        rx.icon("circle-help", size=20, color="white"),
+        size="2",
+        align="center",
+        variant="solid",
+        color_scheme="ruby",
+        radius="full"       
+    )
+    return tooltip
