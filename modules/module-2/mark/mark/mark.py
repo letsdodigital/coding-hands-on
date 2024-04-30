@@ -1,8 +1,8 @@
-from rxconfig import (
-    config,
-)
+from rxconfig import config
 
 import reflex as rx
+import re
+import reflex.components.radix.primitives as rdxp
 
 from consent_types import (
     consent_keys,
@@ -13,13 +13,28 @@ from consent_types import (
 from users import users
 
 
-class User(
-    rx.Model,
-    table=True,
-):
-    username: str
+class User(rx.Model, table=True):
+    user_name: str
+    first_name: str
+    last_name: str
+
+
+class Patient(rx.Model, table=True):
+    first_name: str
+    last_name: str
+    hospital_number: str
+    date_of_birth: str
     email: str
-    password: str
+
+
+class PatientConsent(rx.Model, table=True):
+    patient_id: int
+    consent_type: str
+    get_full_description: str
+    intended_benefits: str
+    potential_risks: str
+    date: str
+    signed_by: str
 
 
 class FormState(rx.State):
@@ -32,10 +47,7 @@ class FormState(rx.State):
     intended_benefits = ""
     potential_risks = ""
 
-    def handle_submit(
-        self,
-        form_data: dict,
-    ):
+    def handle_submit(self, form_data: dict):
         """Handles the form submit."""
         self.form_data = form_data
         """with rx.session() as session:
@@ -48,12 +60,13 @@ class FormState(rx.State):
             )
             session.commit()"""
 
-        with rx.session() as session:
+        """with rx.session() as session:
             self.users = session.exec(
                 User.select().where(User.username.contains(self.name))
-            ).all()
+            ).all()"""
 
         # print(self.users)
+        print(self.form_data)
 
         self.update()
 
@@ -64,15 +77,26 @@ class FormState(rx.State):
         self.potential_risks = get_potential_risks(self.procedure)
         return
 
+    def reset_state(self):
+        self.reset()
+
+    def print_state(self):
+        return "blah"
+
+        """state_str = ""
+        for key, value in self.form_data.items():
+            state_str += f"{key}: {value}</br>"
+        return state_str"""
+
 
 def db_all():
     name = ""
     users = []
     return_str = ""
-    with rx.session() as session:
+    """with rx.session() as session:
         users = session.exec(
             User.select().where(User.username.contains(name))
-        ).all()
+        ).all()"""
 
     # print(users)
 
@@ -86,6 +110,12 @@ style_main = {
     "direction": "column",
     "spacing": "2",
     "align": "start",
+    "top-padding": "10px",
+}
+
+style_select = {
+    "direction": "column",
+    "align": "start",
 }
 
 style_text = {"width": "500px"}
@@ -97,27 +127,65 @@ style_button = {
     "spacing": "2",
 }
 
+style_navbar = {
+    "width": "100%",
+    "padding": "10px",
+}
+
+
+def navbar():
+    return rx.hstack(
+        rx.hstack(
+            rx.heading("Consent form", font_size="2em"),
+        ),
+        rx.spacer(),
+        rx.menu.root(
+            rx.menu.trigger(
+                rx.button("Menu"),
+            ),
+            rx.menu.content(
+                rx.menu.item(rx.link("Consent form", href="/")),
+                rx.menu.item(
+                    rx.link("Previous forms", href="/previous-forms")
+                ),
+                rx.menu.item(
+                    rx.link("Database refresh", href="/database-refresh")
+                ),
+                width="10rem",
+            ),
+        ),
+        position="fixed",
+        top="0px",
+        background_color="lightgray",
+        padding="1em",
+        height="4em",
+        width="100%",
+        z_index="5",
+    )
+
 
 @rx.page(title="Consent form")
+@rx.page(on_load=FormState.reset_state)
 def index():
-
-    return rx.center(
-        rx.vstack(
-            rx.box(
-                rx.heading(
-                    "My digital consent form",
-                    font_size="2em",
+    return rx.fragment(
+        navbar(),
+        rx.center(
+            rx.vstack(
+                rx.box(
+                    rx.heading(
+                        "My digital consent form",
+                        font_size="2em",
+                    ),
+                    padding_top="20px",
                 ),
-                padding_top="20px",
-            ),
-            rx.form.root(
-                rx.flex(
-                    rx.form.field(
-                        rx.flex(
+                rx.form.root(
+                    rx.flex(
+                        rx.form.field(
                             rx.form.label("First name"),
                             rx.form.control(
                                 rx.input.input(
                                     type="text",
+                                    required=True,
                                     **style_text,
                                 ),
                                 as_child=True,
@@ -127,11 +195,8 @@ def index():
                                 match="typeMismatch",
                             ),
                             name="first_name",
-                            **style_main,
                         ),
-                    ),
-                    rx.form.field(
-                        rx.flex(
+                        rx.form.field(
                             rx.form.label("Last name"),
                             rx.form.control(
                                 rx.input.input(
@@ -145,11 +210,8 @@ def index():
                                 match="typeMismatch",
                             ),
                             name="last_name",
-                            **style_main,
                         ),
-                    ),
-                    rx.form.field(
-                        rx.flex(
+                        rx.form.field(
                             rx.form.label("Hospital number"),
                             rx.form.control(
                                 rx.input.input(
@@ -163,11 +225,8 @@ def index():
                                 match="typeMismatch",
                             ),
                             name="hospital_number",
-                            **style_main,
                         ),
-                    ),
-                    rx.form.field(
-                        rx.flex(
+                        rx.form.field(
                             rx.form.label("Date of birth"),
                             rx.form.control(
                                 rx.input.input(
@@ -180,28 +239,40 @@ def index():
                                 match="typeMismatch",
                             ),
                             name="date_of_birth",
-                            **style_main,
                         ),
-                    ),
-                    rx.form.field(
-                        rx.flex(
-                            rx.form.label("Consent for"),
-                            rx.select(
-                                consent_keys(),
-                                value=FormState.procedure,
-                                placeholder="type",
-                                on_change=FormState.update,
+                        rx.form.field(
+                            rx.form.label("Patient's email"),
+                            rx.form.control(
+                                rx.input.input(
+                                    type="email",
+                                    **style_text,
+                                ),
+                                as_child=True,
                             ),
                             rx.form.message(
-                                "A consent type must be provided",
+                                "Please enter a valid email address!",
                                 match="typeMismatch",
                             ),
-                            name="consent_type",
-                            **style_main,
+                            name="patient_email",
                         ),
-                    ),
-                    rx.form.field(
-                        rx.flex(
+                        rx.form.field(
+                            rx.flex(
+                                rx.form.label("Consent for"),
+                                rx.select(
+                                    consent_keys(),
+                                    value=FormState.procedure,
+                                    placeholder="type",
+                                    on_change=FormState.update,
+                                ),
+                                rx.form.message(
+                                    "A consent type must be provided",
+                                    match="typeMismatch",
+                                ),
+                                **style_select,
+                            ),
+                            name="consent_type",
+                        ),
+                        rx.form.field(
                             rx.form.label("Full description"),
                             rx.text_area(
                                 value=FormState.full_description,
@@ -209,11 +280,8 @@ def index():
                                 disabled=True,
                             ),
                             name="full_description",
-                            **style_main,
                         ),
-                    ),
-                    rx.form.field(
-                        rx.flex(
+                        rx.form.field(
                             rx.form.label("Intended benefits"),
                             rx.text_area(
                                 value=FormState.intended_benefits,
@@ -221,11 +289,8 @@ def index():
                                 disabled=True,
                             ),
                             name="intended_benefits",
-                            **style_main,
                         ),
-                    ),
-                    rx.form.field(
-                        rx.flex(
+                        rx.form.field(
                             rx.form.label("Potential risks"),
                             rx.text_area(
                                 value=FormState.potential_risks,
@@ -233,43 +298,120 @@ def index():
                                 disabled=True,
                             ),
                             name="potential_risks",
-                            **style_main,
                         ),
-                    ),
-                    rx.form.field(
-                        rx.flex(
-                            rx.form.label("Signed by"),
-                            rx.select(
-                                users,
-                            ),
-                            rx.form.message(
-                                "A signature is needed!",
-                                match="typeMismatch",
+                        rx.form.field(
+                            rx.flex(
+                                rx.form.label("Signed by"),
+                                rx.select(
+                                    users,
+                                ),
+                                rx.form.message(
+                                    "A signature is needed!",
+                                    match="typeMismatch",
+                                ),
+                                **style_select,
                             ),
                             name="signed_by",
-                            **style_main,
                         ),
-                    ),
-                    rx.flex(
-                        rx.form.submit(
-                            rx.button("Submit"),
-                            as_child=True,
-                            width="100px",
+                        rx.flex(
+                            rx.form.submit(
+                                rx.button("Submit"),
+                                as_child=True,
+                                width="100px",
+                            ),
+                            **style_button,
                         ),
-                        **style_button,
+                        **style_main,
                     ),
+                    on_submit=FormState.handle_submit,
+                    reset_on_submit=True,
                     **style_main,
                 ),
-                on_submit=FormState.handle_submit,
-                reset_on_submit=True,
+                rx.divider(),
+                rx.heading("Results"),
+                rx.html(db_all()),
+                # rx.html(FormState.print_state()),
+            ),
+            padding_top="6em",
+        ),
+    )
+
+
+@rx.page(title="Consent form")
+def previous_forms():
+    return rx.fragment(
+        navbar(),
+        rx.center(
+            rx.vstack(
+                rx.box(
+                    rx.heading(
+                        "Initialise database",
+                        font_size="2em",
+                    ),
+                    padding_top="20px",
+                ),
+                rx.text("This will refresh the database and remove all data."),
+                rx.form.root(
+                    rx.flex(
+                        rx.flex(
+                            rx.form.submit(
+                                rx.button("Refresh database"),
+                                as_child=True,
+                                width="200px",
+                            ),
+                            **style_button,
+                        ),
+                        **style_main,
+                    ),
+                    on_submit=FormState.handle_submit,
+                    reset_on_submit=True,
+                    **style_main,
+                ),
                 **style_main,
             ),
-            rx.divider(),
-            rx.heading("Results"),
-            rx.html(db_all()),
+            padding_top="6em",
+        ),
+    )
+
+
+@rx.page(title="Consent form")
+def database_refresh():
+    return rx.fragment(
+        navbar(),
+        rx.center(
+            rx.vstack(
+                rx.box(
+                    rx.heading(
+                        "Initialise database",
+                        font_size="2em",
+                    ),
+                    padding_top="20px",
+                ),
+                rx.text("This will refresh the database and remove all data."),
+                rx.form.root(
+                    rx.flex(
+                        rx.flex(
+                            rx.form.submit(
+                                rx.button("Refresh database"),
+                                as_child=True,
+                                width="200px",
+                            ),
+                            **style_button,
+                        ),
+                        **style_main,
+                    ),
+                    on_submit=FormState.handle_submit,
+                    reset_on_submit=True,
+                    **style_main,
+                ),
+                **style_main,
+            ),
+            padding_top="6em",
         ),
     )
 
 
 app = rx.App()
 app.add_page(index)
+app.add_page(database_refresh, route="/database-refresh")
+app.add_page(previous_forms, route="/previous-forms")
