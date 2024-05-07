@@ -14,6 +14,9 @@ This is based on MoqUps!
 
 * What is a python virtual environment?
 * What is OOP?
+* What is a frontend?
+* What is a backend?
+* What is an API?
 
 ```{.bash}
 streamlit hello
