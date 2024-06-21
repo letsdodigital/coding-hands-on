@@ -6,3 +6,6 @@
 /.quarto/
 __pycache__/
 venv/
+*-venv/
+
+secrets.toml

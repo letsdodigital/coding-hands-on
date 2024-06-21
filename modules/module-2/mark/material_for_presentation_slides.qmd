@@ -1,0 +1,45 @@
+---
+format: html
+---
+
+# Material to pull across to the presentation slides
+
+## Lesson 1 - Moqups Process mapping
+
+This is based on MoqUps!
+
+* What is process mapping
+
+## Lesson 2 - Get Streamlit running
+
+* What is a python virtual environment?
+* What is OOP?
+* What is a frontend?
+* What is a backend?
+* What is an API?
+
+```{.bash}
+streamlit hello
+```
+
+* create app.py and add
+
+```{.python filename="app.py"}
+import streamlit as st
+
+st.write("Hello world")
+```
+
+```{.bash}
+streamlit run app.py
+```
+
+* When you update the code and save, click "Always rerun" (top right) in the browser to always refresh on code change.
+
+```{.python filename="----.py"}
+
+```
+
+```{.bash}
+
+```
