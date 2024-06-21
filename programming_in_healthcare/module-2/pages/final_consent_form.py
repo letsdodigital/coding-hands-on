@@ -15,7 +15,7 @@ class QueryConsentForm:
         main_table_data_single = [
             foreign_data
             for foreign_data in self.main_table.data
-            if foreign_data["id"] == st.session_state["submitted_consents_id"]
+            if foreign_data["id"] == st.session_state["submitted_consent_id"]
         ]
 
         created_at_date = datetime.fromisoformat(
@@ -32,7 +32,7 @@ class QueryConsentForm:
         main_table_data_single = [
             foreign_data
             for foreign_data in self.main_table.data
-            if foreign_data["id"] == st.session_state["submitted_consents_id"]
+            if foreign_data["id"] == st.session_state["submitted_consent_id"]
         ]
 
         foreign_table_data_all = [
@@ -47,11 +47,11 @@ class QueryConsentForm:
 def main():
     st.title("Your completed consent form")
 
-    if "submitted_consents_id" not in st.session_state or st.session_state["submitted_consents_id"] == 0:
+    if "submitted_consent_id" not in st.session_state or st.session_state["submitted_consent_id"] == 0:
         st.write("A consent form has not been submitted")
         return
     
-    # st.write(st.session_state["submitted_consents_id"])
+    # st.write(st.session_state["submitted_consent_id"])
 
     query = QueryConsentForm("submitted_consents")
 
@@ -102,8 +102,6 @@ def main():
     st.header("Signature")
     st.text_input("Signed off by", value = f"{ user["first_name"] } { user["last_name"] }", disabled=True)
     st.date_input("Date signed", query.created_at(), disabled=True)
-
-
 
     return
 

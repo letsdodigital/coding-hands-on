@@ -37,6 +37,10 @@ This is based on MoqUps!
 * What is a web browser
 * What languages do we use in web browsers - JS, TS, HTML, CSS, more fancy ones (XML)
 * what is a function, how to write one. (Anatomy of a function)
+* Anatomy of the for loop. Loop variable. The use of `else` with for loops. `breaks`
+* Don't forget indentation and colons `:`
+* `all` statement
+* Initialising variables
 
 ```{.bash}
 streamlit hello
