@@ -7,6 +7,9 @@ https://www.nhs.uk/conditions/kidney-disease/diagnosis/
 
 Gotten stuck, look at the slides at:
 https://letsdodigital.org/learn/learn-python/module-1/
+
+Warning:
+This is not to be used as a real life medical app! This is for training purposes only.
 """
 
 import streamlit as st
