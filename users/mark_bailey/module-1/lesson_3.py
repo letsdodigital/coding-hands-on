@@ -13,7 +13,7 @@ import streamlit as st
 
 """Exercise 1 - 'Hello world!' web app style!
 Run the app using the command:
-$ streamlit run lesson_3.py
+$ streamlit run app.py
 """
 
 

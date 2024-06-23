@@ -20,7 +20,11 @@ def create_user_folders() -> None:
             else:
                 folder_path.mkdir(parents=True)
                 print(f"The folder {folder_path} has been created.")
-                shutil.copytree(Path("modules"), folder_path, dirs_exist_ok=True)
+                shutil.copytree(
+                    Path("programming_in_healthcare"),
+                    folder_path,
+                    dirs_exist_ok=True,
+                )
 
     return
 
