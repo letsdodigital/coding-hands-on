@@ -8,10 +8,9 @@ https://letsdodigital.org/learn/learn-python/module-1/
 """
 
 """Ignore this code up until...
-
 """
 
-import answers.lesson_2_anwers as answers
+import answers.lesson_2_answers as answers
 
 all_correct = True
 
@@ -71,7 +70,7 @@ Why is the below code not printing out anything? Can you fix it?
 
 
 def a_function():
-    print("* I am a line of code that wants to be printed!")
+    print("* I am a line of code that wants to be printed! *")
     return
 
     a_function()
@@ -98,9 +97,9 @@ if patient_allergy == "amoxicillin":
 elif patient_allergy == "tazocin":
     allergy_group = "penicillins"
 else:
-    allergy_group = "others"
+    allergy_group = "not specified"
 
-print("* Patient is allergic to", allergy_group)
+print("* Patient is allergic to" + allergy_group)
 """
 
 """ Exercise 8 - for loops
@@ -112,7 +111,7 @@ print("* Patient is allergic to", allergy_group)
 hb_values = [12, 12.3, 12.4, 13]
 
 """Exercise 9 - calling a function
-Convert the comments below into code. A userful link:
+Convert the comments below into code. A useful link:
 https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults
 """
 

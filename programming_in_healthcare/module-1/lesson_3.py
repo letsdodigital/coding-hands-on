@@ -16,7 +16,7 @@ import streamlit as st
 
 """Exercise 1 - 'Hello world!' web app style!
 Run the app using the command:
-$ streamlit run app.py
+$ streamlit run lesson_3.py
 """
 
 
@@ -60,7 +60,7 @@ if __name__ == "__main__":
 """
 
 """
-# Add arguements 'creatinine, age, gender, race' to function below
+# Add arguments 'creatinine, age, gender, race' to function below
 def calculate_egfr():
     egfr = 45
     return  # Return a string with 'creatinine, age, gender, race and egfr'
@@ -69,7 +69,7 @@ def calculate_egfr():
 def main():
     st.title("eGFR calculator")
     # Create variables 'creatinine, age, gender, race' with some initial values.
-    # Pass arguements 'creatinine, age, gender, race' to the function call below.
+    # Pass arguments 'creatinine, age, gender, race' to the function call below.
     return_string = calculate_egfr()
     st.write(f"{ return_string }")
     return
@@ -90,7 +90,7 @@ if __name__ == "__main__":
 
 You will be using the below equation for calculating the eGFR:
 
-eGFR = 175 * ((creatinine × 0.011312) ^ (-1.154)) x (age ^ (-0.203))
+eGFR = 175 x ((creatinine x 0.011312) ^ (-1.154)) x (age ^ (-0.203))
        x (0.742 if female) x (1.212 if Afro-Caribbean)
 """
 

@@ -19,5 +19,5 @@ https://letsdodigital.org/learn/learn-python/module-1/
 https://docs.streamlit.io/library/advanced-features/theming
 2. Change the colours of your web app
 3. Change the font
-4. Change themes.
+4. Change theme
 """
