@@ -31,7 +31,7 @@ printf "\n${BB}Setting codespace forwarded ports to public..${NC}\n"
 gh codespace ports visibility $PORTS_VISIBILITY -c $CODESPACE_NAME
 if [ $? -ne 0 ]; then
     printf "\n${BR}Error setting ports visiblity to public.\n"
-    printf "Check messages above, review "ports" tab and"
+    printf "Check messages above, review \"ports\" tab and"
     printf " consider running this script again.\n\n"
     printf "Continuing to install +/- patch streamlit${NC}\n"
     EXIT=1
