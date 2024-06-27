@@ -27,7 +27,9 @@ def statement(answer):
 """START HERE!"""
 
 """Exercise 1 - What is in a comment?
-What is a comment? Uncomment the correct answer below
+What is a comment? Uncomment the correct answer below and then run the script again
+with:
+$ python lesson_2.py
 """
 
 # statement("A comment is code that the computer must run.")
@@ -37,7 +39,9 @@ What is a comment? Uncomment the correct answer below
 # statement("A comment is a waste of time")
 
 """Exercise 2 - variables
-Uncomment the correct answers
+Uncomment the correct answers and then run the script again
+with:
+$ python lesson_2.py
 """
 
 # statement("A variable is a set space in the computer’s memory.")
@@ -52,6 +56,7 @@ Can you spot the problem and fix it?
 """
 
 # drug name = "Amoxicillin"
+# print("drug name is Amoxicillin")
 
 """Exercise 4 - quotation marks
 Uncomment the below code. What happens when you run it from the terminal?
@@ -62,6 +67,7 @@ Can you spot the problem and fix it?
 patient_id = "1523"
 patient_name = "John Smith'
 patient_DOB = "01/01/1990"
+print("Passed patient demographics")
 """
 
 """Exercise 5 - indentation

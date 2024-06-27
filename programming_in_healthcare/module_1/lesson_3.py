@@ -12,6 +12,7 @@ Warning:
 This is not to be used as a real life medical app! This is for training purposes only.
 """
 
+# Do NOT comment out his library import
 import streamlit as st
 
 """Exercise 1 - 'Hello world!' web app style!
@@ -99,12 +100,12 @@ def calculate_egfr(creatinine, age, gender, race):
     # Calculate a 'gender_factor' which is 1 for 'Males' and 0.742 for 'Females'
     # If gender is not "Male" or "Female" (python is capitalisation sensitive)
     # then raise an error with:
-    # raise ValueError ("Your error message")
+    # raise ValueError("Your error message")
 
     # Calculate a 'race_factor' which is 1.212 for 'Afro-Caribbean' and 1 for 'other'
     # If race is not "Afro-Caribbean" or "other" (python is capitalisation sensitive)
     # then raise an error with:
-    # raise ValueError ("Your error message")
+    # raise ValueError("Your error message")
 
     # Calculate eGFR using the equation mentioned above
     egfr = 0
