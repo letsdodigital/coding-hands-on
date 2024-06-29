@@ -14,6 +14,7 @@ def create_user_folders() -> None:
         for line in file:
             username = line.strip()
             username = username.replace(" ", "_")
+            username = username.lower()
             folder_path = Path("users") / username
             if folder_path.exists():
                 print(f"The folder {folder_path} already exists.")
@@ -25,14 +26,11 @@ def create_user_folders() -> None:
                     folder_path,
                     dirs_exist_ok=True,
                 )
-                os.rename(
-                    folder_path / Path("module-1"),
-                    folder_path / Path(username + "_module-1"),
-                )
-                os.rename(
-                    folder_path / Path("module-2"),
-                    folder_path / Path(username + "_module-2"),
-                )
+                for folder in os.listdir(folder_path):
+                    os.rename(
+                        folder_path / folder,
+                        folder_path / Path(username + "_" + folder),
+                    )
 
     return
 
