@@ -44,7 +44,7 @@ if __name__ == "__main__":
 
 def main():
     # Call the 'calculate_egfr' function above and store the value as return_egfr
-    # Print the returned value to the browser
+    # write the returned value to the browser
     return
 
 
