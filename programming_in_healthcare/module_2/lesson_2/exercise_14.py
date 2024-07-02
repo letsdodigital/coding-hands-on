@@ -114,7 +114,6 @@ def main():
 
     users = execute_query(conn.table("users").select("*"), ttl="10m")
 
-
     user_names = [""] + [
         user["user_name"] for user in users.data if "user_name" in user
     ]

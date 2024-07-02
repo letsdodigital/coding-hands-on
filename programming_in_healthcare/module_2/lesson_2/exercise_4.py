@@ -1,5 +1,5 @@
 import streamlit as st
-from st_supabase_connection import SupabaseConnection
+from st_supabase_connection import SupabaseConnection, execute_query
 
 """Exercise 4 - Read what you wrote to the database
 
@@ -11,13 +11,14 @@ it to the screen and also add a button.
 def main():
     conn = st.connection("supabase", type=SupabaseConnection)
 
-    users = conn.query("*", table="users", ttl="10m").execute()
+    users = execute_query(conn.table("users").select("*"), ttl="10m")
 
     test_data = {"test_data": "Some test data"}
 
-    result = (
-        conn.table("test_upload").insert([test_data], count="None").execute()
+    result = execute_query(
+        conn.table("test_upload").insert([test_data], count="None")
     )
+
 
     # Read the "test_upload" table and store in a variable
 

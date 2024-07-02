@@ -1,5 +1,5 @@
 import streamlit as st
-from st_supabase_connection import SupabaseConnection
+from st_supabase_connection import SupabaseConnection, execute_query
 
 """Exercise 13 - Adding more code to `on_change` and `submitted`
 
@@ -44,7 +44,7 @@ def initialise():
         st.session_state.potential_risks_state = initialise_state
 
     conn = st.connection("supabase", type=SupabaseConnection)
-    consent_types = conn.query("*", table="consent_types", ttl="10m").execute()
+    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
 
     return
 
@@ -124,15 +124,13 @@ def main():
 
     conn = st.connection("supabase", type=SupabaseConnection)
 
-    users = conn.query("*", table="users", ttl="10m").execute()
+    users = execute_query(conn.table("users").select("*"), ttl="10m")
 
     user_names = [""] + [
         user["user_name"] for user in users.data if "user_name" in user
     ]
 
-    patients = conn.query(
-        "*", table="patient_demographics", ttl="10m"
-    ).execute()
+    patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
 
     hospital_numbers = [
         patient["hospital_number"]
@@ -140,7 +138,7 @@ def main():
         if "hospital_number" in patient
     ]
 
-    consent_types = conn.query("*", table="consent_types", ttl="10m").execute()
+    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
 
     intervention_types = [""] + [
         consent_type["type"]

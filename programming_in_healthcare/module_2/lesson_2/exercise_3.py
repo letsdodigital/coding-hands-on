@@ -1,5 +1,5 @@
 import streamlit as st
-from st_supabase_connection import SupabaseConnection
+from st_supabase_connection import SupabaseConnection, execute_query
 
 """Exercise 3 - Write to the database
 
@@ -13,7 +13,7 @@ like
 def main():
     conn = st.connection("supabase", type=SupabaseConnection)
 
-    users = conn.query("*", table="users", ttl="10m").execute()
+    users = execute_query(conn.table("users").select("*"), ttl="10m")
 
     # Create a dictionary called "test_data" with a key of "test_data",
     # and any value you like. If you add the time including seconds you
