@@ -10,22 +10,19 @@ and added something to the input fields. All you need to add is some code to
 check that the button has been pressed.
 """
 
+
 def initialise():
     return
 
 
 def on_change_hospital_number():
-    st.write(
-        f"Hospital number changed to: { st.session_state.hospital_number_input }"
-    )
+    st.write(f"Hospital number changed to: { st.session_state.hospital_number_input }")
 
     return
 
 
 def on_change_intervention():
-    st.write(
-        f"Intervention changed to: { st.session_state.intervention_input }"
-    )
+    st.write(f"Intervention changed to: { st.session_state.intervention_input }")
 
     return
 
@@ -33,7 +30,7 @@ def on_change_intervention():
 def main():
     # We have added this here for you
     fields = {}
-    
+
     conn = st.connection("supabase", type=SupabaseConnection)
 
     users = execute_query(conn.table("users").select("*"), ttl="10m")

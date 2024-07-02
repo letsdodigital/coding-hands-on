@@ -93,9 +93,9 @@ def on_change_intervention():
             # data base. We have done the first 3 for you. You need to do the
             # other 2. Uncomment to use this code.
 
-                # st.session_state.intervention_id = intervention["id"]
-                # st.session_state.intervention_state = (st.session_state.intervention_input)
-                # st.session_state.full_description_state = intervention["full_description"]
+            # st.session_state.intervention_id = intervention["id"]
+            # st.session_state.intervention_state = (st.session_state.intervention_input)
+            # st.session_state.full_description_state = intervention["full_description"]
 
             break
     else:

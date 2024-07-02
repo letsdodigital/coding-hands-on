@@ -58,9 +58,7 @@ def initialise():
 
 def on_change_hospital_number():
     # Delete this line of code
-    st.write(
-        f"Hospital number changed to: { st.session_state.hospital_number_input }"
-    )
+    st.write(f"Hospital number changed to: { st.session_state.hospital_number_input }")
 
     # Create a variable called `hospital_number_input` and initialise it with
     # the value of the session state `hospital_number_input`.
@@ -80,9 +78,7 @@ def on_change_hospital_number():
 
 def on_change_intervention():
     # Delete this line of code
-    st.write(
-        f"Intervention changed to: { st.session_state.intervention_input }"
-    )
+    st.write(f"Intervention changed to: { st.session_state.intervention_input }")
 
     # Create a `for loop`. This needs to loop through `consent_types.data` and
     # have a loop variable called `intervention`.

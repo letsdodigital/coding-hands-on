@@ -10,6 +10,7 @@ NOTES: You will need to create a date field for date of birth (obvious, but
 worth noting).
 """
 
+
 def main():
     conn = st.connection("supabase", type=SupabaseConnection)
 
@@ -23,7 +24,7 @@ def main():
         conn.table("test_upload").insert([test_data], count="None")
     )
 
-    test_data_all_data = execute_query(conn.table("test_upload").select("*"),ttl="10m")
+    test_data_all_data = execute_query(conn.table("test_upload").select("*"), ttl="10m")
 
     # Change the title to "My Digital Consent Form"
     st.title("API call test")

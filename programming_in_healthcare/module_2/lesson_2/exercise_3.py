@@ -10,6 +10,7 @@ NOTES: Use the datetime library to add a date and time string to your data if yo
 like
 """
 
+
 def main():
     conn = st.connection("supabase", type=SupabaseConnection)
 

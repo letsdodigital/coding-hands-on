@@ -9,6 +9,7 @@ title and add some input fields for interventions, this time with two
 selectboxes.
 """
 
+
 def main():
     conn = st.connection("supabase", type=SupabaseConnection)
 
@@ -23,7 +24,7 @@ def main():
         conn.table("test_upload").insert([test_data], count="None")
     )
 
-    test_data_all_data = execute_query(conn.table("test_upload").select("*"),ttl="10m")
+    test_data_all_data = execute_query(conn.table("test_upload").select("*"), ttl="10m")
 
     # STOP1 deleting up to here
 

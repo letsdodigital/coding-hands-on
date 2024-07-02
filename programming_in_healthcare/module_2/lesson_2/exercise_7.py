@@ -8,6 +8,7 @@ create your consent form and submit it. We will now get you to query the
 `patients` and `consent_types` tables and output the results to the browser.
 """
 
+
 def main():
     conn = st.connection("supabase", type=SupabaseConnection)
 
@@ -27,9 +28,7 @@ def main():
     st.text_input("Email")
 
     st.header("Intervention")
-    st.selectbox(
-        "Intervention", ["", "Below knee amputation", "Cannula"]
-    )
+    st.selectbox("Intervention", ["", "Below knee amputation", "Cannula"])
     st.text_input("Full description")
     st.text_input("Intended benefits")
     st.text_input("Potential risks")

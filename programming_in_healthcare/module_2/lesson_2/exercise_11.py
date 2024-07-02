@@ -8,11 +8,12 @@ line START HERE. After that, go back to the beginning and carry out the rest of
 the tasks required.
 """
 
+
 def initialise():
     # We added this line for you
     initialise_state = "test_data"
 
-    # Now you need to initialise all of your state keys, checking if they have 
+    # Now you need to initialise all of your state keys, checking if they have
     # been initialised already. We have done the first one for you.
     if "intervention_state" not in st.session_state:
         st.session_state.intervention_state = initialise_state
@@ -20,24 +21,20 @@ def initialise():
 
 
 def on_change_hospital_number():
-    st.write(
-        f"Hospital number changed to: { st.session_state.hospital_number_input }"
-    )
+    st.write(f"Hospital number changed to: { st.session_state.hospital_number_input }")
 
     return
 
 
 def on_change_intervention():
-    st.write(
-        f"Intervention changed to: { st.session_state.intervention_input }"
-    )
+    st.write(f"Intervention changed to: { st.session_state.intervention_input }")
 
     return
 
 
 def main():
     fields = {}
-    
+
     conn = st.connection("supabase", type=SupabaseConnection)
 
     users = execute_query(conn.table("users").select("*"), ttl="10m")
@@ -79,11 +76,11 @@ def main():
 
         # START HERE
         # To each input field (EXCEPT the "Signed off by" field) add the second
-        # argument, which is `value`, as a session state variable. This should 
+        # argument, which is `value`, as a session state variable. This should
         # match the key in the field dictionary, but with a suffix of "_state".
         # Please also disable the field. We have already done all of the changes
         # for the first field "hospital_number" below. Complete for the rest.
-        
+
         fields["hospital_number"] = st.text_input(
             "Hospital number",
             st.session_state.hospital_number_state,

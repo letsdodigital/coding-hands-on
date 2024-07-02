@@ -15,10 +15,7 @@ def main():
 
     test_data = {"test_data": "Some test data"}
 
-    result = execute_query(
-        conn.table("test_upload").insert([test_data], count="None")
-    )
-
+    result = execute_query(conn.table("test_upload").insert([test_data], count="None"))
 
     # Read the "test_upload" table and store in a variable
 
