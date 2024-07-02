@@ -1,2 +1,3 @@
 black
 streamlit
+st_supabase_connection
