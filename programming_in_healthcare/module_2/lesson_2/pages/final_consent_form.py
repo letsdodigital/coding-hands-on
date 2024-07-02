@@ -6,9 +6,6 @@ from datetime import datetime
 class QueryConsentForm:
     def __init__(self, main_table_name):
         self.conn = st.connection("supabase", type=SupabaseConnection)
-        # self.main_table = self.conn.query(
-        #     "*", table=main_table_name, ttl="10m"
-        # ).execute()
         self.main_table = execute_query(self.conn.table(main_table_name).select("*"), ttl="10m")
         return
 
@@ -26,9 +23,6 @@ class QueryConsentForm:
         return created_at_date
 
     def execute(self, foreign_table_name, field):
-        # foreign_table_data_all = self.conn.query(
-        #     "*", table=foreign_table_name, ttl="10m"
-        # ).execute()
         foreign_table_data_all = execute_query(
             self.conn.table(foreign_table_name).select("*"), ttl="10m"
         )
