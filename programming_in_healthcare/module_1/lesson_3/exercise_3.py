@@ -6,7 +6,7 @@ https://pathlabs.rlbuht.nhs.uk/eGFRcalculator.htm
 https://www.nhs.uk/conditions/kidney-disease/diagnosis/
 
 Gotten stuck, look at the slides at:
-https://letsdodigital.org/learn/learn-python/module-1/
+https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
 
 Warning:
 This is not to be used as a real life medical app! This is for training purposes only.

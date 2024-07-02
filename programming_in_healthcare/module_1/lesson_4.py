@@ -4,7 +4,7 @@ If you have completed all of the other lessons, and would like another exercise,
 try out the below.
 
 Gotten stuck, look at the slides at:
-https://letsdodigital.org/learn/learn-python/module-1/
+https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
 """
 
 """Exercise 1 - Create any clinical calculator you like

@@ -3,11 +3,11 @@
 Some basic terminal and python exercises
 
 Gotten stuck, look at the slides at:
-https://letsdodigital.org/learn/learn-python/module-1/
+https://letsdodigital.org/learn/learn-python/module-1/2-coding-environment.html
 """
 
 """Exercise 1
-Just run this python script
+Just run this python script.
 """
 
 
@@ -34,6 +34,6 @@ Run a terminal command to show what is your current directory path.
 """
 
 """Finished
-Let your tutor know when you have finished the above. We start the next session
-when everyone is finished with this exercise.
+Let your tutor know when you have finished the above. We will start the next 
+session when everyone is finished with this exercise.
 """
