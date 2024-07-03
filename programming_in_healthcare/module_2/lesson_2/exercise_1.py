@@ -11,13 +11,18 @@ education ;o).
 
 NOTES: You will either need to manually reload the webpage after every code change, 
 or you can select "Always rerun" from the browser to do so automatically.
-If there is an error in your code, you will need to manually refresh in the 
+If there is an error in your code, you may need to manually refresh in the 
 browser after fixing the code.
+
+See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
+get stuck.
 """
 
 
 def main():
+    # Change the title to "Bonjour"
     st.title("Hello")
+    # Change the below line to "Salut le monde!"
     st.text("Hello World!")
 
     return
@@ -26,5 +31,5 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Did this work? if so, move on to the next exercise. If not, as a tutor for
+# Did this work? if so, move on to the next exercise. If not, ask a tutor for
 # help.

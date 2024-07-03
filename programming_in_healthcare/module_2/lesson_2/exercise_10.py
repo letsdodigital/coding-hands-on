@@ -8,6 +8,9 @@ with a little reward. We have done most of the work for you in this next section
 Have a look at what we did. We added a new dictionary (can you find its name?) 
 and added something to the input fields. All you need to add is some code to 
 check that the button has been pressed.
+
+See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
+get stuck.
 """
 
 
@@ -16,13 +19,17 @@ def initialise():
 
 
 def on_change_hospital_number():
-    st.write(f"Hospital number changed to: { st.session_state.hospital_number_input }")
+    st.write(
+        f"Hospital number changed to: { st.session_state.hospital_number_input }"
+    )
 
     return
 
 
 def on_change_intervention():
-    st.write(f"Intervention changed to: { st.session_state.intervention_input }")
+    st.write(
+        f"Intervention changed to: { st.session_state.intervention_input }"
+    )
 
     return
 
@@ -39,9 +46,13 @@ def main():
         user["user_name"] for user in users.data if "user_name" in user
     ]
 
-    patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
+    patients = execute_query(
+        conn.table("patient_demographics").select("*"), ttl="10m"
+    )
 
-    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
+    consent_types = execute_query(
+        conn.table("consent_types").select("*"), ttl="10m"
+    )
 
     intervention_types = [""] + [
         consent_type["type"]
@@ -79,9 +90,15 @@ def main():
 
         st.header("Intervention")
         fields["intervention"] = st.text_input("Intervention", disabled=True)
-        fields["full_description"] = st.text_input("Full description", disabled=True)
-        fields["intended_benefits"] = st.text_input("Intended benefits", disabled=True)
-        fields["potential_risks"] = st.text_input("Potential risks", disabled=True)
+        fields["full_description"] = st.text_input(
+            "Full description", disabled=True
+        )
+        fields["intended_benefits"] = st.text_input(
+            "Intended benefits", disabled=True
+        )
+        fields["potential_risks"] = st.text_input(
+            "Potential risks", disabled=True
+        )
 
         st.header("Signature")
 
@@ -98,3 +115,6 @@ def main():
 if __name__ == "__main__":
     # Add a call to the `initialise` function
     main()
+
+# Did this work? if so, move on to the next exercise. If not, ask a tutor for
+# help.

@@ -7,6 +7,9 @@ import datetime
 OUTLINE: Now we are going to get you to delete some lines of code, change the
 title and add some input fields for interventions, this time with two 
 selectboxes.
+
+See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
+get stuck.
 """
 
 
@@ -24,7 +27,9 @@ def main():
         conn.table("test_upload").insert([test_data], count="None")
     )
 
-    test_data_all_data = execute_query(conn.table("test_upload").select("*"), ttl="10m")
+    test_data_all_data = execute_query(
+        conn.table("test_upload").select("*"), ttl="10m"
+    )
 
     # STOP1 deleting up to here
 
@@ -73,3 +78,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Did this work? if so, move on to the next exercise. If not, ask a tutor for
+# help.

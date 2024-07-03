@@ -10,6 +10,9 @@ that is no longer needed.
 
 NOTES: Look up how to create functions in the lecture notes if you are not
 comfortable with them yet. You might need to look up forms as well.
+
+See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
+get stuck.
 """
 
 # Create a function called `initialise`, that takes no arguments and returns
@@ -34,9 +37,13 @@ def main():
         user["user_name"] for user in users.data if "user_name" in user
     ]
 
-    patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
+    patients = execute_query(
+        conn.table("patient_demographics").select("*"), ttl="10m"
+    )
 
-    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
+    consent_types = execute_query(
+        conn.table("consent_types").select("*"), ttl="10m"
+    )
 
     intervention_types = [""] + [
         consent_type["type"]
@@ -104,3 +111,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Did this work? if so, move on to the next exercise. If not, ask a tutor for
+# help.

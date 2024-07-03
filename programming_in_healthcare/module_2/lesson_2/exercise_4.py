@@ -5,6 +5,9 @@ from st_supabase_connection import SupabaseConnection, execute_query
 
 OUTLINE: Here you will read back from the database what you wrote to it, print
 it to the screen and also add a button.
+
+See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
+get stuck.
 """
 
 
@@ -15,7 +18,9 @@ def main():
 
     test_data = {"test_data": "Some test data"}
 
-    result = execute_query(conn.table("test_upload").insert([test_data], count="None"))
+    result = execute_query(
+        conn.table("test_upload").insert([test_data], count="None")
+    )
 
     # Read the "test_upload" table and store in a variable
 
@@ -41,3 +46,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Did this work? if so, move on to the next exercise. If not, ask a tutor for
+# help.

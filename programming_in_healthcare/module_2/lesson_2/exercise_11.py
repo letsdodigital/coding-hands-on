@@ -6,6 +6,9 @@ from st_supabase_connection import SupabaseConnection, execute_query
 NOTES: So now you are going to add a lot of code to manage state. Start at the
 line START HERE. After that, go back to the beginning and carry out the rest of
 the tasks required.
+
+See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
+get stuck.
 """
 
 
@@ -21,13 +24,17 @@ def initialise():
 
 
 def on_change_hospital_number():
-    st.write(f"Hospital number changed to: { st.session_state.hospital_number_input }")
+    st.write(
+        f"Hospital number changed to: { st.session_state.hospital_number_input }"
+    )
 
     return
 
 
 def on_change_intervention():
-    st.write(f"Intervention changed to: { st.session_state.intervention_input }")
+    st.write(
+        f"Intervention changed to: { st.session_state.intervention_input }"
+    )
 
     return
 
@@ -43,12 +50,16 @@ def main():
         user["user_name"] for user in users.data if "user_name" in user
     ]
 
-    patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
+    patients = execute_query(
+        conn.table("patient_demographics").select("*"), ttl="10m"
+    )
 
     # Get a list of valid hospital numbers from the patients.data
     # variable. Call the resulting list `hospital_numbers`.
 
-    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
+    consent_types = execute_query(
+        conn.table("consent_types").select("*"), ttl="10m"
+    )
 
     intervention_types = [""] + [
         consent_type["type"]
@@ -95,9 +106,15 @@ def main():
 
         st.header("Intervention")
         fields["intervention"] = st.text_input("Intervention", disabled=True)
-        fields["full_description"] = st.text_input("Full description", disabled=True)
-        fields["intended_benefits"] = st.text_input("Intended benefits", disabled=True)
-        fields["potential_risks"] = st.text_input("Potential risks", disabled=True)
+        fields["full_description"] = st.text_input(
+            "Full description", disabled=True
+        )
+        fields["intended_benefits"] = st.text_input(
+            "Intended benefits", disabled=True
+        )
+        fields["potential_risks"] = st.text_input(
+            "Potential risks", disabled=True
+        )
 
         st.header("Signature")
 
@@ -115,3 +132,6 @@ def main():
 if __name__ == "__main__":
     # Add a call to the `initialise` function
     main()
+
+# Did this work? if so, move on to the next exercise. If not, ask a tutor for
+# help.

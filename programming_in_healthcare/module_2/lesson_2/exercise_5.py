@@ -8,6 +8,9 @@ OUTLINE: Now you will create some input fields for patient demographics.
 
 NOTES: You will need to create a date field for date of birth (obvious, but
 worth noting).
+
+See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
+get stuck.
 """
 
 
@@ -24,7 +27,9 @@ def main():
         conn.table("test_upload").insert([test_data], count="None")
     )
 
-    test_data_all_data = execute_query(conn.table("test_upload").select("*"), ttl="10m")
+    test_data_all_data = execute_query(
+        conn.table("test_upload").select("*"), ttl="10m"
+    )
 
     # Change the title to "My Digital Consent Form"
     st.title("API call test")
@@ -59,3 +64,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Did this work? if so, move on to the next exercise. If not, ask a tutor for
+# help.

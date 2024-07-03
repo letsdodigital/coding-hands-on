@@ -7,6 +7,9 @@ OUTLINE: We are now going to get you to bulk out the functions you have already
 written and then write a new one. We are also going to get you to check that 
 all fo the fields within the form (there will be a black thin border around 
 these fields) are all filled with data.
+
+See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
+get stuck.
 """
 
 
@@ -58,7 +61,9 @@ def initialise():
 
 def on_change_hospital_number():
     # Delete this line of code
-    st.write(f"Hospital number changed to: { st.session_state.hospital_number_input }")
+    st.write(
+        f"Hospital number changed to: { st.session_state.hospital_number_input }"
+    )
 
     # Create a variable called `hospital_number_input` and initialise it with
     # the value of the session state `hospital_number_input`.
@@ -78,7 +83,9 @@ def on_change_hospital_number():
 
 def on_change_intervention():
     # Delete this line of code
-    st.write(f"Intervention changed to: { st.session_state.intervention_input }")
+    st.write(
+        f"Intervention changed to: { st.session_state.intervention_input }"
+    )
 
     # Create a `for loop`. This needs to loop through `consent_types.data` and
     # have a loop variable called `intervention`.
@@ -123,7 +130,9 @@ def main():
         user["user_name"] for user in users.data if "user_name" in user
     ]
 
-    patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
+    patients = execute_query(
+        conn.table("patient_demographics").select("*"), ttl="10m"
+    )
 
     hospital_numbers = [
         patient["hospital_number"]
@@ -131,7 +140,9 @@ def main():
         if "hospital_number" in patient
     ]
 
-    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
+    consent_types = execute_query(
+        conn.table("consent_types").select("*"), ttl="10m"
+    )
 
     intervention_types = [""] + [
         consent_type["type"]
@@ -227,3 +238,6 @@ def main():
 if __name__ == "__main__":
     initialise()
     main()
+
+# Did this work? if so, move on to the next exercise. If not, ask a tutor for
+# help.

@@ -7,7 +7,10 @@ OUTLINE: So you have read some data from the database in the cloud, now it is
 time for you to write some data to the database.
 
 NOTES: Use the datetime library to add a date and time string to your data if you
-like
+like.
+
+See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
+get stuck.
 """
 
 
@@ -34,3 +37,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Did this work? if so, move on to the next exercise. If not, ask a tutor for
+# help.

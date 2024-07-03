@@ -29,7 +29,7 @@ Run a terminal command to show all files and folders in your current directory.
 """
 
 
-"""Exercise 4
+"""Exercise 5
 Run a terminal command to show what is your current directory path.
 """
 

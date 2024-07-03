@@ -1,7 +1,14 @@
 import streamlit as st
 from st_supabase_connection import SupabaseConnection, execute_query
 
-"""Exercise 14 - 
+"""Exercise 14 - All done
+
+You have now completed all the exercises in this lesson. Well done! You have
+learnt how to read and write to a database in the cloud, and how to use Streamlit
+to create a web app. You have also learnt how to use the Streamlit session state
+to store data between pages. You have also learnt how to use the Streamlit
+connection to store the connection to the database. You have also learnt how to
+use the Streamlit form to create a form that can be submitted to the database.
 """
 
 consent_types = []
@@ -40,7 +47,9 @@ def initialise():
         st.session_state.potential_risks_state = initialise_state
 
     conn = st.connection("supabase", type=SupabaseConnection)
-    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
+    consent_types = execute_query(
+        conn.table("consent_types").select("*"), ttl="10m"
+    )
 
     return
 
@@ -74,10 +83,18 @@ def on_change_intervention():
     for intervention in consent_types.data:
         if intervention["type"] == st.session_state.intervention_input:
             st.session_state.intervention_id = intervention["id"]
-            st.session_state.intervention_state = st.session_state.intervention_input
-            st.session_state.full_description_state = intervention["full_description"]
-            st.session_state.intended_benefits_state = intervention["intended_benefits"]
-            st.session_state.potential_risks_state = intervention["potential_risks"]
+            st.session_state.intervention_state = (
+                st.session_state.intervention_input
+            )
+            st.session_state.full_description_state = intervention[
+                "full_description"
+            ]
+            st.session_state.intended_benefits_state = intervention[
+                "intended_benefits"
+            ]
+            st.session_state.potential_risks_state = intervention[
+                "potential_risks"
+            ]
             break
     else:
         st.session_state.intervention_id = 0
@@ -110,7 +127,9 @@ def main():
         user["user_name"] for user in users.data if "user_name" in user
     ]
 
-    patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
+    patients = execute_query(
+        conn.table("patient_demographics").select("*"), ttl="10m"
+    )
 
     hospital_numbers = [
         patient["hospital_number"]
@@ -118,7 +137,9 @@ def main():
         if "hospital_number" in patient
     ]
 
-    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
+    consent_types = execute_query(
+        conn.table("consent_types").select("*"), ttl="10m"
+    )
 
     intervention_types = [""] + [
         consent_type["type"]

@@ -10,6 +10,9 @@ from the queries you have made of the database queries and then use this data
 in your selectboxes.
 
 NOTES: Go look up list comprehension if you are not comfortable with this yet.
+
+See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
+get stuck.
 """
 
 
@@ -21,9 +24,13 @@ def main():
     # Create a list of "user_names" from the users query (list comprehension
     # might help).
 
-    patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
+    patients = execute_query(
+        conn.table("patient_demographics").select("*"), ttl="10m"
+    )
 
-    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
+    consent_types = execute_query(
+        conn.table("consent_types").select("*"), ttl="10m"
+    )
 
     # Create a list called "intervention_types" of "types" found in the
     # "consent_types" query above.
@@ -69,3 +76,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Did this work? if so, move on to the next exercise. If not, ask a tutor for
+# help.

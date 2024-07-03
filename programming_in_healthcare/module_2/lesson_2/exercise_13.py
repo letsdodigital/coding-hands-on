@@ -5,6 +5,9 @@ from st_supabase_connection import SupabaseConnection, execute_query
 
 OUTLINE: This is the final push of code. We are going to get you to do several 
 steps in this exercise, so watch your step.
+
+See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
+get stuck.
 """
 
 consent_types = []
@@ -44,7 +47,9 @@ def initialise():
         st.session_state.potential_risks_state = initialise_state
 
     conn = st.connection("supabase", type=SupabaseConnection)
-    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
+    consent_types = execute_query(
+        conn.table("consent_types").select("*"), ttl="10m"
+    )
 
     return
 
@@ -130,7 +135,9 @@ def main():
         user["user_name"] for user in users.data if "user_name" in user
     ]
 
-    patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
+    patients = execute_query(
+        conn.table("patient_demographics").select("*"), ttl="10m"
+    )
 
     hospital_numbers = [
         patient["hospital_number"]
@@ -138,7 +145,9 @@ def main():
         if "hospital_number" in patient
     ]
 
-    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
+    consent_types = execute_query(
+        conn.table("consent_types").select("*"), ttl="10m"
+    )
 
     intervention_types = [""] + [
         consent_type["type"]
@@ -250,3 +259,6 @@ def main():
 if __name__ == "__main__":
     initialise()
     main()
+
+# Did this work? if so, move on to the next exercise. If not, ask a tutor for
+# help.

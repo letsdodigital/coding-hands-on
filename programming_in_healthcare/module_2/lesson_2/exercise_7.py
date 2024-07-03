@@ -6,6 +6,9 @@ from st_supabase_connection import SupabaseConnection, execute_query
 OUTLINE: So, you need data from more than one database table to successfully 
 create your consent form and submit it. We will now get you to query the
 `patients` and `consent_types` tables and output the results to the browser.
+
+See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
+get stuck.
 """
 
 
@@ -55,3 +58,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# Did this work? if so, move on to the next exercise. If not, ask a tutor for
+# help.
