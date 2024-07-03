@@ -1,5 +1,5 @@
 import streamlit as st
-from st_supabase_connection import SupabaseConnection
+from st_supabase_connection import SupabaseConnection, execute_query
 
 """Exercise 10 - A reward!
 
@@ -10,22 +10,19 @@ and added something to the input fields. All you need to add is some code to
 check that the button has been pressed.
 """
 
+
 def initialise():
     return
 
 
 def on_change_hospital_number():
-    st.write(
-        f"Hospital number changed to: { st.session_state.hospital_number_input }"
-    )
+    st.write(f"Hospital number changed to: { st.session_state.hospital_number_input }")
 
     return
 
 
 def on_change_intervention():
-    st.write(
-        f"Intervention changed to: { st.session_state.intervention_input }"
-    )
+    st.write(f"Intervention changed to: { st.session_state.intervention_input }")
 
     return
 
@@ -33,20 +30,18 @@ def on_change_intervention():
 def main():
     # We have added this here for you
     fields = {}
-    
+
     conn = st.connection("supabase", type=SupabaseConnection)
 
-    users = conn.query("*", table="users", ttl="10m").execute()
+    users = execute_query(conn.table("users").select("*"), ttl="10m")
 
     user_names = [""] + [
         user["user_name"] for user in users.data if "user_name" in user
     ]
 
-    patients = conn.query(
-        "*", table="patient_demographics", ttl="10m"
-    ).execute()
+    patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
 
-    consent_types = conn.query("*", table="consent_types", ttl="10m").execute()
+    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
 
     intervention_types = [""] + [
         consent_type["type"]

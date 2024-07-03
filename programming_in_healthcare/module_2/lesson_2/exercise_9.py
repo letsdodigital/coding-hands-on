@@ -1,5 +1,5 @@
 import streamlit as st
-from st_supabase_connection import SupabaseConnection
+from st_supabase_connection import SupabaseConnection, execute_query
 
 """Exercise 9 - Time for a proper form and saving of state
 
@@ -12,11 +12,11 @@ NOTES: Look up how to create functions in the lecture notes if you are not
 comfortable with them yet. You might need to look up forms as well.
 """
 
-# Create a function called `initialise`, that takes no arguments and returns 
+# Create a function called `initialise`, that takes no arguments and returns
 # nothing
 
 # Create a function called `on_change_hospital_number`, which takes no arguments
-# and writes to the browser the value of the field created later in this 
+# and writes to the browser the value of the field created later in this
 # exercise below with the key `hospital_number_input`. Hint, you need to
 # use `st.session_state`.
 
@@ -24,20 +24,19 @@ comfortable with them yet. You might need to look up forms as well.
 # and writes to the browser the value of field created later in this exercise
 # below with the key `intervention_input`.
 
+
 def main():
     conn = st.connection("supabase", type=SupabaseConnection)
 
-    users = conn.query("*", table="users", ttl="10m").execute()
+    users = execute_query(conn.table("users").select("*"), ttl="10m")
 
     user_names = [""] + [
         user["user_name"] for user in users.data if "user_name" in user
     ]
 
-    patients = conn.query(
-        "*", table="patient_demographics", ttl="10m"
-    ).execute()
+    patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
 
-    consent_types = conn.query("*", table="consent_types", ttl="10m").execute()
+    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
 
     intervention_types = [""] + [
         consent_type["type"]
@@ -47,16 +46,16 @@ def main():
 
     st.title("My Digital Consent Form")
 
-    # Add a text input field for inputting a hospital number. Give it an 
+    # Add a text input field for inputting a hospital number. Give it an
     # appropriate label, a key of "hospital_number_input" and the function to
     # call on change should be `on_change_hospital_number` (created above).
 
-    # Add a selectbox field for intervention selection, much like 
-    # `SELECTBOX I` below. This needs an appropriate label, to take a list of 
+    # Add a selectbox field for intervention selection, much like
+    # `SELECTBOX I` below. This needs an appropriate label, to take a list of
     # interventions, a key of "intervention_input" and call the function
     # `on_change_intervention` on change (created above).
 
-    # create a form from here up until "END OF FORM" using 
+    # create a form from here up until "END OF FORM" using
     # `st.form("consent_form"):`
     st.header("Patient details")
     st.text_input("Hospital number")
@@ -66,8 +65,8 @@ def main():
     st.text_input("Email")
 
     st.header("Intervention")
-    
-    # SELECTBOX I: Convert the below line to a "text_input", remove the list 
+
+    # SELECTBOX I: Convert the below line to a "text_input", remove the list
     # argument and disable the field
     st.selectbox("Intervention", intervention_types)
     st.text_input("Full description", disabled=True)

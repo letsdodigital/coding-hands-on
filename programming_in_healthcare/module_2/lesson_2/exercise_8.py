@@ -1,5 +1,5 @@
 import streamlit as st
-from st_supabase_connection import SupabaseConnection
+from st_supabase_connection import SupabaseConnection, execute_query
 
 """Exercise 8 - List comprehension and updating selectboxes
 
@@ -12,21 +12,20 @@ in your selectboxes.
 NOTES: Go look up list comprehension if you are not comfortable with this yet.
 """
 
+
 def main():
     conn = st.connection("supabase", type=SupabaseConnection)
 
-    users = conn.query("*", table="users", ttl="10m").execute()
+    users = execute_query(conn.table("users").select("*"), ttl="10m")
 
-    # Create a list of "user_names" from the users query (list comprehension 
+    # Create a list of "user_names" from the users query (list comprehension
     # might help).
 
-    patients = conn.query(
-        "*", table="patient_demographics", ttl="10m"
-    ).execute()
+    patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
 
-    consent_types = conn.query("*", table="consent_types", ttl="10m").execute()  
+    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
 
-    # Create a list called "intervention_types" of "types" found in the 
+    # Create a list called "intervention_types" of "types" found in the
     # "consent_types" query above.
 
     st.title("My Digital Consent Form")
@@ -40,17 +39,15 @@ def main():
 
     st.header("Intervention")
 
-    # Update the below line to use "intervention_types" (newly created above), 
+    # Update the below line to use "intervention_types" (newly created above),
     # instead of the static list already used below.
-    st.selectbox(
-        "Intervention", ["", "Below knee amputation", "Cannula"]
-    )
+    st.selectbox("Intervention", ["", "Below knee amputation", "Cannula"])
     st.text_input("Full description", disabled=True)
     st.text_input("Intended benefits", disabled=True)
     st.text_input("Potential risks", disabled=True)
 
     st.header("Signature")
-    # Update the below line to use "user_names" (newly created above), 
+    # Update the below line to use "user_names" (newly created above),
     # instead of the static list already used below
     st.selectbox("Signed off by", ["", "Dr Smith", "Nurse Jones"])
 

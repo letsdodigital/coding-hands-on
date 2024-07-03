@@ -1,5 +1,5 @@
 import streamlit as st
-from st_supabase_connection import SupabaseConnection
+from st_supabase_connection import SupabaseConnection, execute_query
 import datetime
 
 """Exercise 5 - Create some input fields
@@ -10,22 +10,21 @@ NOTES: You will need to create a date field for date of birth (obvious, but
 worth noting).
 """
 
+
 def main():
     conn = st.connection("supabase", type=SupabaseConnection)
 
-    users = conn.query("*", table="users", ttl="10m").execute()
+    users = execute_query(conn.table("users").select("*"), ttl="10m")
 
     current_time = datetime.datetime.now().strftime("%H:%M:%S")
 
     test_data = {"test_data": f"Some test data - { current_time }"}
 
-    update_result = (
-        conn.table("test_upload").insert([test_data], count="None").execute()
+    update_result = execute_query(
+        conn.table("test_upload").insert([test_data], count="None")
     )
 
-    test_data_all_data = conn.query(
-        "*", table="test_upload", ttl="10m"
-    ).execute()
+    test_data_all_data = execute_query(conn.table("test_upload").select("*"), ttl="10m")
 
     # Change the title to "My Digital Consent Form"
     st.title("API call test")

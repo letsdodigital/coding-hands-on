@@ -74,18 +74,10 @@ def on_change_intervention():
     for intervention in consent_types.data:
         if intervention["type"] == st.session_state.intervention_input:
             st.session_state.intervention_id = intervention["id"]
-            st.session_state.intervention_state = (
-                st.session_state.intervention_input
-            )
-            st.session_state.full_description_state = intervention[
-                "full_description"
-            ]
-            st.session_state.intended_benefits_state = intervention[
-                "intended_benefits"
-            ]
-            st.session_state.potential_risks_state = intervention[
-                "potential_risks"
-            ]
+            st.session_state.intervention_state = st.session_state.intervention_input
+            st.session_state.full_description_state = intervention["full_description"]
+            st.session_state.intended_benefits_state = intervention["intended_benefits"]
+            st.session_state.potential_risks_state = intervention["potential_risks"]
             break
     else:
         st.session_state.intervention_id = 0
@@ -114,13 +106,11 @@ def main():
 
     users = execute_query(conn.table("users").select("*"), ttl="10m")
 
-
     user_names = [""] + [
         user["user_name"] for user in users.data if "user_name" in user
     ]
 
     patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
-
 
     hospital_numbers = [
         patient["hospital_number"]
@@ -129,7 +119,6 @@ def main():
     ]
 
     consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
-
 
     intervention_types = [""] + [
         consent_type["type"]

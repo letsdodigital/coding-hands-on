@@ -1,5 +1,5 @@
 import streamlit as st
-from st_supabase_connection import SupabaseConnection
+from st_supabase_connection import SupabaseConnection, execute_query
 
 """Exercise 12 - Updating functions and managing the submit button
 
@@ -58,9 +58,7 @@ def initialise():
 
 def on_change_hospital_number():
     # Delete this line of code
-    st.write(
-        f"Hospital number changed to: { st.session_state.hospital_number_input }"
-    )
+    st.write(f"Hospital number changed to: { st.session_state.hospital_number_input }")
 
     # Create a variable called `hospital_number_input` and initialise it with
     # the value of the session state `hospital_number_input`.
@@ -80,9 +78,7 @@ def on_change_hospital_number():
 
 def on_change_intervention():
     # Delete this line of code
-    st.write(
-        f"Intervention changed to: { st.session_state.intervention_input }"
-    )
+    st.write(f"Intervention changed to: { st.session_state.intervention_input }")
 
     # Create a `for loop`. This needs to loop through `consent_types.data` and
     # have a loop variable called `intervention`.
@@ -121,15 +117,13 @@ def main():
 
     conn = st.connection("supabase", type=SupabaseConnection)
 
-    users = conn.query("*", table="users", ttl="10m").execute()
+    users = execute_query(conn.table("users").select("*"), ttl="10m")
 
     user_names = [""] + [
         user["user_name"] for user in users.data if "user_name" in user
     ]
 
-    patients = conn.query(
-        "*", table="patient_demographics", ttl="10m"
-    ).execute()
+    patients = execute_query(conn.table("patient_demographics").select("*"), ttl="10m")
 
     hospital_numbers = [
         patient["hospital_number"]
@@ -137,7 +131,7 @@ def main():
         if "hospital_number" in patient
     ]
 
-    consent_types = conn.query("*", table="consent_types", ttl="10m").execute()
+    consent_types = execute_query(conn.table("consent_types").select("*"), ttl="10m")
 
     intervention_types = [""] + [
         consent_type["type"]

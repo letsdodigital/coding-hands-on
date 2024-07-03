@@ -1,5 +1,5 @@
 import streamlit as st
-from st_supabase_connection import SupabaseConnection
+from st_supabase_connection import SupabaseConnection, execute_query
 
 """Exercise 7 - Getting data from other tables
 
@@ -8,10 +8,11 @@ create your consent form and submit it. We will now get you to query the
 `patients` and `consent_types` tables and output the results to the browser.
 """
 
+
 def main():
     conn = st.connection("supabase", type=SupabaseConnection)
 
-    users = conn.query("*", table="users", ttl="10m").execute()
+    users = execute_query(conn.table("users").select("*"), ttl="10m")
 
     # Perform a query to get all records from the "patients" table
 
@@ -27,9 +28,7 @@ def main():
     st.text_input("Email")
 
     st.header("Intervention")
-    st.selectbox(
-        "Intervention", ["", "Below knee amputation", "Cannula"]
-    )
+    st.selectbox("Intervention", ["", "Below knee amputation", "Cannula"])
     st.text_input("Full description")
     st.text_input("Intended benefits")
     st.text_input("Potential risks")
