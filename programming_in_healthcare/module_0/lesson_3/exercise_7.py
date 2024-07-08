@@ -1,4 +1,4 @@
-"""Lesson 2 - exercise 7 - control the flow
+"""Lesson 2 - exercise 7 - Control the flow
 
     Run the code with:
     

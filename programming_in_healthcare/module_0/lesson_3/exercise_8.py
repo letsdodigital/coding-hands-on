@@ -1,4 +1,4 @@
-"""Lesson 2 - exercise 8 - for loops
+"""Lesson 2 - exercise 8 - For loops
 
     Write code to print out each element of the below list
     Hint (use 'for' and 'in').

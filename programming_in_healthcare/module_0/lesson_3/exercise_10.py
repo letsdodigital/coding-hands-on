@@ -1,4 +1,4 @@
-"""Lesson 2 - exercise 9 - your call
+"""Lesson 2 - exercise 10 - Your call
 
     Build your own clinical calculator. Use your favourite search engine to find 
     a clinical calculator equation of your choice.

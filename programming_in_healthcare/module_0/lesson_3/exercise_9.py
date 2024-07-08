@@ -1,4 +1,4 @@
-"""Lesson 2 - exercise 9 - calling a function
+"""Lesson 2 - exercise 9 - Calling a function
 
     Convert the comments below into code. 
     

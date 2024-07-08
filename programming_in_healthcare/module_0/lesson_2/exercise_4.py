@@ -1,4 +1,4 @@
-"""Lesson 2 - exercise 4 - quotation marks
+"""Lesson 2 - exercise 4 - Quotation marks
 
     Run the code with:
 
