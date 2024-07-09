@@ -1,4 +1,8 @@
-"""Lesson 2 - exercise 8 - For loops
+"""Lesson 3 - exercise 3 - For loops
+
+    Run the code with:
+
+    $ python exercise_3.py
 
     Write code to print out each element of the below list
     Hint (use 'for' and 'in').
@@ -14,4 +18,4 @@ hb_values = [12, 12.3, 12.4, 13]
 # write your code here
 
 
-# If that worked, please move on to exercise 9
+# If that worked, please move on to exercise 4

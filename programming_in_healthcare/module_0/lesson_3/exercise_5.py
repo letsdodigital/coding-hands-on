@@ -1,4 +1,8 @@
-"""Lesson 2 - exercise 10 - Your call
+"""Lesson 2 - exercise 5 - Your call
+
+    Run the code with:
+
+    $ python exercise_5.py
 
     Build your own clinical calculator. Use your favourite search engine to find 
     a clinical calculator equation of your choice.

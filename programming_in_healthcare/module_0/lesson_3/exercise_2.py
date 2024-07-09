@@ -1,8 +1,8 @@
-"""Lesson 2 - exercise 6 - Functions
+"""Lesson 3 - exercise 2 - Functions
 
     Run the code with:
 
-    $ python exercise_6.py
+    $ python exercise_2.py
     
     Try the below ask in the comments below.
 
@@ -17,4 +17,4 @@
 # Call the above function with the patient's name and DOB.
 
 
-# If that worked, please move on to exercise 7
+# If that worked, please move on to exercise 3

@@ -1,8 +1,8 @@
-"""Lesson 2 - exercise 7 - Control the flow
+"""Lesson 3 - exercise 1 - Control the flow
 
     Run the code with:
     
-    $ python exercise_7.py
+    $ python exercise_1.py
 
     Change the value of 'patient_allergy' to see what happens. 
     
@@ -23,4 +23,4 @@ else:
 
 print("* Patient is allergic to" + allergy_group)
 
-# If that worked, please move on to exercise 8
+# If that worked, please move on to exercise 2

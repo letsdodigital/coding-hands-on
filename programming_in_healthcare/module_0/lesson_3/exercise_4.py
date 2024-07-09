@@ -1,4 +1,8 @@
-"""Lesson 2 - exercise 9 - Calling a function
+"""Lesson 3 - exercise 4 - Calling a function
+
+    Run the code with:
+
+    $ python exercise_4.py
 
     Convert the comments below into code. 
     
@@ -19,4 +23,4 @@ def bmi_calculator(weight, height):
 
 # call the bmi_calculator above
 
-# If that worked, please move on to exercise 10
+# If that worked, please move on to exercise 5
