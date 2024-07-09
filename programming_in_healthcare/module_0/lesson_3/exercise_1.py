@@ -19,7 +19,7 @@ if patient_allergy == "amoxicillin":
 elif patient_allergy == "tazocin":
     allergy_group = "penicillins"
 else:
-    allergy_group = "not specified"
+    allergy_group = "other antibiotics"
 
 print("* Patient is allergic to " + allergy_group)
 
