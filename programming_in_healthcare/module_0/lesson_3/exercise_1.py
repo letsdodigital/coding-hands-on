@@ -21,6 +21,6 @@ elif patient_allergy == "tazocin":
 else:
     allergy_group = "not specified"
 
-print("* Patient is allergic to" + allergy_group)
+print("* Patient is allergic to " + allergy_group)
 
 # If that worked, please move on to exercise 2

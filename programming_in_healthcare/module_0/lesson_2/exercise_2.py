@@ -6,6 +6,8 @@
 
     Then follow the instructions below.
 
+    Run the code each time you add a print statement
+
     Gotten stuck, look at the slides at:
     https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
 """
