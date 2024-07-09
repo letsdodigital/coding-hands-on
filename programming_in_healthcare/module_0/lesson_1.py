@@ -3,7 +3,7 @@
 Some basic terminal and python exercises
 
 Gotten stuck, look at the slides at:
-https://letsdodigital.org/learn/learn-python/module-1/2-coding-environment.html
+https://letsdodigital.org/learn/learn-python/module-0/2-coding-environment.html
 """
 
 """Exercise 1

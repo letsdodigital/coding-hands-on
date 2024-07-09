@@ -7,7 +7,7 @@
     Why is the below code not printing out anything? Can you fix it?
 
     Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-1/3-python-basics.html
+    https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
 """
 
 

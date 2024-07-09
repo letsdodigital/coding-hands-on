@@ -7,7 +7,7 @@
     Then follow the instructions below.
 
     Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-1/3-python-basics.html
+    https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
 """
 
 print("Let's create and print some variables!")

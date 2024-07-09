@@ -12,7 +12,7 @@
     Where is the second error? Can you fix it?
 
     Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-1/3-python-basics.html
+    https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
 """
 
 drug name = "Amoxicillin"

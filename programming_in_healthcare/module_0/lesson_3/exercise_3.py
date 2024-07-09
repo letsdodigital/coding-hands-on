@@ -10,7 +10,7 @@
     Feeling more adventurous, try using 'while' instead
 
     Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-1/3-python-basics.html
+    https://letsdodigital.org/learn/learn-python/module-0/4-python-basics.html
 """
 
 hb_values = [12, 12.3, 12.4, 13]

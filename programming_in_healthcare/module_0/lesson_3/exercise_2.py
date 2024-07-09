@@ -7,7 +7,7 @@
     Try the below ask in the comments below.
 
     Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-1/3-python-basics.html
+    https://letsdodigital.org/learn/learn-python/module-0/4-python-basics.html
 """
 
 # Write a function that takes in as arguments a patient's name and date of birth
