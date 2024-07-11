@@ -1,4 +1,4 @@
-"""Lesson 3 - exercise 4
+"""Lesson 2 - exercise 4
 
 Let's build a clinical web app. Some useful links:
 

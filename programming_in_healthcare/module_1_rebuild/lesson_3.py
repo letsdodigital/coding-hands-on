@@ -1,4 +1,4 @@
-"""Lesson 4
+"""Lesson 3
 
 If you have completed all of the other lessons, and would like another exercise,
 try out the below.

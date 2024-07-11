@@ -1,4 +1,4 @@
-"""Lesson 3 - exercise 6
+"""Lesson 2 - exercise 5
 
 Let's build a clinical web app. Some useful links:
 
@@ -14,7 +14,8 @@ This is not to be used as a real life medical app! This is for training purposes
 
 import streamlit as st
 
-"""Exercise 6 - errors, you should sort them out!
+
+"""Exercise 5 - time for some input!
 1. Follow the steps below
 """
 
@@ -50,17 +51,14 @@ def calculate_egfr(creatinine, age, gender, race):
 
 def main():
     st.title("eGFR calculator")
-
-    creatinine = st.number_input("Creatinine:", step=1)
-    age = st.number_input("Age:", step=1)
-    gender = st.selectbox("Gender:", ["", "Male", "Female"])
-    race = st.selectbox("Race:", ["", "Afro-Caribbean", "other"])
-
-    # You now need to handle the exceptions caused by erroneous input variables,
-    # eg 'creatinine, age, gender, race'.
-    # You do this with the 'try, except, else' exception handlers.
-    # With the except clause, you should display an appropriate message to the
-    # Browser.
+    # Convert 'creatinine and age' into input fields for the web browser.
+    # Hint: use 'variable_name = st.number_input("Display name:", step=1)'.
+    creatinine = 110
+    age = 55
+    # Convert 'gender and race' into selection fields for the web browser.
+    # Hint: use 'variable_name = st.selectbox("Display name:", ["", "option 1", "option 2"])'.
+    gender = "Male"
+    race = "Afro-Caribbean"
     egfr = calculate_egfr(creatinine, age, gender, race)
     st.write(f"{ egfr }")
     return
@@ -69,7 +67,8 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Run the above code and make see if a sensible eGFR is displayed in the browser.
-# Make sure an appropriate message is displayed if the input data is erroneous.
+# Run the above code and make see if a sensible eGFR is displayed in the browser
+# after entering some data. If you get errors in the terminal and the browser for
+# certain data entered, do not worry, we will fix these in the next exercise.
 
-# If that worked, please move on to exercise 7.
+# If that worked, please move on to exercise 6.

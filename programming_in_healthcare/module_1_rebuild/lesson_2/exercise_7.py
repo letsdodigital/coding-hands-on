@@ -1,4 +1,4 @@
-"""Lesson 3 - exercise 5
+"""Lesson 2 - exercise 7
 
 Let's build a clinical web app. Some useful links:
 
@@ -14,8 +14,7 @@ This is not to be used as a real life medical app! This is for training purposes
 
 import streamlit as st
 
-
-"""Exercise 5 - time for some input!
+"""Exercise 7 - don't forget about the stages!
 1. Follow the steps below
 """
 
@@ -49,26 +48,31 @@ def calculate_egfr(creatinine, age, gender, race):
     return int(egfr)
 
 
+# Create a function that takes in the argument eGFR and returns the CKD stage.
+# See 'https://www.nhs.uk/conditions/kidney-disease/diagnosis/' for these stages.
+
+
 def main():
     st.title("eGFR calculator")
-    # Convert 'creatinine and age' into input fields for the web browser.
-    # Hint: use 'variable_name = st.number_input("Display name:", step=1)'.
-    creatinine = 110
-    age = 55
-    # Convert 'gender and race' into selection fields for the web browser.
-    # Hint: use 'variable_name = st.selectbox("Display name:", ["", "option 1", "option 2"])'.
-    gender = "Male"
-    race = "Afro-Caribbean"
-    egfr = calculate_egfr(creatinine, age, gender, race)
-    st.write(f"{ egfr }")
+
+    creatinine = st.number_input("Creatinine:", step=1)
+    age = st.number_input("Age:", step=1)
+    gender = st.selectbox("Gender:", ["", "Male", "Female"])
+    race = st.selectbox("Race:", ["", "Afro-Caribbean", "other"])
+
+    try:
+        egfr = calculate_egfr(creatinine, age, gender, race)
+    except Exception as e:
+        st.write(f"Awaiting appropriate inputs")
+    else:
+        st.write(f"eGFR: { egfr }")
+        # call the ckd stage function and print to the browser the CKD stage.
     return
 
 
 if __name__ == "__main__":
     main()
 
-# Run the above code and make see if a sensible eGFR is displayed in the browser
-# after entering some data. If you get errors in the terminal and the browser for
-# certain data entered, do not worry, we will fix these in the next exercise.
+# Run the above code and make see if a sensible eGFR is displayed in the browser.
 
-# If that worked, please move on to exercise 6.
+# If that worked, please move on to exercise 8.

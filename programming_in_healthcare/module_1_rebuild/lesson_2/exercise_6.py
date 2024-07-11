@@ -1,4 +1,4 @@
-"""Lesson 3 - exercise 7
+"""Lesson 2 - exercise 6
 
 Let's build a clinical web app. Some useful links:
 
@@ -14,7 +14,7 @@ This is not to be used as a real life medical app! This is for training purposes
 
 import streamlit as st
 
-"""Exercise 7 - don't forget about the stages!
+"""Exercise 6 - errors, you should sort them out!
 1. Follow the steps below
 """
 
@@ -48,10 +48,6 @@ def calculate_egfr(creatinine, age, gender, race):
     return int(egfr)
 
 
-# Create a function that takes in the argument eGFR and returns the CKD stage.
-# See 'https://www.nhs.uk/conditions/kidney-disease/diagnosis/' for these stages.
-
-
 def main():
     st.title("eGFR calculator")
 
@@ -60,13 +56,13 @@ def main():
     gender = st.selectbox("Gender:", ["", "Male", "Female"])
     race = st.selectbox("Race:", ["", "Afro-Caribbean", "other"])
 
-    try:
-        egfr = calculate_egfr(creatinine, age, gender, race)
-    except Exception as e:
-        st.write(f"Awaiting appropriate inputs")
-    else:
-        st.write(f"eGFR: { egfr }")
-        # call the ckd stage function and print to the browser the CKD stage.
+    # You now need to handle the exceptions caused by erroneous input variables,
+    # eg 'creatinine, age, gender, race'.
+    # You do this with the 'try, except, else' exception handlers.
+    # With the except clause, you should display an appropriate message to the
+    # Browser.
+    egfr = calculate_egfr(creatinine, age, gender, race)
+    st.write(f"{ egfr }")
     return
 
 
@@ -74,5 +70,6 @@ if __name__ == "__main__":
     main()
 
 # Run the above code and make see if a sensible eGFR is displayed in the browser.
+# Make sure an appropriate message is displayed if the input data is erroneous.
 
-# If that worked, please move on to exercise 8.
+# If that worked, please move on to exercise 7.
