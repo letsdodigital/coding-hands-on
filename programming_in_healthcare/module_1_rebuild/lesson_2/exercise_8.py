@@ -1,22 +1,12 @@
-"""Lesson 2  - exercise 8
+"""Lesson 2  - exercise 8 - Finished product!
 
-Let's build a clinical web app. Some useful links:
+    All done!
 
-https://pathlabs.rlbuht.nhs.uk/eGFRcalculator.htm
-https://www.nhs.uk/conditions/kidney-disease/diagnosis/
-
-Gotten stuck, look at the slides at:
-https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
-
-Warning:
-This is not to be used as a real life medical app! This is for training purposes only.
+    Warning:
+    This is not to be used as a real life medical app! This is for training purposes only.
 """
 
 import streamlit as st
-
-"""Exercise 8 - finished product!
-1. Below is the final app in working form with added docstring comments. 
-"""
 
 
 def calculate_egfr(creatinine, age, gender, race):

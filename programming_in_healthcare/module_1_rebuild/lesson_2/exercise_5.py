@@ -1,23 +1,15 @@
-"""Lesson 2 - exercise 5
+"""Lesson 2 - exercise 5 - Time for some input!
 
-Let's build a clinical web app. Some useful links:
+    Follow the instructions in the comments below.
 
-https://pathlabs.rlbuht.nhs.uk/eGFRcalculator.htm
-https://www.nhs.uk/conditions/kidney-disease/diagnosis/
+    Gotten stuck, look at the slides at:
+    https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
 
-Gotten stuck, look at the slides at:
-https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
-
-Warning:
-This is not to be used as a real life medical app! This is for training purposes only.
+    Warning:
+    This is not to be used as a real life medical app! This is for training purposes only.
 """
 
 import streamlit as st
-
-
-"""Exercise 5 - time for some input!
-1. Follow the steps below
-"""
 
 
 def calculate_egfr(creatinine, age, gender, race):
@@ -51,16 +43,21 @@ def calculate_egfr(creatinine, age, gender, race):
 
 def main():
     st.title("eGFR calculator")
+
     # Convert 'creatinine and age' into input fields for the web browser.
-    # Hint: use 'variable_name = st.number_input("Display name:", step=1)'.
+    # Hint: use 'variable_name = st.number_input("Label name:", step=1)'.
+
     creatinine = 110
     age = 55
+
     # Convert 'gender and race' into selection fields for the web browser.
-    # Hint: use 'variable_name = st.selectbox("Display name:", ["", "option 1", "option 2"])'.
+    # Hint: use 'variable_name = st.selectbox("Label name:", ["", "option 1", "option 2"])'.
+
     gender = "Male"
     race = "Afro-Caribbean"
     egfr = calculate_egfr(creatinine, age, gender, race)
     st.write(f"{ egfr }")
+
     return
 
 

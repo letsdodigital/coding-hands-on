@@ -1,22 +1,20 @@
-"""Lesson 2 - exercise 7
+"""Lesson 2 - exercise 7 - Don't forget about the stages!
 
-Let's build a clinical web app. Some useful links:
+    Let's build a clinical web app. Some useful links:
 
-https://pathlabs.rlbuht.nhs.uk/eGFRcalculator.htm
-https://www.nhs.uk/conditions/kidney-disease/diagnosis/
+    https://pathlabs.rlbuht.nhs.uk/eGFRcalculator.htm
+    https://www.nhs.uk/conditions/kidney-disease/diagnosis/
 
-Gotten stuck, look at the slides at:
-https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
+    Follow the instructions in the comments below.
 
-Warning:
-This is not to be used as a real life medical app! This is for training purposes only.
+    Gotten stuck, look at the slides at:
+    https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
+
+    Warning:
+    This is not to be used as a real life medical app! This is for training purposes only.
 """
 
 import streamlit as st
-
-"""Exercise 7 - don't forget about the stages!
-1. Follow the steps below
-"""
 
 
 def calculate_egfr(creatinine, age, gender, race):

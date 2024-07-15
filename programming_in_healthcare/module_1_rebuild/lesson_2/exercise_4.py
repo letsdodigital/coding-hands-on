@@ -1,27 +1,25 @@
-"""Lesson 2 - exercise 4
+"""Lesson 2 - exercise 4 - You like maths right?
 
-Let's build a clinical web app. Some useful links:
+    You will be using the below equation for calculating the eGFR:
 
-https://pathlabs.rlbuht.nhs.uk/eGFRcalculator.htm
-https://www.nhs.uk/conditions/kidney-disease/diagnosis/
+    eGFR = 175 x ((creatinine x 0.011312) ^ (-1.154)) x (age ^ (-0.203))
+        x (0.742 if female) x (1.212 if Afro-Caribbean)
 
-Gotten stuck, look at the slides at:
-https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
+    Some useful links:
 
-Warning:
-This is not to be used as a real life medical app! This is for training purposes only.
+    https://pathlabs.rlbuht.nhs.uk/eGFRcalculator.htm
+    https://www.nhs.uk/conditions/kidney-disease/diagnosis/
+
+    Follow the instructions in the comments below.
+
+    Gotten stuck, look at the slides at:
+    https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
+
+    Warning:
+    This is not to be used as a real life medical app! This is for training purposes only.
 """
 
 import streamlit as st
-
-"""Exercise 4 - you like maths right?
-1. Follow the steps below
-
-You will be using the below equation for calculating the eGFR:
-
-eGFR = 175 x ((creatinine x 0.011312) ^ (-1.154)) x (age ^ (-0.203))
-       x (0.742 if female) x (1.212 if Afro-Caribbean)
-"""
 
 
 def calculate_egfr(creatinine, age, gender, race):

@@ -1,10 +1,10 @@
 """Lesson 1 - exercise 2 - Use that class
 
-    We have created a class for you called Patient.
+    We have created a class for you called `Patient`.
 
     Follow the instructions in the comments below.
 
-    Run the below code in the terminal using the below command:
+    Run the code in the terminal using the below command:
 
     $ python exercise_2.py
 

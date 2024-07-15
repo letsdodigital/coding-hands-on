@@ -1,23 +1,15 @@
-"""Lesson 2 - exercise 3
+"""Lesson 2 - exercise 3 - Return a value from a function
 
-Let's build a clinical web app. Some useful links:
+    Follow the instructions in the comments below.
 
-https://pathlabs.rlbuht.nhs.uk/eGFRcalculator.htm
-https://www.nhs.uk/conditions/kidney-disease/diagnosis/
+    Gotten stuck, look at the slides at:
+    https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
 
-Gotten stuck, look at the slides at:
-https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
-
-Warning:
-This is not to be used as a real life medical app! This is for training purposes only.
+    Warning:
+    This is not to be used as a real life medical app! This is for training purposes only.
 """
 
 import streamlit as st
-
-
-"""Exercise 3 - time for some arguments
-1. Follow the steps below
-"""
 
 
 # Add arguments 'creatinine, age, gender, race' to function below

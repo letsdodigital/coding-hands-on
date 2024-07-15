@@ -13,9 +13,9 @@
 
 # Import the random library
 
-# Create an instance of the random library
-# call the "random" module and use the "randint" function
-# pass two arguments to the "randint" function, the first is 1 and the second is
+# To a variable called `random_number`, create an instance of the "random" module
+# and use the "randint" function.
+# Pass two arguments to the "randint" function, the first is 1 and the second is
 # 10.
 
 # Print the random number

@@ -1,23 +1,15 @@
-"""Lesson 2 - exercise 2
+"""Lesson 2 - exercise 2 - Create a function
 
-Let's build a clinical web app. Some useful links:
+    Follow the instructions in the comments below.
 
-https://pathlabs.rlbuht.nhs.uk/eGFRcalculator.htm
-https://www.nhs.uk/conditions/kidney-disease/diagnosis/
+    Gotten stuck, look at the slides at:
+    https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
 
-Gotten stuck, look at the slides at:
-https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
-
-Warning:
-This is not to be used as a real life medical app! This is for training purposes only.
+    Warning:
+    This is not to be used as a real life medical app! This is for training purposes only.
 """
 
 import streamlit as st
-
-
-"""Exercise 2 - Creating your first function
-1. Follow the steps below
-"""
 
 
 # Write a function named 'calculate_egfr'.
@@ -26,6 +18,7 @@ import streamlit as st
 
 
 def main():
+    st.title("eGFR calculator")
     # Call the 'calculate_egfr' function above and store the value as return_egfr
     # write the returned value to the browser
     return
