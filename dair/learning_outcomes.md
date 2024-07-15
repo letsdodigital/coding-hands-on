@@ -8,6 +8,8 @@ This document details the high level learning outcomes for each seminar and work
 
 # Session 2 - Datasets and Python
 
+- TODO - Discuss the outcomes for this module, and update to include EDA content
+
 ## Seminar
 
 By the end of the seminar, clinicians should:
