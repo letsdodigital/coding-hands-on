@@ -1,6 +1,6 @@
-## DAIR Learning Outcomes
+# DAIR Workshop Learning Outcomes
 
-This document details the high level learning outcomes for each session in the course, and the associated seminar and workshop.
+This document details the high level learning outcomes for each seminar and workshop in the course.
 
 # Session 1 - Course Introduction
 
