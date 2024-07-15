@@ -1,16 +1,23 @@
-"""Lesson 1 - exercise 1
+"""Lesson 1 - exercise 1 - Random numbers and libraries
 
-    Let's build a clinical web app. Some useful links:
+    Follow the instructions in the comments below.
 
-    https://pathlabs.rlbuht.nhs.uk/eGFRcalculator.htm
-    https://www.nhs.uk/conditions/kidney-disease/diagnosis/
+    Run the code in the terminal using the below command:
+
+    $ python exercise_1.py
 
     Gotten stuck, look at the slides at:
     https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
     https://letsdodigital.org/learn/learn-python/module-1/3-python.html
 """
 
-import random
+# Import the random library
 
-random_number = random.randint(1, 10)
-print(random_number)
+# Create an instance of the random library
+# call the "random" module and use the "randint" function
+# pass two arguments to the "randint" function, the first is 1 and the second is
+# 10.
+
+# Print the random number
+
+# If that all worked, please move on to exercise 2
