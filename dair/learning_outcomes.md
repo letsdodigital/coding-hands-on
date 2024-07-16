@@ -3,14 +3,16 @@
 This document details the high level learning outcomes for each seminar and workshop in the course.
 
 The following learning levels (LLs) should be able to be mapped to the learning points.
-1. Level 1 - Basic Practical Skills
+1. **Level 1 - Basic Practical Skills**
 * E.g. How to reshape a numpy array from `(3, 3, 3)` into `(9, 3)`.
-2. Level 2 - Theory
+2. **Level 2 - Theory**
 * E.g. How k-means splits data up into clusters
-3. Level 3 - Project Planning and Structuring
+3. **Level 3 - Project Planning and Structure**
 * E.g. How to write a class for plotting similar plots during EDA. 
-4. Level 4 - Clinical Translation
+4. **Level 4 - Clinical Translation**
 * E.g. What format data needs to be collected in to train a sepsis predictor from NEWS score. 
+
+The seminars will consist mainly of LL2 and LL4 information, whereas workshops will consist of LL1 and LL3 information.
 
 # Session 1 - Course Introduction
 
@@ -18,13 +20,21 @@ The following learning levels (LLs) should be able to be mapped to the learning 
 
 By the end of the seminar, clinicains should be able to:
 - Know the overall aims and philosophy of the course
-- Know the layout of documentation and how to use it
-- Know what StackOverflow is and when to use it
+- Know the layout of documentation and how to use it (LL3)
+- Know what StackOverflow is and when to use it (LL3)
+- Understand the CSV format (LL2)
+- Understand what constitutes "machine readable" data and what considerations clinicians must make to maximise this (LL4)
 
 ## Workshop
 
 By the end of the workshop, clinicians should be able to:
 - Understand the basics of NumPy and Pandas - TODO elaborate
+- Understand how to convert data to a NumPy array (LL1)
+- Open a CSV file into pandas (LL1)
+- Extract row and column information using pandas (LL1)
+- Search a column for a string (LL1)
+- Perform basic excel maths on array E.g. averaging (LL1)
+- *TODO*
 
 # Session 2 - Datasets and Python
 
@@ -33,20 +43,12 @@ By the end of the workshop, clinicians should be able to:
 ## Seminar
 
 By the end of the seminar, clinicians should:
-- Understand the CSV format
-- Understand what constitutes "machine readable" data and what considerations clinicians must make to maximise this
-- Understand the different data types in a table - strings, integers, floats
-- Understand the broad uses of this type of information
+- TODO
 
 ## Workshop
 
 By the end of the workshop, clinicians should be able to:
-
-- Open a CSV file into pandas
-- Extract row and column information 
-- Search a column for a string
-- Perform basic excel maths on array E.g. averaging
-- *TODO*
+-
 
 The data used in this workshop will be simulated.
 
@@ -56,21 +58,23 @@ The data used in this workshop will be simulated.
 
 By the end of the seminar, clinicians should:
 
-- Understand the DICOM format
-- Understand what information is contained within a DICOM file
-- Understand broadly how a DICOM file stores image data
+- Understand the DICOM format (LL2)
+- Understand what information is contained within a DICOM file (LL2)
+- Understand broadly how a DICOM file stores image data (LL2)
 
 ## Workshop
 
 By the end of the workshop, clinicians should be:
 
-- Able to open a DICOM file with Python
-- extract basic scan information E.g. patient info
-- Be able to display image data from a DICOM in Python
+- Able to open a DICOM file with Python (LL1)
+- extract basic scan information E.g. patient info (LL1)
+- Be able to display image data from a DICOM in Python (LL1)
 
 The study used in this workshop will be the same as the one used in the 3D printing section of the course.
 
 # Session 4 - 3D Printing for Medicine
+
+**Update** - Teddy and I agree that this session is likely outside the scope of the course and should be done as a standalone, if at all. 
 
 ## Seminar
 
