@@ -112,20 +112,21 @@ This workshop will cover the basics of segmentation with InVesalius. Course atte
 
 By the end of the seminar, clinicians should:
 
-- Understand what machine learning is at a broad level
-- Be able to list clinical uses for ML
-- Understand the difference between supervised and unsupervised learning
-- Understand the inputs and outputs of a neural network
-- Understand the difference between a covolutional layer and dense layer at a broad level
+- Understand what machine learning is at a broad level (LL2)
+- Be able to list clinical uses for ML (LL4)
+- Understand the difference between supervised and unsupervised learning (LL2)
+- Understand the inputs and outputs of a neural network (LL2)
+- Understand the difference between a covolutional layer and dense layer at a broad level (LL2)
 
 ## Workshop
 
 By the end of the workshop, clinicians should be able to:
 
-- Open image data for training a machine learning model
-- Conduct basic data preprocessing for machine learning model input
-- Understand how to construct a basic convolutional neural network using Keras/TensorFlow
-- Understand how to run a training loop for a neural network
+- Open image data for training a machine learning model (LL1)
+- Conduct basic data preprocessing for machine learning model input (LL1)
+- Understand how to construct a basic convolutional neural network using Keras/TensorFlow (LL1)
+- Understand how to run a training loop for a neural network (LL1)
+- How to structure machine learning projects to to allow for reuse of model weights (LL3) 
 
 The model structure will be a convolutional neural network with single sigmoid output node denoting probability of pneumonia in the scan.
 
@@ -135,20 +136,20 @@ The model structure will be a convolutional neural network with single sigmoid o
 
 By the end of the seminar, clinicians should:
 
-- Be able to describe the high-level steps needed to implement a ML model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model)
-- Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity)
-- Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves)
-- Be able to give a broad overview of the common metrics that are used with other types of machine learning model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation)
-- Be able to discuss the uses, advantages, and disadvantages of more modern approaches to machine learning (stable diffusion, large language models)
+- Be able to describe the high-level steps needed to implement a ML model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model) (LL2)
+- Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2)
+- Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2)
+- Be able to give a broad overview of the common metrics that are used with other types of machine learning model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2)
+- Be able to discuss the uses, advantages, and disadvantages of more modern approaches to machine learning (stable diffusion, large language models) (LL2) (LL4)
 
 ## Workshop
 
 By the end of the workshop, clinicians should be able to:
 
-- Calculate and understand precision, recall, and F1 scores
-- Use pyplot and scipy to plot a formal ROC curve for a binary classifier
-- Calculate the AUC value for this curve
-- Understand the importance of splitting data into training, validation, and testing datasets
+- Calculate and understand precision, recall, and F1 scores (LL1)
+- Use pyplot and scipy to plot a formal ROC curve for a binary classifier (LL1)
+- Calculate the AUC value for this curve (LL1)
+- Understand the importance of splitting data into training, validation, and testing datasets (LL2)
 
 # Session 7 - Closing Session
 
