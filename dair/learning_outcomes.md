@@ -2,9 +2,29 @@
 
 This document details the high level learning outcomes for each seminar and workshop in the course.
 
+The following learning levels (LLs) should be able to be mapped to the learning points.
+1. Level 1 - Basic Practical Skills
+* E.g. How to reshape a numpy array from `(3, 3, 3)` into `(9, 3)`.
+2. Level 2 - Theory
+* E.g. How k-means splits data up into clusters
+3. Level 3 - Project Planning and Structuring
+* E.g. How to write a class for plotting similar plots during EDA. 
+4. Level 4 - Clinical Translation
+* E.g. What format data needs to be collected in to train a sepsis predictor from NEWS score. 
+
 # Session 1 - Course Introduction
 
-*TODO*
+## Seminar
+
+By the end of the seminar, clinicains should be able to:
+- Know the overall aims and philosophy of the course
+- Know the layout of documentation and how to use it
+- Know what StackOverflow is and when to use it
+
+## Workshop
+
+By the end of the workshop, clinicians should be able to:
+- Understand the basics of NumPy and Pandas - TODO elaborate
 
 # Session 2 - Datasets and Python
 
