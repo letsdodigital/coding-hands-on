@@ -32,7 +32,7 @@ def calculate_egfr(creatinine, age, gender, race):
 
     if race == "Afro-Caribbean":
         race_factor = 1.212
-    elif race == "other":
+    elif race == "Other":
         race_factor = 1
     else:
         raise ValueError(
