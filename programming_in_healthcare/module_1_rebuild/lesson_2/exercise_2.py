@@ -13,7 +13,7 @@ import streamlit as st
 
 
 # Write a function named 'calculate_egfr'.
-# Define a variable in this function called egfr and set it to '45'.
+# Define a variable in this function called `egfr` and set it to '45'.
 # Have this function return egfr.
 
 
