@@ -15,7 +15,7 @@ import streamlit as st
 # Add arguments 'creatinine, age, gender, race' to function below
 def calculate_egfr():
     egfr = 45
-    return f"Your values are: creatinine {creatinine}, age {age}, gender {gender}, race {race} and egfr {egfr}"
+    return f"Your values are: creatinine {creatinine}, age {age}, gender '{gender}', race '{race}' and egfr {egfr}"
 
 
 def main():
@@ -30,7 +30,8 @@ def main():
 if __name__ == "__main__":
     main()
 
-# Run the above code and make see if all 'creatinine, age, gender, race and egfr' are in the browser.
+# Run the above code and make see if you get `Your values are: creatinine 54,
+# age 55, gender m, race black and egfr 45` in the browser.
 
 # If that worked, please move on to exercise 4
 # You also need to stop streamlit using CTRL / CMD - C
