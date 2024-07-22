@@ -15,7 +15,7 @@ import streamlit as st
 # Add arguments 'creatinine, age, gender, race' to function below
 def calculate_egfr():
     egfr = 45
-    return  # Return a string with 'creatinine, age, gender, race and egfr'
+    return f"Your values are: creatinine {creatinine}, age {age}, gender {gender}, race {race} and egfr {egfr}"
 
 
 def main():
