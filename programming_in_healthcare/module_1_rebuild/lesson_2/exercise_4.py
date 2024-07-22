@@ -34,6 +34,8 @@ def calculate_egfr(creatinine, age, gender, race):
     # raise ValueError("Your error message")
 
     # Calculate eGFR using the equation mentioned above
+    # Remember to use brackets to ensure the correct order of operations
+    # Use * for multiplication and ** for power
     egfr = 0
 
     # Return egfr as an integer (hint use 'int(variable)')
@@ -55,5 +57,6 @@ if __name__ == "__main__":
     main()
 
 # Run the above code and make see if a sensible eGFR is displayed in the browser.
+# Hopefully you got a result of '73' in the browser for your eGFR.
 
 # If that worked, please move on to exercise 5
