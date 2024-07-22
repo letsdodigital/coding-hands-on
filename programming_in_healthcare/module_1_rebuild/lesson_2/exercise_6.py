@@ -53,7 +53,7 @@ def main():
     # eg 'creatinine, age, gender, race'.
     # You do this with the 'try, except, else' exception handlers.
     # With the except clause, you should display an appropriate message to the
-    # Browser.
+    # browser.
     egfr = calculate_egfr(creatinine, age, gender, race)
     st.write(f"{ egfr }")
     return

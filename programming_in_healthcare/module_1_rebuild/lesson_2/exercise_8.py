@@ -2,6 +2,10 @@
 
     All done!
 
+    Compare your solutions to the previous exercises to the model one provided here.
+
+    We have added docstrings to the functions here. Docstrings are a way to document your code.
+
     Warning:
     This is not to be used as a real life medical app! This is for training purposes only.
 """
@@ -64,7 +68,7 @@ def get_ckd_stage(egfr):
     """
     if egfr > 90:
         return "1"
-    elif 60 <= egfr <= 89:
+    elif 60 <= egfr <= 90:
         return "2"
     elif 45 <= egfr <= 59:
         return "3a"
@@ -103,4 +107,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# If you are happy with the above, you can now move onto lesson 4.
+# If you are happy with the above, you can now move onto lesson 3.

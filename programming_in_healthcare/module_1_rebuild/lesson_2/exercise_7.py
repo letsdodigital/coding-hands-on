@@ -46,7 +46,8 @@ def calculate_egfr(creatinine, age, gender, race):
     return int(egfr)
 
 
-# Create a function that takes in the argument eGFR and returns the CKD stage.
+# Create a function that takes in the argument eGFR and returns the CKD (Chronic
+# Kidney Disease) stage.
 # See 'https://www.nhs.uk/conditions/kidney-disease/diagnosis/' for these stages.
 
 
@@ -63,8 +64,8 @@ def main():
     except Exception as e:
         st.write(f"Awaiting appropriate inputs")
     else:
-        st.write(f"eGFR: { egfr }")
-        # call the ckd stage function and print to the browser the CKD stage.
+        st.write(f"eGFR: { egfr() }")
+        # call the CKD stage function and print to the browser the CKD stage.
     return
 
 
