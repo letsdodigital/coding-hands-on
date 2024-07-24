@@ -20,21 +20,72 @@ The seminars will consist mainly of LL2 and LL4 information, whereas workshops w
 
 By the end of the seminar, clinicains should be able to:
 - Know the overall aims and philosophy of the course
-- Know the layout of documentation and how to use it (LL3)
-- Know what StackOverflow is and when to use it (LL3)
-- Understand the CSV format (LL2)
-- Understand what constitutes "machine readable" data and what considerations clinicians must make to maximise this (LL4)
+- General coding information
+  - Know the layout of documentation and how to use it (LL3)
+  - Know what StackOverflow is and when to use it (LL3)
+  - Understand what constitutes "machine readable" data and what considerations clinicians must make to maximise this (LL4)
+- Pandas
+  - Know why Pandas exists within the Python ecosystem (ease of processing for tabular data without having to create parsers, seamlessly working with different datatypes) (LL2)
+  - Understand the CSV/TSV format (LL2)
+  - Have a broad understanding of the types of tasks that Pandas is able to perform (grouping data, generating summary statistics) (LL2)
+  - Be able to explain common abbreviations that are used in Pandas code and how it is usually structured (LL3)
+- NumPy
+  - Know why NumPy exists within the Python ecosystem (speed of array operations, ease of working with multidimensional data) (LL2)
+  - Understand the concept of multidimensional arrays and the 'shape' of an array (LL2)
+  - Explain what a NumPy array is (LL2)
+  - Understand how to use NumPy functions and common pitfalls e.g. shape mismatches (LL1)
+- Explain how to represent common data structures as NumPy or Pandas data (quiz-style questions to test understanding) (LL2)
+  - Image data - NumPy array
+  - Tabular data - Pandas DataFrame
+  - A series of time-series ventilator measurements - NumPy array or Pandas DataFrame
+- Matplotlib and Pyplot
+  - Know why Pyplot exists within the Python ecosystem (ease of plotting data) (LL2)
+  - Know the general structure of Pyplot calls and how they are used in projects (LL3)
+  - Have a general appreciation for the wide array of plots that Pyplot can generate (LL2)
+  - Understand some formatting rules for academic journals and how to comply with these using Pyplot (saving high resolution plots, changing fonts) (LL4)
+- SciKit
+  - Know why SciKit exists within the Python ecosystem (ease of use of complex algorithms and statistical tests) (LL2)
+  - Understand the sorts of algorithms that are available within SciKit (LL2)
+  - Understand the general layout of a SciKit function and how they fit into projects (LL3)
+  - Basic recap of what an unpaired t-test is used for in preparation for workshop example (LL2)
+
+Good resources for planning this section include Pandas' [Getting Started](https://pandas.pydata.org/docs/getting_started/index.html#getting-started) guide, [10 minutes to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html#min).
 
 ## Workshop
 
+The aim of this workshop is to recap some basic Python skills and to ensure that course attendees have the appropriate knowledge of core packages before starting more in-depth content. The Pandas section will focus on table manipulation and grouping data, and the NumPy section will focus on combining and modifying arrays and using basic library functions. An task using convolution will be used to demonstrate this to conceptually prepare for the machine learning section of the course. *TODO: Does the convolution LL2 content need to be moved to the seminar?*
+
 By the end of the workshop, clinicians should be able to:
-- Understand the basics of NumPy and Pandas - TODO elaborate
-- Understand how to convert data to a NumPy array (LL1)
-- Open a CSV file into pandas (LL1)
-- Extract row and column information using pandas (LL1)
-- Search a column for a string (LL1)
-- Perform basic excel maths on array E.g. averaging (LL1)
-- *TODO*
+
+- Pandas
+  - Open a CSV file into pandas (LL1)
+  - Extract row and column information using pandas (LL1)
+  - Describe a Dataframe using the `.describe()` method (LL1)
+  - Search a column for a string (LL1)
+  - Clean a dataframe by removing empty `NaN` entries (LL1)
+  - Counting unique strings in a column and plotting them as a bar chart (LL1)
+  - T-test example task (*One candidate dataset is the dataset of survivors from the Titanic*) (LL2)
+    - Plotting grouped numerical data as a bar chart (LL1)
+    - Grouping data for statistical testing (unpaired t-test) (LL1)
+- NumPy
+  - Convert a column of a DataFrame to a NumPy array (LL1)
+  - Print the shape of a NumPy array (LL1)
+  - Accessing array elements using array slicing (e.g. `[0:4]`, `[:-1]`)
+  - Convolution example task (LL1)
+    - Understand what 1D convolution is and what it is used for (LL2)
+    - Understand how to average a signal using a simple kernel (LL2)
+    - Understand what concatenation is and the importance of matching array shapes (LL2)
+    - Concatenate two NumPy arrays together (LL1)
+    - Create a new array (convolution kernel) of ones of a specified shape (LL1)
+    - Divide this new array by its length (LL1)
+    - Convolve the kernel with the NumPy array using `np.convolve()` (LL1)
+- Pyplot and Matplotlib
+  - Plot time series data on a simple line graph (LL1)
+  - Plot two time series signals (raw data and convolved data) on a plot (LL1)
+  - Plot a bar graph of categorical data (LL1)
+  - Plotting numerical data as a histogram (LL1)
+- Scikit
+  - How to perform a statistical test (unpaired t-test) on grouped data using `scipy.stats.ttest_ind()` (LL1)
 
 # Session 2 - Datasets and Python
 
@@ -58,6 +109,7 @@ The data used in this workshop will be simulated.
 
 By the end of the seminar, clinicians should:
 
+- Understand how basic images are represented (LL2)
 - Understand the DICOM format (LL2)
 - Understand what information is contained within a DICOM file (LL2)
 - Understand broadly how a DICOM file stores image data (LL2)
