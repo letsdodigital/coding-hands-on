@@ -47,7 +47,11 @@ By the end of the seminar, clinicains should be able to:
   - Know why SciKit exists within the Python ecosystem (ease of use of complex algorithms and statistical tests) (LL2)
   - Understand the sorts of algorithms that are available within SciKit (LL2)
   - Understand the general layout of a SciKit function and how they fit into projects (LL3)
-  - Basic recap of what an unpaired t-test is used for in preparation for workshop example (LL2)
+- Two basic concepts to prepare for workshop (LL2)
+  - Basic recap of what an unpaired t-test is used for (LL2)
+  - Understand what convolution is and what it is used for (LL2)
+  - Understand intuitively how to average a signal using an averaging kernel e.g. `[0.2, 0.2, 0.2, 0.2, 0.2]` (LL2)
+  - Appreciate that convolution can be used in more than 1 dimension - *will be covered in the machine learning section of the course* (LL2)
 
 Good resources for planning this section include Pandas' [Getting Started](https://pandas.pydata.org/docs/getting_started/index.html#getting-started) guide, [10 minutes to Pandas](https://pandas.pydata.org/docs/user_guide/10min.html#min).
 
@@ -72,8 +76,6 @@ By the end of the workshop, clinicians should be able to:
   - Print the shape of a NumPy array (LL1)
   - Accessing array elements using array slicing (e.g. `[0:4]`, `[:-1]`)
   - Convolution example task (LL1)
-    - Understand what 1D convolution is and what it is used for (LL2)
-    - Understand how to average a signal using a simple kernel (LL2)
     - Understand what concatenation is and the importance of matching array shapes (LL2)
     - Concatenate two NumPy arrays together (LL1)
     - Create a new array (convolution kernel) of ones of a specified shape (LL1)
