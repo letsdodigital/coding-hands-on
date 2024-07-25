@@ -183,6 +183,14 @@ By the end of the seminar, clinicians should:
 
 ## Workshop
 
+The pneumonia dataset that will be used is [this one](https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/data). It has a CC BY 4.0 licence, which means it is free to use for commercial use. Dataset features include:
+- 2GB size - course participants will download the dataset directly to the Colab instance and decompress it using the following commands:
+
+```bash
+!kaggle datasets download -d paultimothymooney/chest-xray-pneumonia
+!unzip chest-xray-pneumonia.zip
+```
+
 By the end of the workshop, clinicians should be able to:
 
 - Open image data for training a machine learning model (LL1)
