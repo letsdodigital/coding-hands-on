@@ -169,15 +169,34 @@ We need the following studies:
 
 By the end of the seminar, clinicians should:
 
-- Understand what machine learning is at a broad level (LL2)
+- Understand the aims of this first AI module and what it will cover
 - Be able to list clinical uses for ML (LL4)
+- Statistical models
+  - Understand what a statistical model is at a broad level (LL2) TODO Move to module 2?
+  - Understand what machine learning is at a broad level (LL2)
+- Understand what a loss function is (LL2)
+- Appreciate that there are a wide variety of optimisers and loss functions that can be used (LL2)
 - Understand the difference between supervised and unsupervised learning (LL2)
-- Understand the inputs and outputs of a neural network (LL2)
-- Understand the difference between a covolutional layer and dense layer at a broad level (LL2)
+- Gain an intuition for how training via backpropagation works via the ball on a hill analogy (LL2)
+- Gain an intuitive understanding of overfitting vs overfitting using a linear model as an example (LL2) TODO Move to module 5?
 - Pneumonia detection task
   - Disclaimer that this course will not cover intepretation of chest X-rays
   - Understand dataset bias and clincial factors that can confound a dataset (LL4)
     - Use examples to demonstrate clinical bias *TODO find appropriate examples* (LL4)
+- Data preprocessing
+  - Understand considerations that must be made when standardising image data for model input (image size, image dimensions, contrast, brightness) (LL2)
+  - Understanding the importance of splitting the data into training, testing, and validation datasets (LL2)
+  - Understand the importance of data augmentation when training (LL2)
+  - Be able to name common data augmentation techniques (shearing, rotation, stretching, elastic deformation in medical imaging datasets) (LL2)
+  - Understand how these concepts apply to other types of data (e.g. time-series data) (LL2)
+- Model architecture and training
+  - Understand why ML frameworks exist in the Python ecosystem (TensorFlow, PyTorch) and what they allow the user to do (LL2)
+  - Understand the inputs and outputs of a neural network (LL2)
+  - Understand the difference between a convolutional layer and dense layer at a broad level (LL2)
+  - Understand what an epoch of training is (LL2)
+  - Understand why data needs to be batched when training a network (LL3)
+  - Understand what a sigmoid layer is and why it is used for probabilistic outputs (LL2)
+- Appreciate that the task we are performing is fairly simple and that more complex techniques exist (LL2)
 
 *Maybe a radiologist/senior clinician could speak about the features that the bot may be dectecting in each scan?*
 
@@ -193,11 +212,23 @@ The pneumonia dataset that will be used is [this one](https://www.kaggle.com/dat
 
 By the end of the workshop, clinicians should be able to:
 
-- Open image data for training a machine learning model (LL1)
-- Conduct basic data preprocessing for machine learning model input (LL1)
-- Understand how to construct a basic convolutional neural network using Keras/TensorFlow (LL1)
-- Understand how to run a training loop for a neural network (LL1)
-- How to structure machine learning projects to to allow for reuse of model weights (LL3) 
+- Data preprocessing
+  - Open an image using PIL with `Image.open()` and extract basic information about the image (format, size) (LL1)
+  - Centre crop an image to standardise for machine learning (LL1)
+  - Resize images using PIL method `Image.resize()` (LL1)
+  - Convert an image to grayscale (LL1)
+  - Pack greyscale images into a 3 dimensional array for training and testing (LL1)
+  - Understand why using Python generators is important for loading data (LL3)
+  - Construct a generator using the `yield` command (LL1)
+- Model architecture
+  - Understand the difference between `Sequential` models and other models in Keras (LL2)
+  - Understand how to construct a basic convolutional neural network using Keras/TensorFlow (LL1)
+  - Understand how to compile a model and view its architecture using `model.summary()` (LL1)
+- Model training
+  - Understand how to run a training loop for a neural network (LL1)
+- Model saving
+  - Structure machine learning projects to to allow for reuse of model weights (LL3) 
+  - Save files from Google Colab for reuse later (LL1)
 
 The model structure will be a convolutional neural network with single sigmoid output node denoting probability of pneumonia in the scan.
 
