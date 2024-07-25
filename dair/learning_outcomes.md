@@ -1,4 +1,4 @@
-# DAIR Workshop Learning Outcomes
+# DAIR Learning Outcomes
 
 This document details the high level learning outcomes for each seminar and workshop in the course.
 
@@ -101,7 +101,7 @@ By the end of the seminar, clinicians should:
 ## Workshop
 
 By the end of the workshop, clinicians should be able to:
--
+- TODO
 
 The data used in this workshop will be simulated.
 
@@ -111,56 +111,59 @@ The data used in this workshop will be simulated.
 
 By the end of the seminar, clinicians should:
 
-- Understand how basic images are represented (LL2)
-- Understand the DICOM format (LL2)
-- Understand what information is contained within a DICOM file (LL2)
-- Understand broadly how a DICOM file stores image data (LL2)
+- Understand the aims of this module (LL4)
+- Basics of image representation (LL2)
+  - Understand what a pixel is (LL2)
+  - Understand what a voxel is, by extension (LL2)
+  - Greyscale images
+    - Understand what values greyscale values are are usually given in (0.0-1.0, 0-255, HU) (LL2)
+    - Understand what a Houndsfield Unit is (LL2)
+  - Colours
+    - Understand how RGB data is used to represent most images (LL2)
+    - Understand what a colourmap is and when it is used (LL2)
+  - Image formats other than DICOM
+    - Understand why compression is needed to store images (LL2)
+    - Understand the difference between lossy and lossless image compression
+    - Name an image compression algorithm (discrete cosine transform) (LL2)
+    - Name common everyday image formats and when they may be used (JPEG, PNG) (LL2)
+- The DICOM format
+  - Know the history of the DICOM standard and why it was introduced (LL2)
+  - Understand what information is contained within a DICOM file (LL2)
+  - Understand that DICOM is a lossless standard (LL2)
+  - Understand broadly how a DICOM file stores image data (both 2D and 3D) (LL2)
+  - Understand why Pydicom is a useful tool for clinicians (LL4)
+- Understand what considerations are needed when coding in Python to convert images, with interactive questions (array shapes) (LL3)
+- Understand the difference between volumetric 3D images and 3D meshes and what is needed to convert between them (segmentation)
+- Understand the basics of image segmentation (LL2)
+- Understand where volumetric imaging is used and where mesh reconstructions are used in clinical medicine (LL4)
 
 ## Workshop
 
 By the end of the workshop, clinicians should be:
 
-- Able to open a DICOM file with Python (LL1)
-- extract basic scan information E.g. patient info (LL1)
-- Be able to display image data from a DICOM in Python (LL1)
+- Open a DICOM file with Python (LL1)
+- Scan information  
+  - Understand that there are three different types of element in a DICOM file (LL2)
+  - Understand different ways to access elements (by hex tag and keyword) (LL2)
+  - Extract basic scan information by keyword e.g. `PatientName` (LL1)
+- Image extraction
+  - Understand what data is needed to accurately reconstruct data from a DICOM study for 3D and 2D images (image shape, slice indices) (LL1)
+  - Extract 2D image data into a NumPy array using `ds.pixel_array` (LL1)
+  - Extract 2D colourmap data (*e.g. Doppler flow rate data*) and plot this appropriately (LL1)
+  - Reconstruct 3D image from a DICOM study and [plot axial, sagittal and coronal views](https://pydicom.github.io/pydicom/stable/auto_examples/image_processing/reslice.html#sphx-glr-auto-examples-image-processing-reslice-py) (LL1)
+  - Preprocess the image for display in Python (LL1)
+  - Plot image data from a DICOM file in Python (LL1)
+  
+We need a candidate DICOM study/studies for this portion of the course. Options include:
+- [Patient Contributed Image Repository](https://www.pcir.org/) - This is where Pydicom gets it's official example studies.
+- Pydicom's official test files
 
-The study used in this workshop will be the same as the one used in the 3D printing section of the course.
+We need the following studies:
+- 2D basic scan (e.g. CXR)
+- 2D scan with colourmap data (e.g. Doppler Ultrasound)
+- 3D volumetric scan (e.g. CT head)
 
-# Session 4 - 3D Printing for Medicine
-
-**Update** - Teddy and I agree that this session is likely outside the scope of the course and should be done as a standalone, if at all. 
-
-## Seminar
-
-By the end of the seminar, clincians should:
-
-- Understand how 3D printing works
-- Be able to list medical uses of 3D printing
-- Understand what steps are needed to get from voxels to object 
-
-## Workshop
-
-This workshop will cover the basics of segmentation with InVesalius. Course attendees will be instructed to install Invesalius at the end of the preceding seminar. The workshop will cover loading 3D DICOM studies with InVesalius, how to navigate the image, how to segment anatomy from a scan, and how to export for fused-deposition modelling (FDM) 3D printing. Slicing with Ultimaker Cura may be demonstrated at the end of the session. A post-workshop activity will include an informal competition for producing the best object segmentation with InVesalius. The best anatomical models at the end of the workshop will be printed and showcased on course social media.
-
-### Session Structure
-      
-- Opening a 3D DICOM scan with InVesalius
-- Navigating a study with InVesalius
-    - Brief discussion of abdominal anatomy and views in each window (sagittal, coronal, axial)
-- Segmentation with InVesalius
-    - How to threshold a scan to make an initial mask
-    - How to crop a mask
-    - How to manually remove holes from the mask in 2D and 3D
-    - How to perform watershed segmentation, and when the IFT method works best (brain segmentation)
-    - Brief overview of the remaining tools which have not been covered
-- Exporting segmentation for 3D printing
-    - How to select different surfaces and delete irrelevant anatomy or segmentation noise
-    - What file formats 3D printers accept, and how to convert between STL and G-code
-    - The importance of the mesh being manifold, and how 3D printer software copes with this
-
-*NB - A DICOM study for this section of the course which we have the relevant permissions/anonimity to use needs to be identified.*
-
-# Session 5 - AI for Medicine (Part 1)
+# Session 4 - AI for Medicine (Part 1)
 
 ## Seminar
 
@@ -171,6 +174,12 @@ By the end of the seminar, clinicians should:
 - Understand the difference between supervised and unsupervised learning (LL2)
 - Understand the inputs and outputs of a neural network (LL2)
 - Understand the difference between a covolutional layer and dense layer at a broad level (LL2)
+- Pneumonia detection task
+  - Disclaimer that this course will not cover intepretation of chest X-rays
+  - Understand dataset bias and clincial factors that can confound a dataset (LL4)
+    - Use examples to demonstrate clinical bias *TODO find appropriate examples* (LL4)
+
+*Maybe a radiologist/senior clinician could speak about the features that the bot may be dectecting in each scan?*
 
 ## Workshop
 
@@ -184,7 +193,7 @@ By the end of the workshop, clinicians should be able to:
 
 The model structure will be a convolutional neural network with single sigmoid output node denoting probability of pneumonia in the scan.
 
-# Session 6 - AI for Medicine (Part 2)
+# Session 5 - AI for Medicine (Part 2)
 
 ## Seminar
 
@@ -205,6 +214,6 @@ By the end of the workshop, clinicians should be able to:
 - Calculate the AUC value for this curve (LL1)
 - Understand the importance of splitting data into training, validation, and testing datasets (LL2)
 
-# Session 7 - Closing Session
+# Session 6 - Closing Session
 
 *TODO*
