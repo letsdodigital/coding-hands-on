@@ -13,7 +13,6 @@ connection to store the connection to the database. You have also learnt how to
 use the Streamlit form to create a form that can be submitted to the database.
 """
 
-hospital_numbers = []
 
 def initialise():
     initialise_state = ""
@@ -46,7 +45,7 @@ def initialise():
     return
 
 
-def on_change_hospital_number(patients):
+def on_change_hospital_number(patients, hospital_numbers):
     hospital_number_input = st.session_state.hospital_number_input
     if hospital_number_input in hospital_numbers:
         for patient in patients.data:
@@ -105,8 +104,6 @@ def user_id_get(users, user_name):
 
 
 def main():
-    global hospital_numbers
-
     error_placeholder = st.empty()
 
     fields = {}
@@ -145,7 +142,7 @@ def main():
         'Hospital number (eg "HN001")',
         key="hospital_number_input",
         # Could also be done using functools.partial
-        on_change=lambda: on_change_hospital_number(patients),
+        on_change=lambda: on_change_hospital_number(patients, hospital_numbers),
     )
 
 
