@@ -1,3 +1,5 @@
+from functools import partial
+
 import streamlit as st
 from st_supabase_connection import SupabaseConnection, execute_query
 
@@ -11,12 +13,9 @@ connection to store the connection to the database. You have also learnt how to
 use the Streamlit form to create a form that can be submitted to the database.
 """
 
-consent_types = []
 hospital_numbers = []
 
 def initialise():
-    global consent_types
-
     initialise_state = ""
 
     st.session_state.submitted_consent_id = 0
@@ -72,7 +71,7 @@ def on_change_hospital_number(patients):
     return
 
 
-def on_change_intervention():
+def on_change_intervention(consent_types):
     for intervention in consent_types.data:
         if intervention["type"] == st.session_state.intervention_input:
             st.session_state.intervention_id = intervention["id"]
@@ -149,11 +148,14 @@ def main():
         on_change=lambda: on_change_hospital_number(patients),
     )
 
+
+
     st.selectbox(
         "Select Intervention Type",
         intervention_types,
         key="intervention_input",
-        on_change=on_change_intervention,
+        # Could also be done using a lambda function
+        on_change=partial(on_change_intervention, consent_types),
     )
 
     with st.form("consent_form"):
