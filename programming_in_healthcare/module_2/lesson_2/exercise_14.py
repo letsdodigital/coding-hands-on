@@ -13,8 +13,6 @@ use the Streamlit form to create a form that can be submitted to the database.
 
 consent_types = []
 hospital_numbers = []
-patients = []
-
 
 def initialise():
     global consent_types
@@ -46,15 +44,10 @@ def initialise():
     if "potential_risks_state" not in st.session_state:
         st.session_state.potential_risks_state = initialise_state
 
-    conn = st.connection("supabase", type=SupabaseConnection)
-    consent_types = execute_query(
-        conn.table("consent_types").select("*"), ttl="10m"
-    )
-
     return
 
 
-def on_change_hospital_number():
+def on_change_hospital_number(patients):
     hospital_number_input = st.session_state.hospital_number_input
     if hospital_number_input in hospital_numbers:
         for patient in patients.data:
@@ -113,7 +106,7 @@ def user_id_get(users, user_name):
 
 
 def main():
-    global hospital_numbers, patients
+    global hospital_numbers
 
     error_placeholder = st.empty()
 
@@ -152,7 +145,8 @@ def main():
     st.text_input(
         'Hospital number (eg "HN001")',
         key="hospital_number_input",
-        on_change=on_change_hospital_number,
+        # Could also be done using functools.partial
+        on_change=lambda: on_change_hospital_number(patients),
     )
 
     st.selectbox(
