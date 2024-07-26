@@ -1,16 +1,16 @@
 """Lesson 2 - exercise 4 - Quotation marks
 
-    Run the code with:
+Run the code with:
 
-    $ python exercise_4.py
+$ python exercise_4.py
 
-    What happens when you run it from the terminal?
-    Can you spot the problem and fix it?
+What happens when you run it from the terminal?
+Can you spot the problem and fix it?
 
-    Got it working? Then try the ask in the comments below.
+Got it working? Then try the ask in the comments below.
 
-    Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
+Gotten stuck, look at the slides at:
+https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
 """
 
 patient_id = "1523"

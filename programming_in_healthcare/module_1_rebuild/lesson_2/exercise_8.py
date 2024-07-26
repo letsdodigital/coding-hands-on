@@ -1,13 +1,13 @@
 """Lesson 2  - exercise 8 - Finished product!
 
-    All done!
+All done!
 
-    Compare your solutions to the previous exercises to the model one provided here.
+Compare your solutions to the previous exercises to the model one provided here.
 
-    We have added docstrings to the functions here. Docstrings are a way to document your code.
+We have added docstrings to the functions here. Docstrings are a way to document your code.
 
-    Warning:
-    This is not to be used as a real life medical app! This is for training purposes only.
+Warning:
+This is not to be used as a real life medical app! This is for training purposes only.
 """
 
 import streamlit as st

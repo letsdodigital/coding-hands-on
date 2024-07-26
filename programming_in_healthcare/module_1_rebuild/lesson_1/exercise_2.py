@@ -1,18 +1,18 @@
 """Lesson 1 - exercise 2 - Use that class
 
-    We have created a class for you called `Patient`.
+We have created a class for you called `Patient`.
 
-    Follow the instructions in the comments below.
+Follow the instructions in the comments below.
 
-    Run the code in the terminal using the below command:
+Run the code in the terminal using the below command:
 
-    $ python exercise_2.py
+$ python exercise_2.py
 
-    Did you get the results you expected?
+Did you get the results you expected?
 
-    Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
-    https://letsdodigital.org/learn/learn-python/module-1/3-python.html
+Gotten stuck, look at the slides at:
+https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
+https://letsdodigital.org/learn/learn-python/module-1/3-python.html
 """
 
 

@@ -9,6 +9,8 @@ to create a web app. You have also learnt how to use the Streamlit session state
 to store data between pages. You have also learnt how to use the Streamlit
 connection to store the connection to the database. You have also learnt how to
 use the Streamlit form to create a form that can be submitted to the database.
+
+We have added some docstrings to the functions in this exercise.
 """
 
 consent_types = []
@@ -17,6 +19,13 @@ patients = []
 
 
 def initialise():
+    """Initialise the Streamlit session state.
+
+    This function initialises the Streamlit session state. It sets the initial
+    values for the patient details and the intervention details. It also sets the
+    initial values for the consent types.
+    """
+
     global consent_types
 
     initialise_state = ""
@@ -55,6 +64,14 @@ def initialise():
 
 
 def on_change_hospital_number():
+    """Runs when the hospital number input changes.
+
+    This function runs when the hospital number input changes. It checks if the
+    hospital number is valid and if it is, it sets the session state variables
+    for the patient details. If the hospital number is invalid, it displays an
+    error message.
+    """
+
     hospital_number_input = st.session_state.hospital_number_input
     if hospital_number_input in hospital_numbers:
         for patient in patients.data:
@@ -80,6 +97,11 @@ def on_change_hospital_number():
 
 
 def on_change_intervention():
+    """Runs when the intervention input changes.
+
+    This function runs when the intervention input changes. It sets the session
+    state variables for the intervention details based on the intervention input.
+    """
     for intervention in consent_types.data:
         if intervention["type"] == st.session_state.intervention_input:
             st.session_state.intervention_id = intervention["id"]
@@ -106,6 +128,17 @@ def on_change_intervention():
 
 
 def user_id_get(users, user_name):
+    """Get the user ID from the user name.
+
+    Returns the user ID from the user name.
+
+    Args:
+        users (dict): The users data.
+        user_name (str): The user name.
+    Returns:
+        int: The user ID.
+    """
+
     for user in users.data:
         if user["user_name"] == user_name:
             return user["id"]
@@ -113,6 +146,11 @@ def user_id_get(users, user_name):
 
 
 def main():
+    """The main Streamlit code.
+
+    This function runs the Streamlit web app.
+    """
+
     global hospital_numbers, patients
 
     error_placeholder = st.empty()

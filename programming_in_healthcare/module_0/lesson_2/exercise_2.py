@@ -1,15 +1,15 @@
 """Lesson 2 - exercise 2 - What are variables? 
 
-    Run the code with:
+Run the code with:
 
-    $ python exercise_2.py
+$ python exercise_2.py
 
-    Then follow the instructions below.
+Then follow the instructions below.
 
-    Run the code each time you add a print statement
+Run the code each time you add a print statement
 
-    Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
+Gotten stuck, look at the slides at:
+https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
 """
 
 print("Let's create and print some variables!")

@@ -1,12 +1,12 @@
 """Lesson 2 - exercise 5 - Time for some input!
 
-    Follow the instructions in the comments below.
+Follow the instructions in the comments below.
 
-    Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
+Gotten stuck, look at the slides at:
+https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
 
-    Warning:
-    This is not to be used as a real life medical app! This is for training purposes only.
+Warning:
+This is not to be used as a real life medical app! This is for training purposes only.
 """
 
 import streamlit as st

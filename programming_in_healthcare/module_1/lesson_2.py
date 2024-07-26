@@ -27,12 +27,13 @@ def statement(question, answer):
 """START HERE!"""
 
 """Exercise 1 - What is in a comment?
-    What is a comment? 
 
-    Change the second argument (initially set as "not answered") to either True or
-    False. Check your answers by running:
+What is a comment? 
 
-    $ python lesson_2.py
+Change the second argument (initially set as "not answered") to either True or
+False. Check your answers by running:
+
+$ python lesson_2.py
 """
 
 statement("A comment is code that the computer must run.", "not answered")
@@ -47,12 +48,13 @@ statement(
 statement("A comment is a waste of time", "not answered")
 
 """Exercise 2 - variables
-    What are variables? 
 
-    Change the second argument (initially set as "not answered") to either True or
-    False. Check your answers by running:
+What are variables? 
 
-    $ python lesson_2.py
+Change the second argument (initially set as "not answered") to either True or
+False. Check your answers by running:
+
+$ python lesson_2.py
 """
 
 statement(
@@ -64,16 +66,18 @@ statement("A string can store any character on the keyboard.", "not answered")
 statement("A boolean can store True, False and maybe.", "not answered")
 
 """Exercise 3 - spaces
-    Uncomment the below code. What happens when you run it from the terminal?
-    Can you spot the problem and fix it?
+
+Uncomment the below code. What happens when you run it from the terminal?
+Can you spot the problem and fix it?
 """
 
 # drug name = "Amoxicillin"
 # print("drug name is Amoxicillin")
 
 """Exercise 4 - quotation marks
-    Uncomment the below code. What happens when you run it from the terminal?
-    Can you spot the problem and fix it?
+
+Uncomment the below code. What happens when you run it from the terminal?
+Can you spot the problem and fix it?
 """
 
 """
@@ -84,7 +88,8 @@ print("Passed patient demographics")
 """
 
 """Exercise 5 - indentation
-    Why is the below code not printing out anything? Can you fix it?
+
+Why is the below code not printing out anything? Can you fix it?
 """
 
 
@@ -96,12 +101,13 @@ def a_function():
 
 
 """Exercise 6 - naming conventions
-    What convention are used in python?
 
-    Change the second argument (initially set as "not answered") to either True or
-    False. Check your answers by running:
+What convention are used in python?
 
-    $ python lesson_2.py
+Change the second argument (initially set as "not answered") to either True or
+False. Check your answers by running:
+
+$ python lesson_2.py
 """
 
 statement(
@@ -131,6 +137,7 @@ print("* Patient is allergic to " + allergy_group)
 """
 
 """ Exercise 8 - for loops
+
     Write code to print out each element of the below list
     Hint (use 'for' and 'in')
     Feeling more adventurous, try using 'while' instead
@@ -141,6 +148,7 @@ hb_values = [12, 12.3, 12.4, 13]
 # write your code here
 
 """Exercise 9 - calling a function
+
     Convert the comments below into code. A useful link:
     https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults
 """

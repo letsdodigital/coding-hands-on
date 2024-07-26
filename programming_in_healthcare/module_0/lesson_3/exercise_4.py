@@ -1,17 +1,17 @@
 """Lesson 3 - exercise 4 - Calling a function
 
-    Run the code with:
+Run the code with:
 
-    $ python exercise_4.py
+$ python exercise_4.py
 
-    Convert the comments below into code. 
-    
-    A useful link:
+Convert the comments below into code. 
 
-    https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults
+A useful link:
 
-    Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-0/4-python-basics.html
+https://www.nhs.uk/health-assessment-tools/calculate-your-body-mass-index/calculate-bmi-for-adults
+
+Gotten stuck, look at the slides at:
+https://letsdodigital.org/learn/learn-python/module-0/4-python-basics.html
 """
 
 

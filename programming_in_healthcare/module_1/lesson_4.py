@@ -8,6 +8,7 @@ https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
 """
 
 """Exercise 1 - Create any clinical calculator you like
+
 1. Go to your favourite search engine.
 2. Type in "Clinical Calculator Equations"
 3. Pick any clinical calculator you like. Make sure can find an equation associated with it.
@@ -15,6 +16,7 @@ https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
 """
 
 """Exercise 2 - Change the layout
+
 1. Follow the guide at:
 https://docs.streamlit.io/library/advanced-features/theming
 2. Change the colours of your web app

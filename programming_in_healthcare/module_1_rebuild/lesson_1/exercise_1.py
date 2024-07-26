@@ -1,14 +1,14 @@
 """Lesson 1 - exercise 1 - Random numbers and libraries
 
-    Follow the instructions in the comments below.
+Follow the instructions in the comments below.
 
-    Run the code in the terminal using the below command:
+Run the code in the terminal using the below command:
 
-    $ python exercise_1.py
+$ python exercise_1.py
 
-    Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
-    https://letsdodigital.org/learn/learn-python/module-1/3-python.html
+Gotten stuck, look at the slides at:
+https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
+https://letsdodigital.org/learn/learn-python/module-1/3-python.html
 """
 
 # Import the random library

@@ -1,18 +1,18 @@
 """Lesson 2 - exercise 3 - Spaces
 
-    Run the code with:
+Run the code with:
 
-    $ python exercise_3.py
+$ python exercise_3.py
 
-    Why is it not working? The traceback will "underline" (with arrows ^^^^) the 
-    1st error.
-    
-    Can you fix it?
+Why is it not working? The traceback will "underline" (with arrows ^^^^) the 
+1st error.
 
-    Where is the second error? Can you fix it?
+Can you fix it?
 
-    Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
+Where is the second error? Can you fix it?
+
+Gotten stuck, look at the slides at:
+https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
 """
 
 drug name = "Amoxicillin"

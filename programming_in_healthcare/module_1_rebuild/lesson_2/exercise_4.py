@@ -1,22 +1,22 @@
 """Lesson 2 - exercise 4 - You like maths right?
 
-    You will be using the below equation for calculating the eGFR:
+You will be using the below equation for calculating the eGFR:
 
-    eGFR = 175 x ((creatinine x 0.011312) ^ (-1.154)) x (age ^ (-0.203))
-        x (0.742 if female) x (1.212 if Afro-Caribbean)
+eGFR = 175 x ((creatinine x 0.011312) ^ (-1.154)) x (age ^ (-0.203))
+    x (0.742 if female) x (1.212 if Afro-Caribbean)
 
-    Some useful links:
+Some useful links:
 
-    https://pathlabs.rlbuht.nhs.uk/eGFRcalculator.htm
-    https://www.nhs.uk/conditions/kidney-disease/diagnosis/
+https://pathlabs.rlbuht.nhs.uk/eGFRcalculator.htm
+https://www.nhs.uk/conditions/kidney-disease/diagnosis/
 
-    Follow the instructions in the comments below.
+Follow the instructions in the comments below.
 
-    Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
+Gotten stuck, look at the slides at:
+https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
 
-    Warning:
-    This is not to be used as a real life medical app! This is for training purposes only.
+Warning:
+This is not to be used as a real life medical app! This is for training purposes only.
 """
 
 import streamlit as st

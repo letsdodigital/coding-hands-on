@@ -1,13 +1,13 @@
 """Lesson 3 - exercise 2 - Functions
 
-    Run the code with:
+Run the code with:
 
-    $ python exercise_2.py
-    
-    Try the below ask in the comments below.
+$ python exercise_2.py
 
-    Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-0/4-python-basics.html
+Try the below ask in the comments below.
+
+Gotten stuck, look at the slides at:
+https://letsdodigital.org/learn/learn-python/module-0/4-python-basics.html
 """
 
 # Write a function that takes in as arguments a patient's name and date of birth

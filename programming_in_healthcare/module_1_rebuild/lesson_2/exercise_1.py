@@ -1,16 +1,16 @@
 """Lesson 2 - exercise 1 - 'Hello world!' web app style!
 
-    Run the app using the command:
-    
-    $ streamlit run exercise_1.py
+Run the app using the command:
 
-    Follow the instructions in the comments below.
+$ streamlit run exercise_1.py
 
-    Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
+Follow the instructions in the comments below.
 
-    Warning:
-    This is not to be used as a real life medical app! This is for training purposes only.
+Gotten stuck, look at the slides at:
+https://letsdodigital.org/learn/learn-python/module-1/4-lets-build.html
+
+Warning:
+This is not to be used as a real life medical app! This is for training purposes only.
 """
 
 # You need to import the `streamlit` module and set it as an alias of `st`

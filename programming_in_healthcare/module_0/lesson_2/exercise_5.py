@@ -1,13 +1,13 @@
 """Lesson 2 - exercise 5 - Indentation
 
-    Run the code with:
+Run the code with:
 
-    $ python exercise_5.py
-    
-    Why is the below code not printing out anything? Can you fix it?
+$ python exercise_5.py
 
-    Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
+Why is the below code not printing out anything? Can you fix it?
+
+Gotten stuck, look at the slides at:
+https://letsdodigital.org/learn/learn-python/module-0/3-python-basics.html
 """
 
 

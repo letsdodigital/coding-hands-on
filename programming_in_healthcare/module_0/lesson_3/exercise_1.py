@@ -1,15 +1,15 @@
 """Lesson 3 - exercise 1 - Control the flow
 
-    Run the code with:
-    
-    $ python exercise_1.py
+Run the code with:
 
-    Change the value of 'patient_allergy' to see what happens. 
-    
-    What is the output?
+$ python exercise_1.py
 
-    Gotten stuck, look at the slides at:
-    https://letsdodigital.org/learn/learn-python/module-0/4-python-basics.html
+Change the value of 'patient_allergy' to see what happens. 
+
+What is the output?
+
+Gotten stuck, look at the slides at:
+https://letsdodigital.org/learn/learn-python/module-0/4-python-basics.html
 """
 
 patient_allergy = "amoxicillin"
