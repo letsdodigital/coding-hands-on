@@ -1,3 +1,5 @@
+from functools import partial
+
 import streamlit as st
 from st_supabase_connection import SupabaseConnection, execute_query
 
@@ -13,21 +15,8 @@ use the Streamlit form to create a form that can be submitted to the database.
 We have added some docstrings to the functions in this exercise.
 """
 
-consent_types = []
-hospital_numbers = []
-patients = []
-
 
 def initialise():
-    """Initialise the Streamlit session state.
-
-    This function initialises the Streamlit session state. It sets the initial
-    values for the patient details and the intervention details. It also sets the
-    initial values for the consent types.
-    """
-
-    global consent_types
-
     initialise_state = ""
 
     st.session_state.submitted_consent_id = 0
@@ -55,23 +44,10 @@ def initialise():
     if "potential_risks_state" not in st.session_state:
         st.session_state.potential_risks_state = initialise_state
 
-    conn = st.connection("supabase", type=SupabaseConnection)
-    consent_types = execute_query(
-        conn.table("consent_types").select("*"), ttl="10m"
-    )
-
     return
 
 
-def on_change_hospital_number():
-    """Runs when the hospital number input changes.
-
-    This function runs when the hospital number input changes. It checks if the
-    hospital number is valid and if it is, it sets the session state variables
-    for the patient details. If the hospital number is invalid, it displays an
-    error message.
-    """
-
+def on_change_hospital_number(patients, hospital_numbers):
     hospital_number_input = st.session_state.hospital_number_input
     if hospital_number_input in hospital_numbers:
         for patient in patients.data:
@@ -96,12 +72,7 @@ def on_change_hospital_number():
     return
 
 
-def on_change_intervention():
-    """Runs when the intervention input changes.
-
-    This function runs when the intervention input changes. It sets the session
-    state variables for the intervention details based on the intervention input.
-    """
+def on_change_intervention(consent_types):
     for intervention in consent_types.data:
         if intervention["type"] == st.session_state.intervention_input:
             st.session_state.intervention_id = intervention["id"]
@@ -146,13 +117,6 @@ def user_id_get(users, user_name):
 
 
 def main():
-    """The main Streamlit code.
-
-    This function runs the Streamlit web app.
-    """
-
-    global hospital_numbers, patients
-
     error_placeholder = st.empty()
 
     fields = {}
@@ -190,14 +154,18 @@ def main():
     st.text_input(
         'Hospital number (eg "HN001")',
         key="hospital_number_input",
-        on_change=on_change_hospital_number,
+        # Could also be done using functools.partial
+        on_change=lambda: on_change_hospital_number(
+            patients, hospital_numbers
+        ),
     )
 
     st.selectbox(
         "Select Intervention Type",
         intervention_types,
         key="intervention_input",
-        on_change=on_change_intervention,
+        # Could also be done using a lambda function
+        on_change=partial(on_change_intervention, consent_types),
     )
 
     with st.form("consent_form"):
