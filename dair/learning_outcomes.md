@@ -194,7 +194,6 @@ We need the following studies:
 - 2D scan with colourmap data (e.g. Doppler Ultrasound)
 - 3D volumetric scan (e.g. CT head)
 
-
 # Session 4 - Modelling for Medicine
 
 ## Seminar
@@ -208,6 +207,7 @@ By the end of the seminar, clinicians should:
     - Linear / logistic regression as a parametric model example (LL2)
   - Nonparametric models
     - k-nearest neighbour model as a flexible non-parametric model (LL2)
+- Be able to describe the high-level steps needed to train a statistical model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model) (LL2)
 - Understanding the importance of splitting the data into training, testing, and validation datasets (LL2)
 - Assumptions of models
   - Understand dataset bias and clincial factors that can confound a dataset (LL4)
@@ -220,7 +220,9 @@ By the end of the seminar, clinicians should:
   - Understand that hyperparameters can be tuned (LL2)
 - Evaulating models
   - Describe methods for evaulating regression models (LL2)
-  - Describe methods for evaulating classification models (LL2)
+  - Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2)
+  - Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2) *TODO Maybe move this to module 5?*
+  - Be able to give a broad overview of the common metrics that are used with other types of model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2)
 - Common pitfalls
   - How to deal with overfitting. (LL2)
   - How to deal with multicollinearity (LL2)
@@ -232,7 +234,7 @@ By the end of the workshop, clinicians should be able to:
 
 *TODO This session should be based around fitting a basic model to basic tabular data - use linear regression and k-means*
 
-# Session 4 - AI for Medicine
+# Session 5 - AI for Medicine
 
 ## Seminar
 
@@ -260,12 +262,6 @@ By the end of the seminar, clinicians should:
   - Understand why data needs to be batched when training a network (LL3)
   - Understand what a sigmoid layer is and why it is used for probabilistic outputs (LL2)
 - Appreciate that the task we are performing is fairly simple and that more complex techniques exist (LL2)
-
-Part 2 content:
-- Be able to describe the high-level steps needed to implement a ML model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model) (LL2)
-- Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2)
-- Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2)
-- Be able to give a broad overview of the common metrics that are used with other types of machine learning model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2)
 - Be able to discuss the uses, advantages, and disadvantages of more modern approaches to machine learning (stable diffusion, large language models) (LL2) (LL4)
 
 *Maybe a radiologist/senior clinician could speak about the features that the bot may be dectecting in each scan?*
@@ -311,16 +307,6 @@ By the end of the workshop, clinicians should be able to:
 - Understand the importance of splitting data into training, validation, and testing datasets (LL2)
 
 The model structure will be a convolutional neural network with single sigmoid output node denoting probability of pneumonia in the scan.
-
-# Session 5 - AI for Medicine (Part 2)
-
-## Seminar
-
-By the end of the seminar, clinicians should:
-
-## Workshop
-
-By the end of the workshop, clinicians should be able to:
 
 # Session 6 - Closing Session
 
