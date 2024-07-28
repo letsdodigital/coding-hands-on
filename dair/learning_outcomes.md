@@ -194,7 +194,45 @@ We need the following studies:
 - 2D scan with colourmap data (e.g. Doppler Ultrasound)
 - 3D volumetric scan (e.g. CT head)
 
-# Session 4 - AI for Medicine (Part 1)
+
+# Session 4 - Modelling for Medicine
+
+## Seminar
+
+By the end of the seminar, clinicians should:
+- *TODO Complete these aims*
+- Understand the aims of this module and what it will cover
+- Types of statistical model
+  - Understand what a statistical model is at a broad level (LL2)
+  - Parametric models
+    - Linear / logistic regression as a parametric model example (LL2)
+  - Nonparametric models
+    - k-nearest neighbour model as a flexible non-parametric model (LL2)
+- Understanding the importance of splitting the data into training, testing, and validation datasets (LL2)
+- Assumptions of models
+  - Understand dataset bias and clincial factors that can confound a dataset (LL4)
+  - Use examples to demonstrate clinical bias *TODO find appropriate examples* (LL4)
+- Bias-variance trade off and overfitting
+  - Gain an intuitive understanding of overfitting vs overfitting using a linear model as an example (LL2)
+- Hyperparameters
+  - Understand what a hyperparameter is (LL2)
+  - How a hyper-parameter effects model output (LL2)
+  - Understand that hyperparameters can be tuned (LL2)
+- Evaulating models
+  - Describe methods for evaulating regression models (LL2)
+  - Describe methods for evaulating classification models (LL2)
+- Common pitfalls
+  - How to deal with overfitting. (LL2)
+  - How to deal with multicollinearity (LL2)
+  - How to deal with missing data and sensitivity analysis (LL2)
+
+## Workshop
+
+By the end of the workshop, clinicians should be able to:
+
+*TODO This session should be based around fitting a basic model to basic tabular data - use linear regression and k-means*
+
+# Session 4 - AI for Medicine
 
 ## Seminar
 
@@ -202,21 +240,15 @@ By the end of the seminar, clinicians should:
 
 - Understand the aims of this first AI module and what it will cover
 - Be able to list clinical uses for ML (LL4)
-- Statistical models
-  - Understand what a statistical model is at a broad level (LL2) TODO Move to module 2?
   - Understand what machine learning is at a broad level (LL2)
 - Understand what a loss function is (LL2)
 - Appreciate that there are a wide variety of optimisers and loss functions that can be used (LL2)
 - Understand the difference between supervised and unsupervised learning (LL2)
 - Gain an intuition for how training via backpropagation works via the ball on a hill analogy (LL2)
-- Gain an intuitive understanding of overfitting vs overfitting using a linear model as an example (LL2) TODO Move to module 5?
 - Pneumonia detection task
   - Disclaimer that this course will not cover intepretation of chest X-rays
-  - Understand dataset bias and clincial factors that can confound a dataset (LL4)
-    - Use examples to demonstrate clinical bias *TODO find appropriate examples* (LL4)
 - Data preprocessing
   - Understand considerations that must be made when standardising image data for model input (image size, image dimensions, contrast, brightness) (LL2)
-  - Understanding the importance of splitting the data into training, testing, and validation datasets (LL2)
   - Understand the importance of data augmentation when training (LL2)
   - Be able to name common data augmentation techniques (shearing, rotation, stretching, elastic deformation in medical imaging datasets) (LL2)
   - Understand how these concepts apply to other types of data (e.g. time-series data) (LL2)
@@ -228,6 +260,13 @@ By the end of the seminar, clinicians should:
   - Understand why data needs to be batched when training a network (LL3)
   - Understand what a sigmoid layer is and why it is used for probabilistic outputs (LL2)
 - Appreciate that the task we are performing is fairly simple and that more complex techniques exist (LL2)
+
+Part 2 content:
+- Be able to describe the high-level steps needed to implement a ML model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model) (LL2)
+- Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2)
+- Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2)
+- Be able to give a broad overview of the common metrics that are used with other types of machine learning model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2)
+- Be able to discuss the uses, advantages, and disadvantages of more modern approaches to machine learning (stable diffusion, large language models) (LL2) (LL4)
 
 *Maybe a radiologist/senior clinician could speak about the features that the bot may be dectecting in each scan?*
 
@@ -260,6 +299,16 @@ By the end of the workshop, clinicians should be able to:
 - Model saving
   - Structure machine learning projects to to allow for reuse of model weights (LL3) 
   - Save files from Google Colab for reuse later (LL1)
+- Model tuning
+  - Appropriately tune hyperparameters and model architecture to improve model performance and size (LL1)
+  - *Note: This should be done in conjunction with the model evaulation step below.*
+- Open a machine learning model from file (LL1)
+- Binary classifier model evaulation
+  - Evaulate a model using testing data (LL1)
+  - Calculate and understand precision, recall, and F1 scores (LL1)
+  - Use pyplot and scipy to plot a formal ROC curve for a binary classifier (LL1)
+  - Calculate the AUC value for this curve (LL1)
+- Understand the importance of splitting data into training, validation, and testing datasets (LL2)
 
 The model structure will be a convolutional neural network with single sigmoid output node denoting probability of pneumonia in the scan.
 
@@ -269,20 +318,9 @@ The model structure will be a convolutional neural network with single sigmoid o
 
 By the end of the seminar, clinicians should:
 
-- Be able to describe the high-level steps needed to implement a ML model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model) (LL2)
-- Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2)
-- Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2)
-- Be able to give a broad overview of the common metrics that are used with other types of machine learning model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2)
-- Be able to discuss the uses, advantages, and disadvantages of more modern approaches to machine learning (stable diffusion, large language models) (LL2) (LL4)
-
 ## Workshop
 
 By the end of the workshop, clinicians should be able to:
-
-- Calculate and understand precision, recall, and F1 scores (LL1)
-- Use pyplot and scipy to plot a formal ROC curve for a binary classifier (LL1)
-- Calculate the AUC value for this curve (LL1)
-- Understand the importance of splitting data into training, validation, and testing datasets (LL2)
 
 # Session 6 - Closing Session
 
