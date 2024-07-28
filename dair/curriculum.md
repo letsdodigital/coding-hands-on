@@ -1,5 +1,7 @@
 # Curriculum
 
+This file is in the process of being merged with `./learning_outcomes.md`. I'll keep this file as is to enable reviewing of the changes made.
+
 ## Learning Outcomes
 
 ### High level Learning outcomes

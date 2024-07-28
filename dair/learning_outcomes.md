@@ -3,16 +3,22 @@
 This document details the high level learning outcomes for each seminar and workshop in the course.
 
 The following learning levels (LLs) should be able to be mapped to the learning points.
-1. **Level 1 - Basic Practical Skills**
+1. **Level 1 - Basic Practical Skills (coding skills)**
 * E.g. How to reshape a numpy array from `(3, 3, 3)` into `(9, 3)`.
-2. **Level 2 - Theory**
+2. **Level 2 - Theory (modelling skills)**
 * E.g. How k-means splits data up into clusters
-3. **Level 3 - Project Planning and Structure**
+3. **Level 3 - Project Planning and Management**
 * E.g. How to write a class for plotting similar plots during EDA. 
 4. **Level 4 - Clinical Translation**
 * E.g. What format data needs to be collected in to train a sepsis predictor from NEWS score. 
 
 The seminars will consist mainly of LL2 and LL4 information, whereas workshops will consist of LL1 and LL3 information.
+
+# Learning outcomes to match
+
+The outcomes below have not been matched to a module yet.
+- one-hot encoding and why (LL2) 
+
 
 # Session 1 - Course Introduction
 
@@ -24,16 +30,18 @@ By the end of the seminar, clinicains should be able to:
   - Know the layout of documentation and how to use it (LL3)
   - Know what StackOverflow is and when to use it (LL3)
   - Understand what constitutes "machine readable" data and what considerations clinicians must make to maximise this (LL4)
-- Pandas
-  - Know why Pandas exists within the Python ecosystem (ease of processing for tabular data without having to create parsers, seamlessly working with different datatypes) (LL2)
-  - Understand the CSV/TSV format (LL2)
-  - Have a broad understanding of the types of tasks that Pandas is able to perform (grouping data, generating summary statistics) (LL2)
-  - Be able to explain common abbreviations that are used in Pandas code and how it is usually structured (LL3)
 - NumPy
   - Know why NumPy exists within the Python ecosystem (speed of array operations, ease of working with multidimensional data) (LL2)
   - Understand the concept of multidimensional arrays and the 'shape' of an array (LL2)
   - Explain what a NumPy array is (LL2)
   - Understand how to use NumPy functions and common pitfalls e.g. shape mismatches (LL1)
+- Pandas
+  - Know why Pandas exists within the Python ecosystem (ease of processing for tabular data without having to create parsers, seamlessly working with different datatypes) (LL2)
+  - Appreciate how Pandas is built on NumPy (LL2)
+  - Understand the CSV/TSV format (LL2)
+  - Have a broad understanding of the types of tasks that Pandas is able to perform (grouping data, generating summary statistics) (LL2)
+  - Be able to explain common abbreviations that are used in Pandas code and how it is usually structured (LL3)
+  - Understand Pandas' indexing system
 - Explain how to represent common data structures as NumPy or Pandas data (quiz-style questions to test understanding) (LL2)
   - Image data - NumPy array
   - Tabular data - Pandas DataFrame
@@ -42,6 +50,7 @@ By the end of the seminar, clinicains should be able to:
   - Know why Pyplot exists within the Python ecosystem (ease of plotting data) (LL2)
   - Know the general structure of Pyplot calls and how they are used in projects (LL3)
   - Have a general appreciation for the wide array of plots that Pyplot can generate (LL2)
+  - Have an appreciation that other plotting libraries exist that are often easier to use for complex plots (Seaborn) (LL2)
   - Understand some formatting rules for academic journals and how to comply with these using Pyplot (saving high resolution plots, changing fonts) (LL4)
 - SciKit
   - Know why SciKit exists within the Python ecosystem (ease of use of complex algorithms and statistical tests) (LL2)
@@ -68,6 +77,7 @@ By the end of the workshop, clinicians should be able to:
   - Search a column for a string (LL1)
   - Clean a dataframe by removing empty `NaN` entries (LL1)
   - Counting unique strings in a column and plotting them as a bar chart (LL1)
+  - Convert strings to `Datetime` objects using date formatting strings (LL1) 
   - T-test example task (*One candidate dataset is the dataset of survivors from the Titanic*) (LL2)
     - Plotting grouped numerical data as a bar chart (LL1)
     - Grouping data for statistical testing (unpaired t-test) (LL1)
@@ -96,14 +106,35 @@ By the end of the workshop, clinicians should be able to:
 ## Seminar
 
 By the end of the seminar, clinicians should:
-- TODO
+- Understand the aims of this module and how they relate to clinical practice (LL4)
+- Exploratory data analysis (EDA)
+  - Understand what EDA is (LL1)
+  - Why do EDA and where EDA fits into a clinical/scientific data analysis pipeline (LL4)
+  - How to effectively handle missing data in a dataset (LL2) 
+  - Understand the concept of collinearity between variables in a dataset (LL2)
+- Error messages
+  - Understand the general format of an error message (LL2)
+- Effective debugging
+  - Learn to debug and deal with 'error messages' (LL2)
+  - Understand common formats of documentation (LL2)
+  - How to use documentation to debug an external function/method (LL2)
+  - Understand when to raise exceptions to prevent unwanted behaviour or bugs (LL2)
 
 ## Workshop
 
 By the end of the workshop, clinicians should be able to:
 - TODO
+- Data preprocessing
+  - Remove or replace missing data in a meaningful way (LL1)
+- EDA
+  - collinearity and variance management
+  - Undertake EDA 
+  - Learn to write custom functions and why
+- Debugging
+  - Check that a varaible is within a required range, and raise an exception if it is not (LL1)
+- Use of documentation
 
-The data used in this workshop will be simulated.
+We need to identify appropriate data to design this workshop around.
 
 # Session 3 - DICOM and Python
 
