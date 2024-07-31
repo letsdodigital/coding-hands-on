@@ -13,12 +13,7 @@ get stuck.
 """
 
 
-# Initialise the global lists `consent_types`, `hospital_numbers` and `patients`
-
-
 def initialise():
-    # Add a global call to `consent_types`
-
     initialise_state = "test_data"
 
     # Initialise a session state called `submitted_consent_id` to 0. You do NOT
@@ -51,15 +46,14 @@ def initialise():
     if "potential_risks_state" not in st.session_state:
         st.session_state.potential_risks_state = initialise_state
 
-    # Start another connection to the database
-
-    # Query the `consent_types` table and store the results in the
-    # `consent_types` list.
-
     return
 
 
 def on_change_hospital_number():
+    # We have added these next two lines of code for you.
+    if "hospital_number_input" not in st.session_state:
+        return
+
     # Delete this line of code
     st.write(
         f"Hospital number changed to: { st.session_state.hospital_number_input }"
@@ -82,6 +76,10 @@ def on_change_hospital_number():
 
 
 def on_change_intervention():
+    # We have added these next two lines of code for you.
+    if "intervention_input" not in st.session_state:
+        return
+
     # Delete this line of code
     st.write(
         f"Intervention changed to: { st.session_state.intervention_input }"
@@ -114,8 +112,6 @@ def on_change_intervention():
 
 
 def main():
-    # add a global statement for `hospital_numbers` and `patients`
-
     # We added this placeholder to display errors messages that we have
     # raise later.
     error_placeholder = st.empty()
@@ -155,14 +151,14 @@ def main():
     st.text_input(
         'Hospital number (eg "HN001")',
         key="hospital_number_input",
-        on_change=on_change_hospital_number,
+        on_change=on_change_hospital_number(),
     )
 
     st.selectbox(
         "Select Intervention Type",
         intervention_types,
         key="intervention_input",
-        on_change=on_change_intervention,
+        on_change=on_change_intervention(),
     )
 
     with st.form("consent_form"):

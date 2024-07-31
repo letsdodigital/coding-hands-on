@@ -22,7 +22,7 @@ get stuck.
 def main():
     # Change the title to "Bonjour"
     st.title("Hello")
-    # Change the below line to "Salut le monde!"
+    # Change the below code to print "Salut le monde!" to the browser
     st.text("Hello World!")
 
     return

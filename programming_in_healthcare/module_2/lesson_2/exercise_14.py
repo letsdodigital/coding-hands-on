@@ -1,5 +1,3 @@
-from functools import partial
-
 import streamlit as st
 from st_supabase_connection import SupabaseConnection, execute_query
 
@@ -8,15 +6,18 @@ from st_supabase_connection import SupabaseConnection, execute_query
 You have now completed all the exercises in this lesson. Well done! You have
 learnt how to read and write to a database in the cloud, and how to use Streamlit
 to create a web app. You have also learnt how to use the Streamlit session state
-to store data between pages. You have also learnt how to use the Streamlit
-connection to store the connection to the database. You have also learnt how to
-use the Streamlit form to create a form that can be submitted to the database.
+to store data between pages. You have also learnt how to use the Streamlit form 
+to create a form that can be submitted to the database.
 
 We have added some docstrings to the functions in this exercise.
 """
 
 
 def initialise():
+    """Initialise the session state.
+
+    Initialises the session state.
+    """
     initialise_state = ""
 
     st.session_state.submitted_consent_id = 0
@@ -48,7 +49,19 @@ def initialise():
 
 
 def on_change_hospital_number(patients, hospital_numbers):
+    """Retrieve patient details from the hospital number.
+
+    Retrieves the patient details from the hospital number.
+
+    Args:
+        patients (dict): The patients data.
+        hospital_numbers (list): The list of hospital numbers
+    """
+    if "hospital_number_input" not in st.session_state:
+        return
+
     hospital_number_input = st.session_state.hospital_number_input
+
     if hospital_number_input in hospital_numbers:
         for patient in patients.data:
             if patient["hospital_number"] == hospital_number_input:
@@ -73,6 +86,16 @@ def on_change_hospital_number(patients, hospital_numbers):
 
 
 def on_change_intervention(consent_types):
+    """Retrieve intervention details from the intervention type.
+
+    Retrieves the intervention details from the intervention type.
+
+    Args:
+        consent_types (dict): The consent types data.
+    """
+    if "intervention_input" not in st.session_state:
+        return
+
     for intervention in consent_types.data:
         if intervention["type"] == st.session_state.intervention_input:
             st.session_state.intervention_id = intervention["id"]
@@ -95,6 +118,7 @@ def on_change_intervention(consent_types):
         st.session_state.full_description_state = ""
         st.session_state.intended_benefits_state = ""
         st.session_state.potential_risks_state = ""
+
     return
 
 
@@ -117,8 +141,8 @@ def user_id_get(users, user_name):
 
 
 def main():
+    """The main function"""
     error_placeholder = st.empty()
-
     fields = {}
 
     conn = st.connection("supabase", type=SupabaseConnection)
@@ -154,18 +178,14 @@ def main():
     st.text_input(
         'Hospital number (eg "HN001")',
         key="hospital_number_input",
-        # Could also be done using functools.partial
-        on_change=lambda: on_change_hospital_number(
-            patients, hospital_numbers
-        ),
+        on_change=on_change_hospital_number(patients, hospital_numbers),
     )
 
     st.selectbox(
         "Select Intervention Type",
         intervention_types,
         key="intervention_input",
-        # Could also be done using a lambda function
-        on_change=partial(on_change_intervention, consent_types),
+        on_change=on_change_intervention(consent_types),
     )
 
     with st.form("consent_form"):
@@ -230,8 +250,6 @@ def main():
                 "consent_type_id": st.session_state.intervention_id,
                 "user_id": user_id_get(users, fields["signed_by"]),
             }
-
-            st.write(consent_final_data)
 
             result = (
                 conn.table("submitted_consents")

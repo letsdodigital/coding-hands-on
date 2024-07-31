@@ -10,14 +10,8 @@ See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
 get stuck.
 """
 
-consent_types = []
-hospital_numbers = []
-patients = []
-
 
 def initialise():
-    global consent_types
-
     # initialise this to an empty string
     initialise_state = "test_data"
 
@@ -46,16 +40,22 @@ def initialise():
     if "potential_risks_state" not in st.session_state:
         st.session_state.potential_risks_state = initialise_state
 
-    conn = st.connection("supabase", type=SupabaseConnection)
+    """conn = st.connection("supabase", type=SupabaseConnection)
     consent_types = execute_query(
         conn.table("consent_types").select("*"), ttl="10m"
-    )
+    )"""
 
     return
 
 
-def on_change_hospital_number():
+# We have added the two arguments `patients` and `hospital_numbers` to the
+# below function.
+def on_change_hospital_number(patients, hospital_numbers):
+    if "hospital_number_input" not in st.session_state:
+        return
+
     hospital_number_input = st.session_state.hospital_number_input
+
     if hospital_number_input in hospital_numbers:
         # Delete this line of code
         st.write("Valid hospital number")
@@ -67,7 +67,9 @@ def on_change_hospital_number():
         # 3. If the above is true, then set the session states relating to the
         # patient demographics to the values in found in the database. We have
         # done the first 3 for you. You will need to do the other 3. Uncomment
-        # to use them.
+        # to use them. The full list of database fields are:
+        # "id", "hospital_number", "first_name", "last_name", "date_of_birth",
+        # "email".
 
         # st.session_state.patient_id = patient["id"]
         # st.session_state.hospital_number_state = hospital_number_input
@@ -79,7 +81,7 @@ def on_change_hospital_number():
         # Delete this line of code
         st.write("empty hospital number field")
 
-        # Of all the session states that you have used modified above, set them
+        # Of all the session states that you have just modified above, set them
         # all to empty strings in this `elif` section.
     else:
         st.error("Invalid hospital number. Please try again.")
@@ -87,7 +89,12 @@ def on_change_hospital_number():
     return
 
 
-def on_change_intervention():
+# We have added the argument `consent_types` to the below function.
+def on_change_intervention(consent_types):
+
+    if "intervention_input" not in st.session_state:
+        return
+
     for intervention in consent_types.data:
         if intervention["type"] == st.session_state.intervention_input:
             # Delete this line of code.
@@ -95,7 +102,7 @@ def on_change_intervention():
 
             # You are going to use similar code to the previous function.
             # Update the session states for the intervention to values from the
-            # data base. We have done the first 3 for you. You need to do the
+            # database. We have done the first 3 for you. You need to do the
             # other 2. Uncomment to use this code.
 
             # st.session_state.intervention_id = intervention["id"]
@@ -121,10 +128,7 @@ def user_id_get(users, user_name):
 
 
 def main():
-    global hospital_numbers, patients
-
     error_placeholder = st.empty()
-
     fields = {}
 
     conn = st.connection("supabase", type=SupabaseConnection)
@@ -160,14 +164,14 @@ def main():
     st.text_input(
         'Hospital number (eg "HN001")',
         key="hospital_number_input",
-        on_change=on_change_hospital_number,
+        on_change=on_change_hospital_number(patients, hospital_numbers),
     )
 
     st.selectbox(
         "Select Intervention Type",
         intervention_types,
         key="intervention_input",
-        on_change=on_change_intervention,
+        on_change=on_change_intervention(consent_types),
     )
 
     with st.form("consent_form"):
@@ -220,16 +224,18 @@ def main():
         submitted = st.form_submit_button("Submit")
 
         if submitted:
-            all_fields_filled = all(value for value in fields.values())
+            all_fields_filled = all(value != "" for value in fields.values())
 
             if not all_fields_filled:
                 st.error("All fields need to be filled.")
                 error_placeholder.error("All fields need to be filled.")
+                fields.clear()
                 return
 
             # Remove the else statement (eg 2 lines) below.
             else:
-                st.write("All fields in the forma are filled")
+                st.write("All fields in the form are filled")
+                fields.clear()
 
             # THIS IS THE FINAL PUSH!
 
