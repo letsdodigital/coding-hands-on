@@ -164,14 +164,16 @@ def main():
     st.text_input(
         'Hospital number (eg "HN001")',
         key="hospital_number_input",
-        on_change=on_change_hospital_number(patients, hospital_numbers),
+        on_change=lambda: on_change_hospital_number(
+            patients, hospital_numbers
+        ),
     )
 
     st.selectbox(
         "Select Intervention Type",
         intervention_types,
         key="intervention_input",
-        on_change=on_change_intervention(consent_types),
+        on_change=lambda: on_change_intervention(consent_types),
     )
 
     with st.form("consent_form"):

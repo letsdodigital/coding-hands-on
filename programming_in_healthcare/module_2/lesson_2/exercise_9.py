@@ -56,11 +56,13 @@ def main():
     # Add a text input field for inputting a hospital number. Give it an
     # appropriate label, a key of "hospital_number_input" and the function to
     # call on change should be `on_change_hospital_number` (created above).
+    # Pass a reference to the on_change function by using `lambda:`.
 
     # Add a selectbox field for intervention selection, much like
     # `SELECTBOX I` below. This needs an appropriate label, to take a list of
     # interventions, a key of "intervention_input" and call the function
     # `on_change_intervention` on change (created above).
+    # Pass a reference to the on_change function by using `lambda:`.
 
     # create a form from here up until "END OF FORM" using
     # `st.form("consent_form"):`
