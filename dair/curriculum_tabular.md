@@ -19,7 +19,6 @@ The seminars will consist mainly of LL2 and LL4 information, whereas workshops w
 The outcomes below have not been matched to a module yet.
 - one-hot encoding and why (LL2) 
 
-
 # Session 1 - Course Introduction
 
 ## Seminar
