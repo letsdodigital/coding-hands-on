@@ -1,4 +1,4 @@
-# DAIR Learning Outcomes
+# DAIM (Imaging) Learning Outcomes
 
 This document details the high level learning outcomes for each seminar and workshop in the course.
 
@@ -14,11 +14,6 @@ The following learning levels (LLs) should be able to be mapped to the learning 
 
 The seminars will consist mainly of LL2 and LL4 information, whereas workshops will consist of LL1 and LL3 information.
 
-# Learning outcomes to match
-
-The outcomes below have not been matched to a module yet.
-- one-hot encoding and why (LL2) 
-
 # TODO 
 
 - Split the course into more granular modules:
@@ -31,16 +26,27 @@ The outcomes below have not been matched to a module yet.
     - Run this over multiple workshops
       - Each workshop should consist of small LL2 synchronous workshops and moderately large coding tasks for people to work through.
 
+
 # Session 1 - Course Introduction
 
 ## Seminar
 
 By the end of the seminar, clinicains should be able to:
 - Know the overall aims and philosophy of the course
+- Aims of the DAIM courses
+  - Translate a basic knowledge of Python into workable clinical skill
+  - Inspire the individual to seek further resources to learn more about the topic
+  - Empower the learner to build complex applications
+- TODO
 - General coding information
   - Know the layout of documentation and how to use it (LL3)
   - Know what StackOverflow is and when to use it (LL3)
   - Understand what constitutes "machine readable" data and what considerations clinicians must make to maximise this (LL4)
+
+# Session 2 - Core Python For Images Introduction
+
+## Seminar
+
 - NumPy
   - Know why NumPy exists within the Python ecosystem (speed of array operations, ease of working with multidimensional data) (LL2)
   - Understand the concept of multidimensional arrays and the 'shape' of an array (LL2)
@@ -68,7 +74,7 @@ Good resources for planning this section include Pandas' [Getting Started](https
 
 ## Workshop
 
-The aim of this workshop is to recap some basic Python skills and to ensure that course attendees have the appropriate knowledge of core packages before starting more in-depth content. The Pandas section will focus on table manipulation and grouping data, and the NumPy section will focus on combining and modifying arrays and using basic library functions. An task using convolution will be used to demonstrate this to conceptually prepare for the machine learning section of the course. *TODO: Does the convolution LL2 content need to be moved to the seminar?*
+The aim of this workshop is to recap some basic Python skills and to ensure that course attendees have the appropriate knowledge of core packages before starting more in-depth content. The NumPy section will focus on combining and modifying arrays and using basic library functions. An task using convolution will be used to demonstrate this to conceptually prepare for the machine learning section of the course. *TODO: Does the convolution LL2 content need to be moved to the seminar?*
 
 By the end of the workshop, clinicians should be able to:
 
@@ -159,10 +165,37 @@ We need the following studies:
 - 2D scan with colourmap data (e.g. Doppler Ultrasound)
 - 3D volumetric scan (e.g. CT head)
 
-# Session 3 - Modelling for Medicine
+# Session 4 - AI for Medicine
 
 ## Seminar
 
+By the end of the seminar, clinicians should:
+
+- Understand the aims of this first AI module and what it will cover
+- Be able to list clinical uses for ML (LL4)
+  - Understand what machine learning is at a broad level (LL2)
+- Understand what a loss function is (LL2)
+- Appreciate that there are a wide variety of optimisers and loss functions that can be used (LL2)
+- Understand the difference between supervised and unsupervised learning (LL2)
+- Gain an intuition for how training via backpropagation works via the ball on a hill analogy (LL2)
+- Pneumonia detection task
+  - Disclaimer that this course will not cover intepretation of chest X-rays
+- Data preprocessing
+  - Understand considerations that must be made when standardising image data for model input (image size, image dimensions, contrast, brightness) (LL2)
+  - Understand the importance of data augmentation when training (LL2)
+  - Be able to name common data augmentation techniques (shearing, rotation, stretching, elastic deformation in medical imaging datasets) (LL2)
+  - Understand how these concepts apply to other types of data (e.g. time-series data) (LL2)
+- Model architecture and training
+  - Understand why ML frameworks exist in the Python ecosystem (TensorFlow, PyTorch) and what they allow the user to do (LL2)
+  - Understand the inputs and outputs of a neural network (LL2)
+  - Understand the difference between a convolutional layer and dense layer at a broad level (LL2)
+  - Understand what an epoch of training is (LL2)
+  - Understand why data needs to be batched when training a network (LL3)
+  - Understand what a sigmoid layer is and why it is used for probabilistic outputs (LL2)
+- Appreciate that the task we are performing is fairly simple and that more complex techniques exist (LL2)
+- Be able to discuss the uses, advantages, and disadvantages of more modern approaches to machine learning (stable diffusion, large language models) (LL2) (LL4)
+
+TODO merge these into the above seminar content.
 By the end of the seminar, clinicians should:
 - *TODO Complete these aims*
 - Understand the aims of this module and what it will cover
@@ -193,41 +226,7 @@ By the end of the seminar, clinicians should:
   - How to deal with multicollinearity (LL2)
   - How to deal with missing data and sensitivity analysis (LL2)
 
-## Workshop
 
-By the end of the workshop, clinicians should be able to:
-
-*TODO This session should be based around fitting a basic model to basic tabular data - use linear regression and k-means*
-
-# Session 4 - AI for Medicine
-
-## Seminar
-
-By the end of the seminar, clinicians should:
-
-- Understand the aims of this first AI module and what it will cover
-- Be able to list clinical uses for ML (LL4)
-  - Understand what machine learning is at a broad level (LL2)
-- Understand what a loss function is (LL2)
-- Appreciate that there are a wide variety of optimisers and loss functions that can be used (LL2)
-- Understand the difference between supervised and unsupervised learning (LL2)
-- Gain an intuition for how training via backpropagation works via the ball on a hill analogy (LL2)
-- Pneumonia detection task
-  - Disclaimer that this course will not cover intepretation of chest X-rays
-- Data preprocessing
-  - Understand considerations that must be made when standardising image data for model input (image size, image dimensions, contrast, brightness) (LL2)
-  - Understand the importance of data augmentation when training (LL2)
-  - Be able to name common data augmentation techniques (shearing, rotation, stretching, elastic deformation in medical imaging datasets) (LL2)
-  - Understand how these concepts apply to other types of data (e.g. time-series data) (LL2)
-- Model architecture and training
-  - Understand why ML frameworks exist in the Python ecosystem (TensorFlow, PyTorch) and what they allow the user to do (LL2)
-  - Understand the inputs and outputs of a neural network (LL2)
-  - Understand the difference between a convolutional layer and dense layer at a broad level (LL2)
-  - Understand what an epoch of training is (LL2)
-  - Understand why data needs to be batched when training a network (LL3)
-  - Understand what a sigmoid layer is and why it is used for probabilistic outputs (LL2)
-- Appreciate that the task we are performing is fairly simple and that more complex techniques exist (LL2)
-- Be able to discuss the uses, advantages, and disadvantages of more modern approaches to machine learning (stable diffusion, large language models) (LL2) (LL4)
 
 *Maybe a radiologist/senior clinician could speak about the features that the bot may be dectecting in each scan?*
 
@@ -275,4 +274,8 @@ The model structure will be a convolutional neural network with single sigmoid o
 
 # Session 5 - Closing Session
 
-*TODO*
+## Seminar
+
+By the end of the seminar, clinicians should:
+- Understand the core learning outcomes from the course
+- TODO
