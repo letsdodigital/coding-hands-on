@@ -37,13 +37,69 @@ By the end of the seminar, clinicains should be able to:
   - Translate a basic knowledge of Python into workable clinical skill
   - Inspire the individual to seek further resources to learn more about the topic
   - Empower the learner to build complex applications
-- TODO
 - General coding information
   - Know the layout of documentation and how to use it (LL3)
   - Know what StackOverflow is and when to use it (LL3)
   - Understand what constitutes "machine readable" data and what considerations clinicians must make to maximise this (LL4)
 
-# Session 2 - Core Python For Images Introduction
+# Session 2 - Basics of Images
+
+* Seminar content will include:
+  
+* Workshop content will include:
+  * How to open and render **different types** of image data  
+  
+## Seminar
+
+By the end of the seminar, clinicians should:
+
+- Know general uses of image data in clinical settings
+- Digital image representation
+  - Understand what a pixel is, and the values it can take on (0.0-1.0, 0-255)
+  - Understand the difference between greyscale and colour images
+  - Understand how brightness maps on value
+  - Understand different ways to represent colours (RGB, HSV)
+  - Be able to read a hex colour code
+  - Understand what the dimensions of an image represent
+  - Understand what the difference between compressed and uncompressed images are
+  - Understand the difference between lossy and lossless compression
+  - Be able to list different image formats
+  - Understand how these concepts extend to 3D images (volumetric images)
+- Transforms
+  - Be able to state what a transform is
+- Convolution
+  - Understand why convolution has been chosen as the example transform for this course
+    - Use in ML, easy to visualise
+  - Understand what a convolution kernel is
+  - Understand what types of operation can be done with convolution (blurring, sharpening)
+- Basics of PIL
+  - Why PIL is valuable in the Python ecosystem
+  - The sorts of operations that PIL can do (LL1)
+
+## Workshop
+
+By the end of the workshop, clinicians should be able to:
+
+- Basics of PIL
+  - Open an image from disk with PIL
+  - Show an image with PIL
+  - Rotate an image with PIL
+  - Crop an image with PIL
+  - Convert to greyscale with PIL
+  - Understand the internal representation of images within PIL
+- Convolution
+  - Smooth an image with PIL
+  - Sharpen an image with PIL
+  - Combine all of these into a function which takes an argument to specify a type of operation to perform
+
+# Session 3 - Core Python For Images
+
+* Seminar content will include:
+  * How to use the basics of popular Python packages:
+    * NumPy (data processing)
+    * Pyplot (plotting graphs)
+* Workshop content will include:
+  * Basics of **relevant Python packages** for use later in the course
 
 ## Seminar
 
