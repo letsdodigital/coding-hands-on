@@ -43,11 +43,6 @@ By the end of the seminar, clinicains should be able to:
   - Understand what constitutes "machine readable" data and what considerations clinicians must make to maximise this (LL4)
 
 # Session 2 - Basics of Images
-
-* Seminar content will include:
-  
-* Workshop content will include:
-  * How to open and render **different types** of image data  
   
 ## Seminar
 
