@@ -26,6 +26,12 @@ def main():
 
     st.title("API call test")
 
+    # Remove this line
+    st.header("Update results")
+
+    # Remove this line
+    st.write(update_result)
+
     st.header("API test results - users")
 
     for user in users.data:

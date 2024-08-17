@@ -3,6 +3,9 @@ from st_supabase_connection import SupabaseConnection, execute_query
 
 """Exercise 2 - Application Process Interface (API) testing
 
+Run the app using the command:
+    $ streamlit run exercise_2.py
+
 OUTLINE: here we are going to get you to use an API. What is an API? Think of 
 this as a means for you to communicate with another computer program running on 
 your own computer or even elsewhere over the internet. 
@@ -30,6 +33,7 @@ def main():
     st.text("Hello World!")
 
     # Write the results of the above query to the browser using a for loop
+    # Hint: you want to loop through users.data
 
     return
 

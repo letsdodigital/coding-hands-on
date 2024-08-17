@@ -3,7 +3,7 @@ from st_supabase_connection import SupabaseConnection, execute_query
 
 """Exercise 1 - Hello World!
 Run the app using the command:
-    $ streamlit run lesson_2.py
+    $ streamlit run exercise_1.py
 
 OUTLINE: In this exercise, we are getting you to run a very basic web app
 that says "Hello World", one of the essential programs in anyone's coding

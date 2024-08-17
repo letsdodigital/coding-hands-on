@@ -6,7 +6,7 @@ from st_supabase_connection import SupabaseConnection, execute_query
 OUTLINE: So you have read some data from the database in the cloud, now it is
 time for you to write some data to the database.
 
-NOTES: Use the datetime library to add a date and time string to your data if you
+Optional: Use the datetime library to add a date and time string to your data if you
 like.
 
 See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
@@ -23,9 +23,14 @@ def main():
     # and any value you like. If you add the time including seconds you
     # can see updated values better later in these exercises.
 
-    # Update the database with the data in the "test_data" dictionary
+    # Update the database with the data in the "test_data" dictionary. Store the
+    # the result in a variable called "update_result".
 
     st.title("API call test")
+
+    # Create a header named "Update results"
+
+    # Write to the browser the results of "update_result".
 
     st.header("API test results - users")
 
