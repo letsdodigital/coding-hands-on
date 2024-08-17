@@ -20,11 +20,11 @@ get stuck.
 
 # Create a function called `on_change_hospital_number`, which takes no arguments
 # and writes to the browser the value of the field created later in this
-# exercise below with the key `hospital_number_input`. Hint, you need to
-# use `st.session_state`.
+# exercise below with the key `hospital_number_input`.
+# Hint, you need to use `st.session_state`.
 
 # Create a function called `on_change_intervention`, which takes no arguments
-# and writes to the browser the value of field created later in this exercise
+# and writes to the browser the value of the field created later in this exercise
 # below with the key `intervention_input`.
 
 
@@ -65,7 +65,7 @@ def main():
     # Pass a reference to the on_change function by using `lambda:`.
 
     # create a form from here up until "END OF FORM" using
-    # `st.form("consent_form"):`
+    # `with st.form("consent_form"):`
     st.header("Patient details")
     st.text_input("Hospital number")
     st.text_input("First name")

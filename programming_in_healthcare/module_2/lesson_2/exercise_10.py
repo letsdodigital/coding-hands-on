@@ -80,7 +80,7 @@ def main():
         # We have added the `field` dictionary with keys here for you.
         fields["hospital_number"] = st.text_input(
             "Hospital number",
-            st.session_state.hospital_number_state,
+            st.session_state.hospital_number_input,
             disabled=True,
         )
         fields["first_name"] = st.text_input("First name")

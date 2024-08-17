@@ -36,15 +36,15 @@ def main():
 
     # Create a header named "Patient details"
 
-    # Create a text field with a name of "Hospital number"
+    # Create a text_input field with a label of "Hospital number"
 
-    # Create a text field with a name of "First name"
+    # Create a text_input field with a label of "First name"
 
-    # Create a text field with a name of "Last name"
+    # Create a text_input field with a label of "Last name"
 
-    # Create a DATE field with a name of "Date of birth"
+    # Create a date_input field with a label of "Date of birth"
 
-    # Create a text field with a name of "Email"
+    # Create a text_input field with a label of "Email"
 
     st.header("API test results - users")
 

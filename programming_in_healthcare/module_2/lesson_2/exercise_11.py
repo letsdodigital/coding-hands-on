@@ -3,8 +3,8 @@ from st_supabase_connection import SupabaseConnection, execute_query
 
 """Exercise 11 - It is a question of state
 
-NOTES: So now you are going to add a lot of code to manage state. Start at the
-line START HERE. After that, go back to the beginning and carry out the rest of
+NOTES: So now you are going to add code to manage state. Start at the line 
+START HERE. After that, go back to the beginning and carry out the rest of 
 the tasks required.
 
 See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
@@ -18,8 +18,9 @@ def initialise():
 
     # Now you need to initialise all of your state keys, checking if they have
     # been initialised already. We have done the first one for you.
-    if "intervention_state" not in st.session_state:
-        st.session_state.intervention_state = initialise_state
+    if "hospital_number_state" not in st.session_state:
+        st.session_state.hospital_number_state = initialise_state
+
     return
 
 
@@ -88,7 +89,7 @@ def main():
         # START HERE
         # To each input field (EXCEPT the "Signed off by" field) add the second
         # argument, which is `value`, as a session state variable. This should
-        # match the key in the field dictionary, but with a suffix of "_state".
+        # match the key in the `fields` dictionary, but with a suffix of "_state".
         # Please also disable the field. We have already done all of the changes
         # for the first field "hospital_number" below. Complete for the rest.
 
@@ -130,7 +131,7 @@ def main():
 
 
 if __name__ == "__main__":
-    # Add a call to the `initialise` function
+    initialise()
     main()
 
 # Did this work? if so, move on to the next exercise. If not, ask a tutor for

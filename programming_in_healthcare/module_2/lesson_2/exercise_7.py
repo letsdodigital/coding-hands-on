@@ -17,7 +17,7 @@ def main():
 
     users = execute_query(conn.table("users").select("*"), ttl="10m")
 
-    # Perform a query to get all records from the "patients" table
+    # Perform a query to get all records from the "patient_demographics" table
 
     # Perform a query to get all records from the "consent_types" table
 

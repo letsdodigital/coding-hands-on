@@ -18,7 +18,7 @@ def main():
 
     test_data = {"test_data": "Some test data"}
 
-    result = execute_query(
+    update_result = execute_query(
         conn.table("test_upload").insert([test_data], count="None")
     )
 
@@ -40,6 +40,8 @@ def main():
     # Write to browser the last record in "test_data" data you received
 
     # Create a button to refresh the screen
+    # Hint a basic button can be used here. Just pressing the button without any
+    # extra logic will refresh the screen.
 
     return
 

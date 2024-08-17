@@ -33,8 +33,7 @@ def main():
 
     # STOP1 deleting up to here
 
-    # Change the title to "My Digital Consent Form"
-    st.title("API call test")
+    st.title("My Digital Consent Form")
 
     st.header("Patient details")
     hospital_number = st.text_input("Hospital number")
@@ -45,17 +44,17 @@ def main():
 
     # Create a header named "Intervention"
 
-    # Add a selectbox with the name "Intervention", a few intervention names in a list
+    # Add a selectbox with the label "Intervention", a few intervention names in a list
 
-    # Create a text field with a name of "Full description"
+    # Create a text field with a label of "Full description"
 
-    # Create a text field with a name of "Intended benefits"
+    # Create a text field with a label of "Intended benefits"
 
-    # Create a text field with a name of "Potential risks"
+    # Create a text field with a label of "Potential risks"
 
     # Create a header named "Signature"
 
-    # Add a selectbox with the name "Signed off by" and a few human names in a list
+    # Add a selectbox with the label "Signed off by" and a few human names in a list
 
     # Remove the below code up to "STOP2"
     st.header("API test results - users")
