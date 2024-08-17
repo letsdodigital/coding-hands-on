@@ -28,14 +28,14 @@ def main():
 
     st.title("API call test")
 
-    # Create a header named "Update results"
-
-    # Write to the browser the results of "update_result".
-
     st.header("API test results - users")
 
     for user in users.data:
         st.write(user)
+
+    # Create a header named "Update result"
+
+    # Write to the browser the results of "update_result".
 
     return
 

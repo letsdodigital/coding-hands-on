@@ -26,20 +26,14 @@ def main():
 
     st.title("API call test")
 
-    # Remove this line
-    st.header("Update results")
-
-    # Remove this line
-    st.write(update_result)
-
     st.header("API test results - users")
 
     for user in users.data:
         st.write(user)
 
-    # Make a header named "Update return"
+    st.header("Update result")
 
-    # Write to browser the results of the database update
+    st.write(update_result)
 
     # Make a header named "Last record of test_data"
 
