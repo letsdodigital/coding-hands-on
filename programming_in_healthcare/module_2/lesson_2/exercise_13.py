@@ -40,16 +40,9 @@ def initialise():
     if "potential_risks_state" not in st.session_state:
         st.session_state.potential_risks_state = initialise_state
 
-    """conn = st.connection("supabase", type=SupabaseConnection)
-    consent_types = execute_query(
-        conn.table("consent_types").select("*"), ttl="10m"
-    )"""
-
     return
 
 
-# We have added the two arguments `patients` and `hospital_numbers` to the
-# below function.
 def on_change_hospital_number(patients, hospital_numbers):
     if "hospital_number_input" not in st.session_state:
         return
@@ -60,6 +53,8 @@ def on_change_hospital_number(patients, hospital_numbers):
         # Delete this line of code
         st.write("Valid hospital number")
 
+        # You are now going to create code that fills in the patient demographic
+        # fields.
         # 1. Use a `for` loop to loop through `patients.data` and have a loop
         # variable of `patient`.
         # 2. Within this loop, check if the key "hospital_number" of the
@@ -71,9 +66,9 @@ def on_change_hospital_number(patients, hospital_numbers):
         # "id", "hospital_number", "first_name", "last_name", "date_of_birth",
         # "email".
 
-        # st.session_state.patient_id = patient["id"]
-        # st.session_state.hospital_number_state = hospital_number_input
-        # st.session_state.first_name_state = patient["first_name"]
+        #       st.session_state.patient_id = patient["id"]
+        #       st.session_state.hospital_number_state = hospital_number_input
+        #       st.session_state.first_name_state = patient["first_name"]
 
         # Add a break here.
 
@@ -89,7 +84,6 @@ def on_change_hospital_number(patients, hospital_numbers):
     return
 
 
-# We have added the argument `consent_types` to the below function.
 def on_change_intervention(consent_types):
 
     if "intervention_input" not in st.session_state:
@@ -100,7 +94,9 @@ def on_change_intervention(consent_types):
             # Delete this line of code.
             st.write("An intervention was selected")
 
-            # You are going to use similar code to the previous function.
+            # You are going to use similar code to the previous function. You are
+            # going to set the session states for the intervention fields which
+            # then will be used to automatically fill in the intervention fields.
             # Update the session states for the intervention to values from the
             # database. We have done the first 3 for you. You need to do the
             # other 2. Uncomment to use this code.
@@ -252,14 +248,23 @@ def main():
 
             # 4. Now update the "submitted_consents" table with the values of
             # the `consent_final_data` dictionary. Store the return value to a
-            # variable called `result`.
+            # variable called `consent_result`.
 
-            # 5. Clear all of the values in the session state
-            # HINT: use a `for loop` and `del`.
+            # 5. Write to the browser the value of the `consent_result`.
 
-            # 6. Update the session state submitted_consent_id with the first element of the result variable (eg element 0) and the key "id".
+            # 6. If the above output to the browser looks good, delete the
+            # write to browser line.
 
-            # 7. Switch to the page `final_consent_form`.
+            # 7. Clear all of the values in the session state
+            # HINT: use a `for loop` and `del`. You will need to get each key
+            # using `st.session_state.keys()` and also use the list() function
+            # to convert the keys to a list.
+
+            # 8. Update the session state submitted_consent_id with the first
+            # element of the `consent_update_result` variable (eg element 0)
+            # and the key "id".
+
+            # 9. Switch to the page `final_consent_form`.
 
     return
 

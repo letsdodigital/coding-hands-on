@@ -16,8 +16,9 @@ def initialise():
     # We added this line for you
     initialise_state = "test_data"
 
-    # Now you need to initialise all of your state keys, checking if they have
-    # been initialised already. We have done the first one for you.
+    # Now you need to initialise all of your state keys you have created below,
+    # checking if they have been initialised already. We have done the first one
+    # for you.
     if "hospital_number_state" not in st.session_state:
         st.session_state.hospital_number_state = initialise_state
 

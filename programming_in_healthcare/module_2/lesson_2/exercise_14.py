@@ -9,7 +9,8 @@ to create a web app. You have also learnt how to use the Streamlit session state
 to store data between pages. You have also learnt how to use the Streamlit form 
 to create a form that can be submitted to the database.
 
-We have added some docstrings to the functions in this exercise.
+Please review a final version of the digital consent form. We have added some 
+docstrings to the functions.
 """
 
 
@@ -253,7 +254,7 @@ def main():
                 "user_id": user_id_get(users, fields["signed_by"]),
             }
 
-            result = (
+            consent_update_result = (
                 conn.table("submitted_consents")
                 .insert([consent_final_data], count="None")
                 .execute()
@@ -261,7 +262,10 @@ def main():
 
             for key in list(st.session_state.keys()):
                 del st.session_state[key]
-            st.session_state.submitted_consent_id = result.data[0]["id"]
+
+            st.session_state.submitted_consent_id = consent_update_result.data[
+                0
+            ]["id"]
 
             st.switch_page("pages/final_consent_form.py")
     return

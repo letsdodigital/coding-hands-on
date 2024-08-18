@@ -5,7 +5,7 @@ from st_supabase_connection import SupabaseConnection, execute_query
 
 OUTLINE: We are now going to get you to bulk out the functions you have already
 written and then write a new one. We are also going to get you to check that 
-all fo the fields within the form (there will be a black thin border around 
+all of the fields within the form (there will be a black thin border around 
 these fields) are all filled with data.
 
 See https://letsdodigital.org/learn/learn-python/module-2/ to help you if you
@@ -49,6 +49,7 @@ def initialise():
     return
 
 
+# Add arguments `patients` and `hospital_numbers`.
 def on_change_hospital_number():
     # We have added these next two lines of code for you.
     if "hospital_number_input" not in st.session_state:
@@ -67,7 +68,7 @@ def on_change_hospital_number():
     # the browser "Valid hospital number" if the hospital number is valid.
 
     # Use `elif` to check if `hospital_number_input` is an empty string (eg
-    # ""). Write to the browser "empty hospital number field" if this is true.
+    # ""). Write to the browser "Empty hospital number field" if this is true.
 
     # Use an "else" statement that writes to the browser an error message
     # (using `st.error`) that the hospital number is not valid.
@@ -75,6 +76,7 @@ def on_change_hospital_number():
     return
 
 
+# Add argument `consent_types`.
 def on_change_intervention():
     # We have added these next two lines of code for you.
     if "intervention_input" not in st.session_state:
@@ -100,6 +102,8 @@ def on_change_intervention():
     return
 
 
+# You now need to now create a function to return the user ID based on the user
+# name.
 # 1. Create another function called `user_id_get`. Now this function takes two
 # arguments, the first `users` and the second `user_name`.
 # 2. This function should loop over `users.data` with the loop variable being
@@ -108,11 +112,11 @@ def on_change_intervention():
 # equal to `user_name`.
 # 4. If this last statement is true, return `user["id"]`.
 # 5. The last line of code for the function, outside of the for loop needs to
-# return 0.
+# return 0. This is in case the user name is not found in the database.
 
 
 def main():
-    # We added this placeholder to display errors messages that we have
+    # We added this placeholder to display errors messages that we can
     # raise later.
     error_placeholder = st.empty()
 
@@ -151,6 +155,8 @@ def main():
     st.text_input(
         'Hospital number (eg "HN001")',
         key="hospital_number_input",
+        # Add arguments `patients` and `hospital_numbers` to
+        # `on_change_hospital_number`
         on_change=lambda: on_change_hospital_number(),
     )
 
@@ -158,6 +164,7 @@ def main():
         "Select Intervention Type",
         intervention_types,
         key="intervention_input",
+        # Add argument `consent_types` to `on_change_intervention`
         on_change=lambda: on_change_intervention(),
     )
 
