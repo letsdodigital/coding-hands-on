@@ -16,7 +16,7 @@ The seminars will consist mainly of LL2 and LL4 information, whereas workshops w
     -   Module 1 - Introduction (no workshop)
     -   Module 2 - Core Python for Image Processing
         -   This can be stretched over multiple weeks depending on the skills and level of the people on the course
-    -   Module 3 - DICOM
+    -   Module 3 - Python and DICOM
         -   This will include the coding skills needed to open and use DICOM files
         -   The workshop will include a mixture of work to do outside a session and tasks to do within a session with a tutor.
     -   Module 5 - AI for Medicine 
@@ -109,7 +109,11 @@ By the end of the workshop, clinicians should be able to:
     -   Sharpen an image with PIL and a custom convolution kernel (LL1)
     -   Combine all of these into a function which takes an argument to specify a type of operation to perform (LL1)
 
-# Session 2 - DICOM and Python
+# Module 3 - Python and DICOM
+
+The aim of this module is to give clinicians an introduction into the DICOM file format, what type of data is represented in this file format, and how to extract basic 2D and 3D image data from these files. 
+
+***N.B.** The interpretation of images in any form will not be covered in this unit.*
 
 ## Seminar
 
@@ -133,7 +137,7 @@ By the end of the seminar, clinicians should:
     -   Understand why Pydicom is a useful tool for clinicians (LL4)
 -   Understand what considerations are needed when coding in Python to convert images, with interactive questions (array shapes) (LL3)
 -   Understand the difference between volumetric 3D images and 3D meshes and what is needed to convert between them (segmentation)
--   Understand the basics of image segmentation (LL2)
+-   Understand the basics of image segmentation in 2D and 3D (LL2)
 -   Understand where volumetric imaging is used and where mesh reconstructions are used in clinical medicine (LL4)
 
 ## Workshop
@@ -153,30 +157,53 @@ By the end of the workshop, clinicians should be:
     -   Preprocess the image for display in Python (LL1)
     -   Plot image data from a DICOM file in Python (LL1)
 
-We need a candidate DICOM study/studies for this portion of the course. Options include: - [Patient Contributed Image Repository](https://www.pcir.org/) - This is where Pydicom gets it's official example studies. - Pydicom's official test files
+We need a candidate DICOM study/studies for this portion of the course. Options include: 
+- [Patient Contributed Image Repository](https://www.pcir.org/) - This is where Pydicom gets it's official example studies. 
+- Pydicom's official test files
 
-We need the following studies: - 2D basic scan (e.g. CXR) - 2D scan with colourmap data (e.g. Doppler Ultrasound) - 3D volumetric scan (e.g. CT head)
+We need the following studies: 
+- 2D basic scan (e.g. CXR) 
+- 3D volumetric scan (e.g. CT head)
+
+*We could also add an extra section to the end to work with colourmaps. This would need imaging with colour data - e.g. ultrasound with flow data.*
 
 # Session 4 - AI for Medicine
 
-## Seminar
+## Seminar 1 
 
-By the end of the seminar, clinicians should:
+By the end of the first seminar, clinicians should:
 
 -   Understand the aims of this first AI module and what it will cover
+-   Understand what machine learning is at a broad level (LL2)
 -   Be able to list clinical uses for ML (LL4)
-    -   Understand what machine learning is at a broad level (LL2)
--   Understand what a loss function is (LL2)
--   Appreciate that there are a wide variety of optimisers and loss functions that can be used (LL2)
--   Understand the difference between supervised and unsupervised learning (LL2)
--   Gain an intuition for how training via backpropagation works via the ball on a hill analogy (LL2)
--   Pneumonia detection task
+-   Be able to describe the high-level steps needed to train a statistical model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model) (LL2) 
+-   Datasets
+    -   Understanding the importance of splitting the data into training, testing, and validation datasets (LL2)
+    -   Understand dataset bias and clincial factors that can confound a dataset (LL4)
+    -   Use examples to demonstrate clinical bias *TODO find appropriate examples* (LL4) 
+-   Be able to relate the aims of the example task (Pneumonia detection task) (LL4)
     -   Disclaimer that this course will not cover intepretation of chest X-rays
 -   Data preprocessing
     -   Understand considerations that must be made when standardising image data for model input (image size, image dimensions, contrast, brightness) (LL2)
     -   Understand the importance of data augmentation when training (LL2)
     -   Be able to name common data augmentation techniques (shearing, rotation, stretching, elastic deformation in medical imaging datasets) (LL2)
     -   Understand how these concepts apply to other types of data (e.g. time-series data) (LL2)
+-   Classifier evaluation
+    -   Evaulating models 
+    -   Describe methods for evaulating regression models (LL2) 
+    -   Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2) 
+    -   Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2) 
+    -   Be able to give a broad overview of the common metrics that are used with other types of model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2)    
+
+## Seminar 2
+
+By the end of the seminar, clinicians should: 
+
+-   Understand the difference between supervised and unsupervised learning (LL2)
+-   Understand what a loss function is (LL2)
+    -   Appreciate that there are a wide variety of optimisers and loss functions that can be used (LL2)
+-   Gain an intuition for how training via backpropagation works via the ball on a hill analogy (LL2)
+- Gain an intuitive understanding of overfitting vs overfitting using a linear model as an example (LL2) 
 -   Model architecture and training
     -   Understand why ML frameworks exist in the Python ecosystem (TensorFlow, PyTorch) and what they allow the user to do (LL2)
     -   Understand the inputs and outputs of a neural network (LL2)
@@ -184,10 +211,16 @@ By the end of the seminar, clinicians should:
     -   Understand what an epoch of training is (LL2)
     -   Understand why data needs to be batched when training a network (LL3)
     -   Understand what a sigmoid layer is and why it is used for probabilistic outputs (LL2)
+-   Hyperparameters 
+    -   Understand what a hyperparameter is (LL2) 
+    -   How a hyper-parameter effects model output (LL2) 
+    -   Understand that hyperparameters can be tuned (LL2) 
+- Common pitfalls 
+    -   How to deal with overfitting. (LL2) 
+    -   How to deal with multicollinearity (LL2) 
+    -   How to deal with missing data and sensitivity analysis (LL2)
 -   Appreciate that the task we are performing is fairly simple and that more complex techniques exist (LL2)
 -   Be able to discuss the uses, advantages, and disadvantages of more modern approaches to machine learning (stable diffusion, large language models) (LL2) (LL4)
-
-TODO merge these into the above seminar content. By the end of the seminar, clinicians should: - *TODO Complete these aims* - Understand the aims of this module and what it will cover - Types of statistical model - Understand what a statistical model is at a broad level (LL2) - Parametric models - Linear / logistic regression as a parametric model example (LL2) - Nonparametric models - k-nearest neighbour model as a flexible non-parametric model (LL2) - Be able to describe the high-level steps needed to train a statistical model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model) (LL2) - Understanding the importance of splitting the data into training, testing, and validation datasets (LL2) - Assumptions of models - Understand dataset bias and clincial factors that can confound a dataset (LL4) - Use examples to demonstrate clinical bias *TODO find appropriate examples* (LL4) - Bias-variance trade off and overfitting - Gain an intuitive understanding of overfitting vs overfitting using a linear model as an example (LL2) - Hyperparameters - Understand what a hyperparameter is (LL2) - How a hyper-parameter effects model output (LL2) - Understand that hyperparameters can be tuned (LL2) - Evaulating models - Describe methods for evaulating regression models (LL2) - Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2) - Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2) *TODO Maybe move this to module 5?* - Be able to give a broad overview of the common metrics that are used with other types of model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2) - Common pitfalls - How to deal with overfitting. (LL2) - How to deal with multicollinearity (LL2) - How to deal with missing data and sensitivity analysis (LL2)
 
 *Maybe a radiologist/senior clinician could speak about the features that the bot may be dectecting in each scan?*
 
@@ -212,6 +245,12 @@ By the end of the workshop, clinicians should be able to:
     -   Pack greyscale images into a 3 dimensional array for training and testing (LL1)
     -   Understand why using Python generators is important for loading data (LL3)
     -   Construct a generator using the `yield` command (LL1)
+-   Binary classifier model evaulation
+    -   Evaluate the performance of a simulated diagnostic classifier using familiar statistics from evidence-based medicine training (LL1)
+    -   Calculate and understand precision, recall, and F1 scores (LL1) (LL2)
+
+**Break between seminars.**
+
 -   Model architecture
     -   Understand the difference between `Sequential` models and other models in Keras (LL2)
     -   Understand how to construct a basic convolutional neural network using Keras/TensorFlow (LL1)
@@ -221,16 +260,15 @@ By the end of the workshop, clinicians should be able to:
 -   Model saving
     -   Structure machine learning projects to to allow for reuse of model weights (LL3)
     -   Save files from Google Colab for reuse later (LL1)
+    -   Open a machine learning model from file (LL1)
 -   Model tuning
     -   Appropriately tune hyperparameters and model architecture to improve model performance and size (LL1)
     -   *Note: This should be done in conjunction with the model evaulation step below.*
--   Open a machine learning model from file (LL1)
 -   Binary classifier model evaulation
     -   Evaulate a model using testing data (LL1)
     -   Calculate and understand precision, recall, and F1 scores (LL1)
     -   Use pyplot and scipy to plot a formal ROC curve for a binary classifier (LL1)
     -   Calculate the AUC value for this curve (LL1)
--   Understand the importance of splitting data into training, validation, and testing datasets (LL2)
 
 The model structure will be a convolutional neural network with single sigmoid output node denoting probability of pneumonia in the scan.
 
@@ -238,4 +276,7 @@ The model structure will be a convolutional neural network with single sigmoid o
 
 ## Seminar
 
-By the end of the seminar, clinicians should: - Understand the core learning outcomes from the course - TODO
+By the end of the seminar, clinicians should: 
+- Understand the core learning outcomes from the course 
+- Understand how to grow their skills further by using other available resources (LL4)
+- Give feedback for further improvements to the course (LL4)
