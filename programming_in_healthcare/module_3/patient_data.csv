@@ -1,0 +1,6 @@
+Patient_ID,Name,Age,Gender,Diagnosis,Blood Pressure,Cholesterol,Glucose Level,Outcome
+1,Alice,45,Female,Hypertension,140/90,200,90,Recovered
+2,Bob,55,Male,Diabetes,130/85,180,150,Unstable
+3,Charlie,65,Male,Hypertension,150/95,220,100,Stable
+4,David,70,Male,Heart Disease,160/100,240,110,Recovered
+5,Eva,50,Female,Hypertension,135/88,210,95,Unstable
