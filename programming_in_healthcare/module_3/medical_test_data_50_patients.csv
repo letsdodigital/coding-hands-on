@@ -1,0 +1,51 @@
+Patient_ID,Name,Age,Diagnosis,Medications,Visit_Date,Doctor,Hemoglobin_Level,Blood_Pressure_Systolic,Blood_Pressure_Diastolic
+101,Mike Russell,75,Thyroid Disorder,Albuterol,2024-09-01,Dr. Green,15.7,171,88
+102,Carl Jenkins,26,Tuberculosis,Lisinopril,2024-09-03,Dr. Grey,13.4,155,108
+103,Olivia Kelly,43,Liver Disease,Aspirin,2024-09-05,Dr. Green,15.1,143,105
+104,Quentin Watson,70,Fractures,Warfarin,2024-09-07,Dr. Miller,15.1,124,112
+105,Henry Black,19,Osteoporosis,Simvastatin,2024-09-09,Dr. Miller,14.5,169,90
+106,Ursula Adams,37,Obesity,Amlodipine,2024-09-11,Dr. Grey,11.6,150,94
+107,Mike Russell,45,Chronic Pain,Prednisone,2024-09-13,Dr. Grey,16.4,130,119
+108,Samuel Hall,64,Tuberculosis,Simvastatin,2024-09-15,Dr. Brown,13.1,122,92
+109,Wendy Perry,77,Obesity,Hydrochlorothiazide,2024-09-17,Dr. Grey,12.2,157,111
+110,Karen Wright,24,Hypertension,Metoprolol,2024-09-19,Dr. Lee,11.3,122,80
+111,Karen Wright,61,Osteoporosis,Amlodipine,2024-09-21,Dr. Green,14.8,103,91
+112,Xavier Long,78,COPD,Amlodipine,2024-09-23,Dr. White,15.4,110,82
+113,Julia Shaw,25,Chronic Pain,Warfarin,2024-09-25,Dr. Black,11.1,137,92
+114,Nina Stone,64,Fractures,Warfarin,2024-09-27,Dr. Grey,14.3,109,62
+115,Xavier Long,52,Hypertension,Furosemide,2024-09-29,Dr. Davis,12.5,97,77
+116,Charlie Lee,31,Anxiety,Insulin,2024-10-01,Dr. Miller,15.2,96,84
+117,Victor Carter,34,Arthritis,Albuterol,2024-10-03,Dr. Lee,12.1,156,101
+118,Bob Johnson,53,Fractures,Amlodipine,2024-10-05,Dr. Black,15.5,106,90
+119,Xavier Long,67,Depression,Simvastatin,2024-10-07,Dr. White,13.5,122,113
+120,Ruth Barnes,57,Hepatitis,Lisinopril,2024-10-09,Dr. Black,17.1,137,117
+121,Diana Price,21,Stroke,Amoxicillin,2024-10-11,Dr. Grey,11.9,165,62
+122,Laura Ellis,19,Arthritis,Insulin,2024-10-13,Dr. Brown,13.2,148,99
+123,Bob Johnson,79,Asthma,Amoxicillin,2024-10-15,Dr. Miller,11.7,175,105
+124,Ursula Adams,23,Asthma,Prednisone,2024-10-17,Dr. Miller,17.0,111,83
+125,George Stevens,71,Hypertension,Aspirin,2024-10-19,Dr. Brown,16.7,119,109
+126,Liam Turner,59,Heart Disease,Simvastatin,2024-10-21,Dr. Green,12.7,127,91
+127,Victor Carter,21,Back Pain,Simvastatin,2024-10-23,Dr. Smith,15.3,140,106
+128,Ruth Barnes,71,COPD,Insulin,2024-10-25,Dr. Lee,16.3,143,81
+129,Yvonne Morris,46,Chronic Pain,Amlodipine,2024-10-27,Dr. Miller,14.6,97,82
+130,William Davis,35,COPD,Hydrochlorothiazide,2024-10-29,Dr. Davis,14.4,116,61
+131,Adam Campbell,43,Chronic Pain,Insulin,2024-10-31,Dr. Miller,12.6,116,86
+132,Paula Murray,61,Arthritis,Amoxicillin,2024-11-02,Dr. Black,11.6,110,101
+133,Bella Grant,51,Anxiety,Insulin,2024-11-04,Dr. Miller,16.8,119,61
+134,Peter Young,27,Diabetes,Simvastatin,2024-11-06,Dr. Miller,16.9,117,85
+135,Olivia Kelly,79,Hypertension,Hydrochlorothiazide,2024-11-08,Dr. Smith,15.1,153,76
+136,Umar Lee,53,Cancer,Albuterol,2024-11-10,Dr. Smith,13.2,158,99
+137,Zara Moore,31,Gallstones,Ibuprofen,2024-11-12,Dr. White,13.3,150,92
+138,Ruth Barnes,48,Gallstones,Furosemide,2024-11-14,Dr. Green,15.7,137,68
+139,Charlie Lee,65,Fractures,Metformin,2024-11-16,Dr. Davis,16.8,108,102
+140,Kyle Harper,32,Heart Disease,Warfarin,2024-11-18,Dr. Miller,16.8,93,113
+141,Zara Moore,25,Asthma,Insulin,2024-11-20,Dr. Miller,16.1,124,107
+142,Grace White,31,Anxiety,Prednisone,2024-11-22,Dr. Lee,15.2,153,98
+143,Ursula Adams,40,Arthritis,Metoprolol,2024-11-24,Dr. Smith,11.5,138,88
+144,Isabel Moore,77,Kidney Failure,Aspirin,2024-11-26,Dr. Davis,12.1,106,101
+145,Mike Russell,74,Asthma,Ibuprofen,2024-11-28,Dr. White,16.8,133,114
+146,Rita Wood,79,Hypertension,Furosemide,2024-11-30,Dr. Green,14.9,119,85
+147,David Brown,57,Asthma,Furosemide,2024-12-02,Dr. Brown,11.1,135,94
+148,Yvonne Morris,38,Heart Disease,Furosemide,2024-12-04,Dr. Green,11.7,95,109
+149,Nathan Hughes,33,Tuberculosis,Furosemide,2024-12-06,Dr. Black,15.3,126,84
+150,Yasmin Scott,62,Sleep Apnea,Amoxicillin,2024-12-08,Dr. Miller,11.0,113,83
