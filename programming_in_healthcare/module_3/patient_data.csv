@@ -4,3 +4,4 @@ Patient_ID,Name,Age,Gender,Diagnosis,Blood Pressure,Cholesterol,Glucose Level,Ou
 3,Charlie,65,Male,Hypertension,150/95,220,100,Stable
 4,David,70,Male,Heart Disease,160/100,240,110,Recovered
 5,Eva,50,Female,Hypertension,135/88,210,95,Unstable
+5,John,55,Male,Hypertension,137/98,200,98,Unstable
