@@ -2,42 +2,49 @@
 
 This document details the high level learning outcomes for each seminar and workshop in the course.
 
-The following learning levels (LLs) should be able to be mapped to the learning points. 
-1. **Level 1 - Basic Practical Skills (coding skills)** \* E.g. How to reshape a numpy array from `(3, 3, 3)` into `(9, 3)`. 
-2. **Level 2 - Theory (modelling skills)** \* E.g. How k-means splits data up into clusters 
-3. **Level 3 - Project Planning and Management** \* E.g. How to write a class for plotting similar plots when opening a DICOM file. 
-4. **Level 4 - Clinical Translation** \* E.g. What format data needs to be collected in to train a clinical outcome predictor from chest x-ray data.
+The following learning levels (LLs) should be able to be mapped to the learning points.
+
+1\. **Level 1 - Basic Practical Skills (coding skills)** \* E.g. How to reshape a NumPy array from `(3, 3, 3)` into `(9, 3)`.
+
+2\. **Level 2 - Theory (modeling skills)** \* E.g. How k-means splits data up into clusters
+
+3\. **Level 3 - Project Planning and Management** \* E.g. How to write a class for plotting similar plots when opening a DICOM file.
+
+4\. **Level 4 - Clinical Translation** \* E.g. What format data needs to be collected in to train a clinical outcome predictor from chest x-ray data.
 
 The seminars will consist mainly of LL2 and LL4 information, whereas workshops will consist of LL1 and LL3 information. The workshops at the start of the course should feature extension tasks which are more complex for people to work through in the workshops if they finish the content before the workshop happens.
 
 # Overall Structure
 
 -   The course will be split into the following modules:
+    -   Module 0 - Overview (no workshop)
     -   Module 1 - Introduction (no workshop)
     -   Module 2 - Core Python for Image Processing
         -   This can be stretched over multiple weeks depending on the skills and level of the people on the course
     -   Module 3 - Python and DICOM
         -   This will include the coding skills needed to open and use DICOM files
         -   The workshop will include a mixture of work to do outside a session and tasks to do within a session with a tutor.
-    -   Module 5 - AI for Medicine 
+    -   Module 4 - AI for Medicine
         -   This will be a set of two or more seminars with a long workbook that will be worked through over multiple weeks
         -   The work in the workbook will be mostly independent.
-    -   Module 6 - Closing (no workshop)
+    -   Module 5 - Closing (no workshop)
 
 # Module 1 - Course Introduction
 
 ## Seminar
 
-By the end of the seminar, clinicians should be able to: 
-- Know the overall aims and philosophy of the course 
-- Aims of the DAIM courses 
-    - Translate a basic knowledge of Python into workable clinical skill 
-    - Inspire the individual to seek further resources to learn more about the topic 
-    - Empower the learner to build complex applications 
-- General coding information 
-    - Know the layout of documentation and how to use it (LL3) 
-    - Know what StackOverflow is and when to use it (LL3) 
-    - Understand what constitutes "machine readable" data and what considerations clinicians must make to maximise this (LL4)
+By the end of the seminar, clinicians should be able to:
+
+-   Know the overall aims and philosophy of the course
+-   Aims of the DAIM courses
+    -   Translate a basic knowledge of Python into workable clinical skill
+    -   Inspire the individual to seek further resources to learn more about the topic
+    -   Empower the learner to build complex applications
+-   General coding information
+    -   Know the layout of a Jupyter Notebook and how to use it (LL1)
+    -   Know the layout of documentation and how to use it (LL3)
+    -   Know what StackOverflow is and when to use it (LL3)
+    -   Understand what constitutes "machine readable" data and what considerations clinicians must make to maximise this (LL4)
 
 # Module 2 - Core Python for Image Processing
 
@@ -50,15 +57,15 @@ By the end of the seminar, clinicians should:
     -   Understand what a pixel is, and the values it can take on (0.0-1.0, 0-255) (LL2)
     -   Understand the difference between greyscale and colour images (LL2)
     -   Understand how brightness maps on value (LL2)
+    -   
+    -   
     -   Understand different ways to represent colours (RGB, HSV) (LL2)
     -   Be able to read a hex colour code (LL2)
     -   Understand what the dimensions of an image represent (LL2)
-    -   Understand what the difference between compressed and uncompressed images are (LL2) 
+    -   Understand what the difference between compressed and uncompressed images are (LL2)
     -   Understand the difference between lossy and lossless compression (LL2)
     -   Be able to list different image formats (LL2)
     -   Understand how these concepts extend to 3D images (volumetric images) (LL2)
--   Transforms
-    -   Be able to state what a transform is (LL2)
 -   Convolution
     -   Understand why convolution has been chosen as the example transform for this course (LL2)
         -   Use in ML, easy to visualise
@@ -70,7 +77,6 @@ By the end of the seminar, clinicians should:
 -   Basics of PIL (LL1)
     -   Why PIL is valuable in the Python ecosystem (LL3)
     -   The sorts of operations that PIL can do (LL1)
-
 -   Basics of NumPy (LL1)
     -   Know why NumPy exists within the Python ecosystem (speed of array operations, ease of working with multidimensional data) (LL2)
     -   Understand the concept of multidimensional arrays and the 'shape' of an array (LL2)
@@ -111,7 +117,7 @@ By the end of the workshop, clinicians should be able to:
 
 # Module 3 - Python and DICOM
 
-The aim of this module is to give clinicians an introduction into the DICOM file format, what type of data is represented in this file format, and how to extract basic 2D and 3D image data from these files. 
+The aim of this module is to give clinicians an introduction into the DICOM file format, what type of data is represented in this file format, and how to extract basic 2D and 3D image data from these files.
 
 ***N.B.** The interpretation of images in any form will not be covered in this unit.*
 
@@ -157,30 +163,26 @@ By the end of the workshop, clinicians should be:
     -   Preprocess the image for display in Python (LL1)
     -   Plot image data from a DICOM file in Python (LL1)
 
-We need a candidate DICOM study/studies for this portion of the course. Options include: 
-- [Patient Contributed Image Repository](https://www.pcir.org/) - This is where Pydicom gets it's official example studies. 
-- Pydicom's official test files
+We need a candidate DICOM study/studies for this portion of the course. Options include: - [Patient Contributed Image Repository](https://www.pcir.org/) - This is where Pydicom gets it's official example studies. - Pydicom's official test files
 
-We need the following studies: 
-- 2D basic scan (e.g. CXR) 
-- 3D volumetric scan (e.g. CT head)
+We need the following studies: - 2D basic scan (e.g. CXR) - 3D volumetric scan (e.g. CT head)
 
 *We could also add an extra section to the end to work with colourmaps. This would need imaging with colour data - e.g. ultrasound with flow data.*
 
-# Session 4 - AI for Medicine
+# Module 4 - AI for Medicine
 
-## Seminar 1 
+## Seminar 1
 
 By the end of the first seminar, clinicians should:
 
 -   Understand the aims of this first AI module and what it will cover
 -   Understand what machine learning is at a broad level (LL2)
 -   Be able to list clinical uses for ML (LL4)
--   Be able to describe the high-level steps needed to train a statistical model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model) (LL2) 
+-   Be able to describe the high-level steps needed to train a statistical model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model) (LL2)
 -   Datasets
     -   Understanding the importance of splitting the data into training, testing, and validation datasets (LL2)
     -   Understand dataset bias and clincial factors that can confound a dataset (LL4)
-    -   Use examples to demonstrate clinical bias *TODO find appropriate examples* (LL4) 
+    -   Use examples to demonstrate clinical bias *TODO find appropriate examples* (LL4)
 -   Be able to relate the aims of the example task (Pneumonia detection task) (LL4)
     -   Disclaimer that this course will not cover intepretation of chest X-rays
 -   Data preprocessing
@@ -189,21 +191,22 @@ By the end of the first seminar, clinicians should:
     -   Be able to name common data augmentation techniques (shearing, rotation, stretching, elastic deformation in medical imaging datasets) (LL2)
     -   Understand how these concepts apply to other types of data (e.g. time-series data) (LL2)
 -   Classifier evaluation
-    -   Evaulating models 
-    -   Describe methods for evaulating regression models (LL2) 
-    -   Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2) 
-    -   Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2) 
-    -   Be able to give a broad overview of the common metrics that are used with other types of model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2)    
+    -   Evaulating models
+    -   Describe methods for evaulating regression models (LL2)
+    -   Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2)
+    -   Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2)
+    -   Be able to give a broad overview of the common metrics that are used with other types of model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2)
 
 ## Seminar 2
 
-By the end of the seminar, clinicians should: 
+By the end of the seminar, clinicians should:
 
 -   Understand the difference between supervised and unsupervised learning (LL2)
 -   Understand what a loss function is (LL2)
     -   Appreciate that there are a wide variety of optimisers and loss functions that can be used (LL2)
 -   Gain an intuition for how training via backpropagation works via the ball on a hill analogy (LL2)
-- Gain an intuitive understanding of overfitting vs overfitting using a linear model as an example (LL2) 
+    -   Link to 3Blue1Brown videos
+-   Gain an intuitive understanding of overfitting vs underfitting using a linear model as an example (LL2)
 -   Model architecture and training
     -   Understand why ML frameworks exist in the Python ecosystem (TensorFlow, PyTorch) and what they allow the user to do (LL2)
     -   Understand the inputs and outputs of a neural network (LL2)
@@ -211,13 +214,13 @@ By the end of the seminar, clinicians should:
     -   Understand what an epoch of training is (LL2)
     -   Understand why data needs to be batched when training a network (LL3)
     -   Understand what a sigmoid layer is and why it is used for probabilistic outputs (LL2)
--   Hyperparameters 
-    -   Understand what a hyperparameter is (LL2) 
-    -   How a hyper-parameter effects model output (LL2) 
-    -   Understand that hyperparameters can be tuned (LL2) 
-- Common pitfalls 
-    -   How to deal with overfitting. (LL2) 
-    -   How to deal with multicollinearity (LL2) 
+-   Hyperparameters
+    -   Understand what a hyperparameter is (LL2)
+    -   How a hyper-parameter effects model output (LL2)
+    -   Understand that hyperparameters can be tuned (LL2)
+-   Common pitfalls
+    -   How to deal with overfitting. (LL2)
+    -   How to deal with multicollinearity (LL2)
     -   How to deal with missing data and sensitivity analysis (LL2)
 -   Appreciate that the task we are performing is fairly simple and that more complex techniques exist (LL2)
 -   Be able to discuss the uses, advantages, and disadvantages of more modern approaches to machine learning (stable diffusion, large language models) (LL2) (LL4)
@@ -276,7 +279,4 @@ The model structure will be a convolutional neural network with single sigmoid o
 
 ## Seminar
 
-By the end of the seminar, clinicians should: 
-- Understand the core learning outcomes from the course 
-- Understand how to grow their skills further by using other available resources (LL4)
-- Give feedback for further improvements to the course (LL4)
+By the end of the seminar, clinicians should: - Understand the core learning outcomes from the course - Understand how to grow their skills further by using other available resources (LL4) - Give feedback for further improvements to the course (LL4)
