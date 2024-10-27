@@ -57,8 +57,6 @@ By the end of the seminar, clinicians should:
     -   Understand what a pixel is, and the values it can take on (0.0-1.0, 0-255) (LL2)
     -   Understand the difference between greyscale and colour images (LL2)
     -   Understand how brightness maps on value (LL2)
-    -   
-    -   
     -   Understand different ways to represent colours (RGB, HSV) (LL2)
     -   Be able to read a hex colour code (LL2)
     -   Understand what the dimensions of an image represent (LL2)
