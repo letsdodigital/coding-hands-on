@@ -83,40 +83,63 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="daim-imaging-learning-outcomes" class="level1">
 <h1>DAIM (Imaging) Learning Outcomes</h1>
 <p>This document details the high level learning outcomes for each seminar and workshop in the course.</p>
-<p>The following learning levels (LLs) should be able to be mapped to the learning points. 1. <strong>Level 1 - Basic Practical Skills (coding skills)</strong> * E.g. How to reshape a numpy array from <code>(3, 3, 3)</code> into <code>(9, 3)</code>. 2. <strong>Level 2 - Theory (modelling skills)</strong> * E.g. How k-means splits data up into clusters 3. <strong>Level 3 - Project Planning and Management</strong> * E.g. How to write a class for plotting similar plots when opening a DICOM file. 4. <strong>Level 4 - Clinical Translation</strong> * E.g. What format data needs to be collected in to train a clinical outcome predictor from chest x-ray data.</p>
-<p>The seminars will consist mainly of LL2 and LL4 information, whereas workshops will consist of LL1 and LL3 information.</p>
+<p>The following learning levels (LLs) should be able to be mapped to the learning points.</p>
+<p>1. <strong>Level 1 - Basic Practical Skills (coding skills)</strong> * E.g. How to reshape a NumPy array from <code>(3, 3, 3)</code> into <code>(9, 3)</code>.</p>
+<p>2. <strong>Level 2 - Theory (modeling skills)</strong> * E.g. How k-means splits data up into clusters</p>
+<p>3. <strong>Level 3 - Project Planning and Management</strong> * E.g. How to write a class for plotting similar plots when opening a DICOM file.</p>
+<p>4. <strong>Level 4 - Clinical Translation</strong> * E.g. What format data needs to be collected in to train a clinical outcome predictor from chest x-ray data.</p>
+<p>The seminars will consist mainly of LL2 and LL4 information, whereas workshops will consist of LL1 and LL3 information. The workshops at the start of the course should feature extension tasks which are more complex for people to work through in the workshops if they finish the content before the workshop happens.</p>
 </section>
-<section id="todo" class="level1">
-<h1>TODO</h1>
+<section id="overall-structure" class="level1">
+<h1>Overall Structure</h1>
 <ul>
-<li>Split the course into more granular modules:
+<li>The course will be split into the following modules:
 <ul>
-<li>Session 1 - General Course overview with lots of LL4 content</li>
-<li>Session 2 - Core Python for Image Processing
+<li>Module 0 - Overview (no workshop)</li>
+<li>Module 1 - Introduction (no workshop)</li>
+<li>Module 2 - Core Python for Image Processing
 <ul>
 <li>This can be stretched over multiple weeks depending on the skills and level of the people on the course</li>
 </ul></li>
-<li>Session 3 - DICOM</li>
-<li>Session 4 - AI for Medicine
+<li>Module 3 - Python and DICOM
 <ul>
-<li>Seminar of high level content LL2/LL4</li>
-<li>Run this over multiple workshops
+<li>This will include the coding skills needed to open and use DICOM files</li>
+<li>The workshop will include a mixture of work to do outside a session and tasks to do within a session with a tutor.</li>
+</ul></li>
+<li>Module 4 - AI for Medicine
 <ul>
-<li>Each workshop should consist of small LL2 synchronous workshops and moderately large coding tasks for people to work through.</li>
+<li>This will be a set of two or more seminars with a long workbook that will be worked through over multiple weeks</li>
+<li>The work in the workbook will be mostly independent.</li>
 </ul></li>
-</ul></li>
+<li>Module 5 - Closing (no workshop)</li>
 </ul></li>
 </ul>
 </section>
-<section id="session-1---course-introduction" class="level1">
-<h1>Session 1 - Course Introduction</h1>
+<section id="module-1---course-introduction" class="level1">
+<h1>Module 1 - Course Introduction</h1>
 <section id="seminar" class="level2">
 <h2 class="anchored" data-anchor-id="seminar">Seminar</h2>
-<p>By the end of the seminar, clinicains should be able to: - Know the overall aims and philosophy of the course - Aims of the DAIM courses - Translate a basic knowledge of Python into workable clinical skill - Inspire the individual to seek further resources to learn more about the topic - Empower the learner to build complex applications - General coding information - Know the layout of documentation and how to use it (LL3) - Know what StackOverflow is and when to use it (LL3) - Understand what constitutes “machine readable” data and what considerations clinicians must make to maximise this (LL4)</p>
+<p>By the end of the seminar, clinicians should be able to:</p>
+<ul>
+<li>Know the overall aims and philosophy of the course</li>
+<li>Aims of the DAIM courses
+<ul>
+<li>Translate a basic knowledge of Python into workable clinical skill</li>
+<li>Inspire the individual to seek further resources to learn more about the topic</li>
+<li>Empower the learner to build complex applications</li>
+</ul></li>
+<li>General coding information
+<ul>
+<li>Know the layout of a Jupyter Notebook and how to use it (LL1)</li>
+<li>Know the layout of documentation and how to use it (LL3)</li>
+<li>Know what StackOverflow is and when to use it (LL3)</li>
+<li>Understand what constitutes “machine readable” data and what considerations clinicians must make to maximise this (LL4)</li>
+</ul></li>
+</ul>
 </section>
 </section>
-<section id="session-2---basics-of-images" class="level1">
-<h1>Session 2 - Basics of Images</h1>
+<section id="module-2---core-python-for-image-processing" class="level1">
+<h1>Module 2 - Core Python for Image Processing</h1>
 <section id="seminar-1" class="level2">
 <h2 class="anchored" data-anchor-id="seminar-1">Seminar</h2>
 <p>By the end of the seminar, clinicians should:</p>
@@ -124,79 +147,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Know general uses of image data in clinical settings</li>
 <li>Digital image representation
 <ul>
-<li>Understand what a pixel is, and the values it can take on (0.0-1.0, 0-255)</li>
-<li>Understand the difference between greyscale and colour images</li>
-<li>Understand how brightness maps on value</li>
-<li>Understand different ways to represent colours (RGB, HSV)</li>
-<li>Be able to read a hex colour code</li>
-<li>Understand what the dimensions of an image represent</li>
-<li>Understand what the difference between compressed and uncompressed images are</li>
-<li>Understand the difference between lossy and lossless compression</li>
-<li>Be able to list different image formats</li>
-<li>Understand how these concepts extend to 3D images (volumetric images)</li>
-</ul></li>
-<li>Transforms
-<ul>
-<li>Be able to state what a transform is</li>
+<li>Understand what a pixel is, and the values it can take on (0.0-1.0, 0-255) (LL2)</li>
+<li>Understand the difference between greyscale and colour images (LL2)</li>
+<li>Understand how brightness maps on value (LL2)</li>
+<li></li>
+<li></li>
+<li>Understand different ways to represent colours (RGB, HSV) (LL2)</li>
+<li>Be able to read a hex colour code (LL2)</li>
+<li>Understand what the dimensions of an image represent (LL2)</li>
+<li>Understand what the difference between compressed and uncompressed images are (LL2)</li>
+<li>Understand the difference between lossy and lossless compression (LL2)</li>
+<li>Be able to list different image formats (LL2)</li>
+<li>Understand how these concepts extend to 3D images (volumetric images) (LL2)</li>
 </ul></li>
 <li>Convolution
 <ul>
-<li>Understand why convolution has been chosen as the example transform for this course
+<li>Understand why convolution has been chosen as the example transform for this course (LL2)
 <ul>
 <li>Use in ML, easy to visualise</li>
 </ul></li>
-<li>Understand what a convolution kernel is</li>
-<li>Understand what types of operation can be done with convolution (blurring, sharpening)</li>
+<li>Understand what convolution is and what it is used for (LL2)</li>
+<li>Understand what a convolution kernel is (LL2)</li>
+<li>Understand what types of operation can be done with convolution (blurring, sharpening) (LL2)</li>
+<li>Understand intuitively how to average a signal using an averaging kernel e.g.&nbsp;<code>[0.2, 0.2, 0.2, 0.2, 0.2]</code> (LL2)</li>
+<li>Appreciate that convolution can be used in less than or more than 2 dimensions (LL2)</li>
 </ul></li>
-<li>Basics of PIL
+<li>Basics of PIL (LL1)
 <ul>
-<li>Why PIL is valuable in the Python ecosystem</li>
+<li>Why PIL is valuable in the Python ecosystem (LL3)</li>
 <li>The sorts of operations that PIL can do (LL1)</li>
 </ul></li>
-</ul>
-</section>
-<section id="workshop" class="level2">
-<h2 class="anchored" data-anchor-id="workshop">Workshop</h2>
-<p>By the end of the workshop, clinicians should be able to:</p>
-<ul>
-<li>Basics of PIL
-<ul>
-<li>Open an image from disk with PIL</li>
-<li>Show an image with PIL</li>
-<li>Rotate an image with PIL</li>
-<li>Crop an image with PIL</li>
-<li>Convert to greyscale with PIL</li>
-<li>Understand the internal representation of images within PIL</li>
-</ul></li>
-<li>Convolution
-<ul>
-<li>Smooth an image with PIL</li>
-<li>Sharpen an image with PIL</li>
-<li>Combine all of these into a function which takes an argument to specify a type of operation to perform</li>
-</ul></li>
-</ul>
-</section>
-</section>
-<section id="session-3---core-python-for-images" class="level1">
-<h1>Session 3 - Core Python For Images</h1>
-<ul>
-<li>Seminar content will include:
-<ul>
-<li>How to use the basics of popular Python packages:
-<ul>
-<li>NumPy (data processing)</li>
-<li>Pyplot (plotting graphs)</li>
-</ul></li>
-</ul></li>
-<li>Workshop content will include:
-<ul>
-<li>Basics of <strong>relevant Python packages</strong> for use later in the course</li>
-</ul></li>
-</ul>
-<section id="seminar-2" class="level2">
-<h2 class="anchored" data-anchor-id="seminar-2">Seminar</h2>
-<ul>
-<li>NumPy
+<li>Basics of NumPy (LL1)
 <ul>
 <li>Know why NumPy exists within the Python ecosystem (speed of array operations, ease of working with multidimensional data) (LL2)</li>
 <li>Understand the concept of multidimensional arrays and the ‘shape’ of an array (LL2)</li>
@@ -207,82 +188,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Image data - NumPy array</li>
 </ul></li>
-<li>Matplotlib and Pyplot
-<ul>
-<li>Know why Pyplot exists within the Python ecosystem (ease of plotting data) (LL2)</li>
-<li>Know the general structure of Pyplot calls and how they are used in projects (LL3)</li>
-<li>Have a general appreciation for the wide array of plots that Pyplot can generate (LL2)</li>
-<li>Have an appreciation that other plotting libraries exist that are often easier to use for complex plots (Seaborn) (LL2)</li>
-<li>Understand some formatting rules for academic journals and how to comply with these using Pyplot (saving high resolution plots, changing fonts) (LL4)</li>
-</ul></li>
-<li>SciKit
-<ul>
-<li>Know why SciKit exists within the Python ecosystem (ease of use of complex algorithms and statistical tests) (LL2)</li>
-<li>Understand the sorts of algorithms that are available within SciKit (LL2)</li>
-<li>Understand the general layout of a SciKit function and how they fit into projects (LL3)</li>
-</ul></li>
-<li>Two basic concepts to prepare for workshop (LL2)
-<ul>
-<li>Basic recap of what an unpaired t-test is used for (LL2)</li>
-<li>Understand what convolution is and what it is used for (LL2)</li>
-<li>Understand intuitively how to average a signal using an averaging kernel e.g.&nbsp;<code>[0.2, 0.2, 0.2, 0.2, 0.2]</code> (LL2)</li>
-<li>Appreciate that convolution can be used in more than 1 dimension - <em>will be covered in the machine learning section of the course</em> (LL2)</li>
-</ul></li>
 </ul>
-<p>Good resources for planning this section include Pandas’ <a href="https://pandas.pydata.org/docs/getting_started/index.html#getting-started">Getting Started</a> guide, <a href="https://pandas.pydata.org/docs/user_guide/10min.html#min">10 minutes to Pandas</a>.</p>
 </section>
-<section id="workshop-1" class="level2">
-<h2 class="anchored" data-anchor-id="workshop-1">Workshop</h2>
-<p>The aim of this workshop is to recap some basic Python skills and to ensure that course attendees have the appropriate knowledge of core packages before starting more in-depth content. The NumPy section will focus on combining and modifying arrays and using basic library functions. An task using convolution will be used to demonstrate this to conceptually prepare for the machine learning section of the course. <em>TODO: Does the convolution LL2 content need to be moved to the seminar?</em></p>
+<section id="workshop" class="level2">
+<h2 class="anchored" data-anchor-id="workshop">Workshop</h2>
+<p>The aim of this workshop is to recap some basic Python skills and to ensure that course attendees have the appropriate knowledge of core packages before starting more in-depth content. The NumPy section will focus on combining and modifying arrays and using basic library functions. An task using convolution will be used to demonstrate this to conceptually prepare for the machine learning section of the course.</p>
+<p>Use an example X-ray image with a simulated CSV file describing an imaginary small dataset of patients.</p>
 <p>By the end of the workshop, clinicians should be able to:</p>
 <ul>
-<li>Pandas
+<li>Basics of PIL
 <ul>
-<li>Open a CSV file into pandas (LL1)</li>
-<li>Extract row and column information using pandas (LL1)</li>
-<li>Describe a Dataframe using the <code>.describe()</code> method (LL1)</li>
-<li>Search a column for a string (LL1)</li>
-<li>Clean a dataframe by removing empty <code>NaN</code> entries (LL1)</li>
-<li>Counting unique strings in a column and plotting them as a bar chart (LL1)</li>
-<li>Convert strings to <code>Datetime</code> objects using date formatting strings (LL1)</li>
-<li>T-test example task (<em>One candidate dataset is the dataset of survivors from the Titanic</em>) (LL2)
-<ul>
-<li>Plotting grouped numerical data as a bar chart (LL1)</li>
-<li>Grouping data for statistical testing (unpaired t-test) (LL1)</li>
-</ul></li>
+<li>Open an image from disk with PIL (LL1)</li>
+<li>Show an image with PIL (LL1)</li>
+<li>Rotate an image with PIL (LL1)</li>
+<li>Crop an image with PIL (LL1)</li>
+<li>Convert to greyscale with PIL (LL1)</li>
+<li>Understand the internal representation of images within PIL (LL1)</li>
 </ul></li>
 <li>NumPy
 <ul>
+<li>Open a CSV file into a NumPy array (LL1)</li>
 <li>Convert a column of a DataFrame to a NumPy array (LL1)</li>
 <li>Print the shape of a NumPy array (LL1)</li>
 <li>Accessing array elements using array slicing (e.g.&nbsp;<code>[0:4]</code>, <code>[:-1]</code>)</li>
+<li>Count the number of unique items in an array with <code>numpy.unique()</code> (LL1)</li>
+</ul></li>
 <li>Convolution example task (LL1)
 <ul>
-<li>Understand what concatenation is and the importance of matching array shapes (LL2)</li>
-<li>Concatenate two NumPy arrays together (LL1)</li>
 <li>Create a new array (convolution kernel) of ones of a specified shape (LL1)</li>
 <li>Divide this new array by its length (LL1)</li>
 <li>Convolve the kernel with the NumPy array using <code>np.convolve()</code> (LL1)</li>
-</ul></li>
-</ul></li>
-<li>Pyplot and Matplotlib
-<ul>
-<li>Plot time series data on a simple line graph (LL1)</li>
-<li>Plot two time series signals (raw data and convolved data) on a plot (LL1)</li>
-<li>Plot a bar graph of categorical data (LL1)</li>
-<li>Plotting numerical data as a histogram (LL1)</li>
-</ul></li>
-<li>Scikit
-<ul>
-<li>How to perform a statistical test (unpaired t-test) on grouped data using <code>scipy.stats.ttest_ind()</code> (LL1)</li>
+<li>Display this image with PIL (LL1)</li>
+<li>Smooth an image with PIL and a custom convolution kernel (LL1)</li>
+<li>Sharpen an image with PIL and a custom convolution kernel (LL1)</li>
+<li>Combine all of these into a function which takes an argument to specify a type of operation to perform (LL1)</li>
 </ul></li>
 </ul>
 </section>
 </section>
-<section id="session-2---dicom-and-python" class="level1">
-<h1>Session 2 - DICOM and Python</h1>
-<section id="seminar-3" class="level2">
-<h2 class="anchored" data-anchor-id="seminar-3">Seminar</h2>
+<section id="module-3---python-and-dicom" class="level1">
+<h1>Module 3 - Python and DICOM</h1>
+<p>The aim of this module is to give clinicians an introduction into the DICOM file format, what type of data is represented in this file format, and how to extract basic 2D and 3D image data from these files.</p>
+<p><em><strong>N.B.</strong> The interpretation of images in any form will not be covered in this unit.</em></p>
+<section id="seminar-2" class="level2">
+<h2 class="anchored" data-anchor-id="seminar-2">Seminar</h2>
 <p>By the end of the seminar, clinicians should:</p>
 <ul>
 <li>Understand the aims of this module (LL4)</li>
@@ -300,17 +249,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Understand how RGB data is used to represent most images (LL2)</li>
 <li>Understand what a colourmap is and when it is used (LL2)</li>
 </ul></li>
-<li>Image formats other than DICOM
-<ul>
-<li>Understand why compression is needed to store images (LL2)</li>
-<li>Understand the difference between lossy and lossless image compression</li>
-<li>Name an image compression algorithm (discrete cosine transform) (LL2)</li>
-<li>Name common everyday image formats and when they may be used (JPEG, PNG) (LL2)</li>
-</ul></li>
 </ul></li>
 <li>The DICOM format
 <ul>
-<li>Know the history of the DICOM standard and why it was introduced (LL2)</li>
+<li>Know the history of the DICOM standard and why it was introduced (LL4)</li>
 <li>Understand what information is contained within a DICOM file (LL2)</li>
 <li>Understand that DICOM is a lossless standard (LL2)</li>
 <li>Understand broadly how a DICOM file stores image data (both 2D and 3D) (LL2)</li>
@@ -318,12 +260,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li>Understand what considerations are needed when coding in Python to convert images, with interactive questions (array shapes) (LL3)</li>
 <li>Understand the difference between volumetric 3D images and 3D meshes and what is needed to convert between them (segmentation)</li>
-<li>Understand the basics of image segmentation (LL2)</li>
+<li>Understand the basics of image segmentation in 2D and 3D (LL2)</li>
 <li>Understand where volumetric imaging is used and where mesh reconstructions are used in clinical medicine (LL4)</li>
 </ul>
 </section>
-<section id="workshop-2" class="level2">
-<h2 class="anchored" data-anchor-id="workshop-2">Workshop</h2>
+<section id="workshop-1" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-1">Workshop</h2>
 <p>By the end of the workshop, clinicians should be:</p>
 <ul>
 <li>Open a DICOM file with Python (LL1)</li>
@@ -344,25 +286,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 </ul>
 <p>We need a candidate DICOM study/studies for this portion of the course. Options include: - <a href="https://www.pcir.org/">Patient Contributed Image Repository</a> - This is where Pydicom gets it’s official example studies. - Pydicom’s official test files</p>
-<p>We need the following studies: - 2D basic scan (e.g.&nbsp;CXR) - 2D scan with colourmap data (e.g.&nbsp;Doppler Ultrasound) - 3D volumetric scan (e.g.&nbsp;CT head)</p>
+<p>We need the following studies: - 2D basic scan (e.g.&nbsp;CXR) - 3D volumetric scan (e.g.&nbsp;CT head)</p>
+<p><em>We could also add an extra section to the end to work with colourmaps. This would need imaging with colour data - e.g.&nbsp;ultrasound with flow data.</em></p>
 </section>
 </section>
-<section id="session-4---ai-for-medicine" class="level1">
-<h1>Session 4 - AI for Medicine</h1>
-<section id="seminar-4" class="level2">
-<h2 class="anchored" data-anchor-id="seminar-4">Seminar</h2>
-<p>By the end of the seminar, clinicians should:</p>
+<section id="module-4---ai-for-medicine" class="level1">
+<h1>Module 4 - AI for Medicine</h1>
+<section id="seminar-1-1" class="level2">
+<h2 class="anchored" data-anchor-id="seminar-1-1">Seminar 1</h2>
+<p>By the end of the first seminar, clinicians should:</p>
 <ul>
 <li>Understand the aims of this first AI module and what it will cover</li>
-<li>Be able to list clinical uses for ML (LL4)
-<ul>
 <li>Understand what machine learning is at a broad level (LL2)</li>
+<li>Be able to list clinical uses for ML (LL4)</li>
+<li>Be able to describe the high-level steps needed to train a statistical model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model) (LL2)</li>
+<li>Datasets
+<ul>
+<li>Understanding the importance of splitting the data into training, testing, and validation datasets (LL2)</li>
+<li>Understand dataset bias and clincial factors that can confound a dataset (LL4)</li>
+<li>Use examples to demonstrate clinical bias <em>TODO find appropriate examples</em> (LL4)</li>
 </ul></li>
-<li>Understand what a loss function is (LL2)</li>
-<li>Appreciate that there are a wide variety of optimisers and loss functions that can be used (LL2)</li>
-<li>Understand the difference between supervised and unsupervised learning (LL2)</li>
-<li>Gain an intuition for how training via backpropagation works via the ball on a hill analogy (LL2)</li>
-<li>Pneumonia detection task
+<li>Be able to relate the aims of the example task (Pneumonia detection task) (LL4)
 <ul>
 <li>Disclaimer that this course will not cover intepretation of chest X-rays</li>
 </ul></li>
@@ -373,6 +317,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Be able to name common data augmentation techniques (shearing, rotation, stretching, elastic deformation in medical imaging datasets) (LL2)</li>
 <li>Understand how these concepts apply to other types of data (e.g.&nbsp;time-series data) (LL2)</li>
 </ul></li>
+<li>Classifier evaluation
+<ul>
+<li>Evaulating models</li>
+<li>Describe methods for evaulating regression models (LL2)</li>
+<li>Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2)</li>
+<li>Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2)</li>
+<li>Be able to give a broad overview of the common metrics that are used with other types of model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2)</li>
+</ul></li>
+</ul>
+</section>
+<section id="seminar-2-1" class="level2">
+<h2 class="anchored" data-anchor-id="seminar-2-1">Seminar 2</h2>
+<p>By the end of the seminar, clinicians should:</p>
+<ul>
+<li>Understand the difference between supervised and unsupervised learning (LL2)</li>
+<li>Understand what a loss function is (LL2)
+<ul>
+<li>Appreciate that there are a wide variety of optimisers and loss functions that can be used (LL2)</li>
+</ul></li>
+<li>Gain an intuition for how training via backpropagation works via the ball on a hill analogy (LL2)
+<ul>
+<li>Link to 3Blue1Brown videos</li>
+</ul></li>
+<li>Gain an intuitive understanding of overfitting vs underfitting using a linear model as an example (LL2)</li>
 <li>Model architecture and training
 <ul>
 <li>Understand why ML frameworks exist in the Python ecosystem (TensorFlow, PyTorch) and what they allow the user to do (LL2)</li>
@@ -382,17 +350,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Understand why data needs to be batched when training a network (LL3)</li>
 <li>Understand what a sigmoid layer is and why it is used for probabilistic outputs (LL2)</li>
 </ul></li>
+<li>Hyperparameters
+<ul>
+<li>Understand what a hyperparameter is (LL2)</li>
+<li>How a hyper-parameter effects model output (LL2)</li>
+<li>Understand that hyperparameters can be tuned (LL2)</li>
+</ul></li>
+<li>Common pitfalls
+<ul>
+<li>How to deal with overfitting. (LL2)</li>
+<li>How to deal with multicollinearity (LL2)</li>
+<li>How to deal with missing data and sensitivity analysis (LL2)</li>
+</ul></li>
 <li>Appreciate that the task we are performing is fairly simple and that more complex techniques exist (LL2)</li>
 <li>Be able to discuss the uses, advantages, and disadvantages of more modern approaches to machine learning (stable diffusion, large language models) (LL2) (LL4)</li>
 </ul>
-<p>TODO merge these into the above seminar content. By the end of the seminar, clinicians should: - <em>TODO Complete these aims</em> - Understand the aims of this module and what it will cover - Types of statistical model - Understand what a statistical model is at a broad level (LL2) - Parametric models - Linear / logistic regression as a parametric model example (LL2) - Nonparametric models - k-nearest neighbour model as a flexible non-parametric model (LL2) - Be able to describe the high-level steps needed to train a statistical model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model) (LL2) - Understanding the importance of splitting the data into training, testing, and validation datasets (LL2) - Assumptions of models - Understand dataset bias and clincial factors that can confound a dataset (LL4) - Use examples to demonstrate clinical bias <em>TODO find appropriate examples</em> (LL4) - Bias-variance trade off and overfitting - Gain an intuitive understanding of overfitting vs overfitting using a linear model as an example (LL2) - Hyperparameters - Understand what a hyperparameter is (LL2) - How a hyper-parameter effects model output (LL2) - Understand that hyperparameters can be tuned (LL2) - Evaulating models - Describe methods for evaulating regression models (LL2) - Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2) - Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2) <em>TODO Maybe move this to module 5?</em> - Be able to give a broad overview of the common metrics that are used with other types of model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2) - Common pitfalls - How to deal with overfitting. (LL2) - How to deal with multicollinearity (LL2) - How to deal with missing data and sensitivity analysis (LL2)</p>
 <p><em>Maybe a radiologist/senior clinician could speak about the features that the bot may be dectecting in each scan?</em></p>
 </section>
-<section id="workshop-3" class="level2">
-<h2 class="anchored" data-anchor-id="workshop-3">Workshop</h2>
+<section id="workshop-2" class="level2">
+<h2 class="anchored" data-anchor-id="workshop-2">Workshop</h2>
 <p>The pneumonia dataset that will be used is <a href="https://www.kaggle.com/datasets/paultimothymooney/chest-xray-pneumonia/data">this one</a>. It has a CC BY 4.0 licence, which means it is free to use for commercial use. Dataset features include: - 2GB size - course participants will download the dataset directly to the Colab instance and decompress it using the following commands:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">!kaggle</span> datasets download <span class="at">-d</span> paultimothymooney/chest-xray-pneumonia</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="ex">!unzip</span> chest-xray-pneumonia.zip</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This workshop should be run as one over two seminars. The seminar can be used to check in on how people are doing with the workshop content as this will be unsupported. There will be a break point in the workshop (trained model saved) which is used between seminars.</p>
 <p>By the end of the workshop, clinicians should be able to:</p>
 <ul>
 <li>Data preprocessing
@@ -405,6 +385,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Understand why using Python generators is important for loading data (LL3)</li>
 <li>Construct a generator using the <code>yield</code> command (LL1)</li>
 </ul></li>
+<li>Binary classifier model evaulation
+<ul>
+<li>Evaluate the performance of a simulated diagnostic classifier using familiar statistics from evidence-based medicine training (LL1)</li>
+<li>Calculate and understand precision, recall, and F1 scores (LL1) (LL2)</li>
+</ul></li>
+</ul>
+<p><strong>Break between seminars.</strong></p>
+<ul>
 <li>Model architecture
 <ul>
 <li>Understand the difference between <code>Sequential</code> models and other models in Keras (LL2)</li>
@@ -419,13 +407,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>Structure machine learning projects to to allow for reuse of model weights (LL3)</li>
 <li>Save files from Google Colab for reuse later (LL1)</li>
+<li>Open a machine learning model from file (LL1)</li>
 </ul></li>
 <li>Model tuning
 <ul>
 <li>Appropriately tune hyperparameters and model architecture to improve model performance and size (LL1)</li>
 <li><em>Note: This should be done in conjunction with the model evaulation step below.</em></li>
 </ul></li>
-<li>Open a machine learning model from file (LL1)</li>
 <li>Binary classifier model evaulation
 <ul>
 <li>Evaulate a model using testing data (LL1)</li>
@@ -433,16 +421,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>Use pyplot and scipy to plot a formal ROC curve for a binary classifier (LL1)</li>
 <li>Calculate the AUC value for this curve (LL1)</li>
 </ul></li>
-<li>Understand the importance of splitting data into training, validation, and testing datasets (LL2)</li>
 </ul>
 <p>The model structure will be a convolutional neural network with single sigmoid output node denoting probability of pneumonia in the scan.</p>
 </section>
 </section>
 <section id="session-5---closing-session" class="level1">
 <h1>Session 5 - Closing Session</h1>
-<section id="seminar-5" class="level2">
-<h2 class="anchored" data-anchor-id="seminar-5">Seminar</h2>
-<p>By the end of the seminar, clinicians should: - Understand the core learning outcomes from the course - TODO</p>
+<section id="seminar-3" class="level2">
+<h2 class="anchored" data-anchor-id="seminar-3">Seminar</h2>
+<p>By the end of the seminar, clinicians should: - Understand the core learning outcomes from the course - Understand how to grow their skills further by using other available resources (LL4) - Give feedback for further improvements to the course (LL4)</p>
 </section>
 </section>
 
