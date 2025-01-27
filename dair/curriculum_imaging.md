@@ -175,36 +175,24 @@ By the end of the first seminar, clinicians should:
 
 -   Understand the aims of this first AI module and what it will cover
 -   Understand what machine learning is at a broad level (LL2)
+-   Understand the difference between supervised and unsupervised learning (LL2)
 -   Be able to list clinical uses for ML (LL4)
 -   Be able to describe the high-level steps needed to train a statistical model (collect data, preprocess data, augment data, define model, compile model, train model, evaluate model) (LL2)
 -   Datasets
     -   Understanding the importance of splitting the data into training, testing, and validation datasets (LL2)
     -   Understand dataset bias and clincial factors that can confound a dataset (LL4)
     -   Use examples to demonstrate clinical bias *TODO find appropriate examples* (LL4)
--   Be able to relate the aims of the example task (Pneumonia detection task) (LL4)
-    -   Disclaimer that this course will not cover intepretation of chest X-rays
 -   Data preprocessing
     -   Understand considerations that must be made when standardising image data for model input (image size, image dimensions, contrast, brightness) (LL2)
     -   Understand the importance of data augmentation when training (LL2)
     -   Be able to name common data augmentation techniques (shearing, rotation, stretching, elastic deformation in medical imaging datasets) (LL2)
     -   Understand how these concepts apply to other types of data (e.g. time-series data) (LL2)
--   Classifier evaluation
-    -   Evaulating models
-    -   Describe methods for evaulating regression models (LL2)
-    -   Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2)
-    -   Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2)
-    -   Be able to give a broad overview of the common metrics that are used with other types of model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2)
-
-## Seminar 2
-
-By the end of the seminar, clinicians should:
-
--   Understand the difference between supervised and unsupervised learning (LL2)
+-   Be able to relate the aims of the example task (Pneumonia detection task) (LL4)
+    -   Disclaimer that this course will not cover intepretation of chest X-rays
 -   Understand what a loss function is (LL2)
     -   Appreciate that there are a wide variety of optimisers and loss functions that can be used (LL2)
 -   Gain an intuition for how training via backpropagation works via the ball on a hill analogy (LL2)
     -   Link to 3Blue1Brown videos
--   Gain an intuitive understanding of overfitting vs underfitting using a linear model as an example (LL2)
 -   Model architecture and training
     -   Understand why ML frameworks exist in the Python ecosystem (TensorFlow, PyTorch) and what they allow the user to do (LL2)
     -   Understand the inputs and outputs of a neural network (LL2)
@@ -216,12 +204,27 @@ By the end of the seminar, clinicians should:
     -   Understand what a hyperparameter is (LL2)
     -   How a hyper-parameter effects model output (LL2)
     -   Understand that hyperparameters can be tuned (LL2)
+
+## Seminar 2
+
+By the end of the seminar, clinicians should:
+
+-   Gain an intuitive understanding of overfitting vs underfitting using a linear model as an example (LL2)
+-   Classifier evaluation
+    -   Evaulating models
+    -   Describe methods for evaulating regression models (LL2)
+    -   Be able to describe important metrics for a classifier (positive/negative predictive value, sensitivity and specificity) (LL2)
+    -   Be able to describe the statistical tests needed to evaluate a binary classifier (F1 score, AUC and ROC curves) (LL2)
+    -   Be able to give a broad overview of the common metrics that are used with other types of model (softmax for multiclass classifiers, pixel accuracy and intersection over union (IoU) for segmentation) (LL2)
+    -   Be aware of data leakage and its implications (LL2)
 -   Common pitfalls
     -   How to deal with overfitting. (LL2)
     -   How to deal with multicollinearity (LL2)
     -   How to deal with missing data and sensitivity analysis (LL2)
 -   Appreciate that the task we are performing is fairly simple and that more complex techniques exist (LL2)
 -   Be able to discuss the uses, advantages, and disadvantages of more modern approaches to machine learning (stable diffusion, large language models) (LL2) (LL4)
+-   Be able to explain ethical arguments for/against use of AI in a clinical context (LL4)
+-   Understand reasons why an AI system may not perform the same way across multiple contexts - Reproducibility (LL4)
 
 *Maybe a radiologist/senior clinician could speak about the features that the bot may be dectecting in each scan?*
 
