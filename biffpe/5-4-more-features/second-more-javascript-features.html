@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Manipulation Demo</title>
+    <style>
+        .demo-container {
+            border: 2px solid #333;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .target-box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+            margin: 10px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .button-container {
+            margin: 10px 0;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <!-- Demo 1: Color Change -->
+    <div class="demo-container">
+        <h2>1. Color Change Demo</h2>
+        <div id="colorBox" class="target-box"></div>
+        <div class="button-container">
+            <button onclick="changeColor()">Change Color</button>
+        </div>
+    </div>
+
+    <!-- Demo 2: Move Element -->
+    <div class="demo-container">
+        <h2>2. Move Element Demo</h2>
+        <div id="moveBox" class="target-box"></div>
+        <div class="button-container">
+            <button onclick="moveElement()">Move Right</button>
+        </div>
+    </div>
+
+    <!-- Demo 3: Hide/Show -->
+    <div class="demo-container">
+        <h2>3. Hide/Show Demo</h2>
+        <div id="hideBox" class="target-box"></div>
+        <div class="button-container">
+            <button onclick="toggleVisibility()">Toggle Visibility</button>
+        </div>
+    </div>
+
+    <!-- Demo 4: Rotate Transform -->
+    <div class="demo-container">
+        <h2>4. Rotate Transform Demo</h2>
+        <div id="rotateBox" class="target-box"></div>
+        <div class="button-container">
+            <button onclick="rotateElement()">Rotate</button>
+        </div>
+    </div>
+
+    <!-- Demo 5: Scale Transform -->
+    <div class="demo-container">
+        <h2>5. Scale Transform Demo</h2>
+        <div id="scaleBox" class="target-box"></div>
+        <div class="button-container">
+            <button onclick="scaleElement()">Scale</button>
+        </div>
+    </div>
+
+    <!-- Demo 6: Multiple Transformations -->
+    <div class="demo-container">
+        <h2>6. Multiple Transformations Demo</h2>
+        <div id="multiBox" class="target-box"></div>
+        <div class="button-container">
+            <button onclick="multiTransform()">Transform</button>
+        </div>
+    </div>
+
+    <script>
+        // Demo 1: Color Change
+        function changeColor() {
+            const box = document.getElementById('colorBox');
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            box.style.backgroundColor = randomColor;
+        }
+
+        // Demo 2: Move Element
+        let position = 0;
+        function moveElement() {
+            const box = document.getElementById('moveBox');
+            position += 50;
+            if (position > 200) position = 0;
+            box.style.transform = `translateX(${position}px)`;
+        }
+
+        // Demo 3: Hide/Show
+        function toggleVisibility() {
+            const box = document.getElementById('hideBox');
+            box.style.visibility = box.style.visibility === 'hidden' ? 'visible' : 'hidden';
+        }
+
+        // Demo 4: Rotate Transform
+        let rotation = 0;
+        function rotateElement() {
+            const box = document.getElementById('rotateBox');
+            rotation += 45;
+            box.style.transform = `rotate(${rotation}deg)`;
+        }
+
+        // Demo 5: Scale Transform
+        let isScaled = false;
+        function scaleElement() {
+            const box = document.getElementById('scaleBox');
+            isScaled = !isScaled;
+            box.style.transform = isScaled ? 'scale(1.5)' : 'scale(1)';
+        }
+
+        // Demo 6: Multiple Transformations
+        let isTransformed = false;
+        function multiTransform() {
+            const box = document.getElementById('multiBox');
+            isTransformed = !isTransformed;
+            if (isTransformed) {
+                box.style.transform = 'rotate(45deg) translateX(50px) scale(1.2)';
+                box.style.backgroundColor = '#e74c3c';
+            } else {
+                box.style.transform = 'none';
+                box.style.backgroundColor = '#3498db';
+            }
+        }
+    </script>
+</body>
+</html>

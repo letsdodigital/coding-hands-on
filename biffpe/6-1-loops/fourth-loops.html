@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluid Balance Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .section {
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .result {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Patient Fluid Balance Calculator</h1>
+    <div class="section">
+        <h2>Input/Output Data</h2>
+        <p>Daily fluid measurements in milliliters (mL):</p>
+        <ul>
+            <li>Day 1: Input = 2500 mL, Output = 2000 mL</li>
+            <li>Day 2: Input = 2300 mL, Output = 2100 mL</li>
+            <li>Day 3: Input = 2800 mL, Output = 2400 mL</li>
+            <li>Day 4: Input = 2200 mL, Output = 2300 mL</li>
+            <li>Day 5: Input = 2600 mL, Output = 2200 mL</li>
+        </ul>
+    </div>
+    <div class="section">
+        <h2>Method 1: Manual Calculation</h2>
+        <p>Calculating fluid balance for 5 days without loops</p>
+        <script>
+            // Manual data for fluid input and output (in mL)
+            const day1Input = 2500;
+            const day1Output = 2000;
+            const day2Input = 2300;
+            const day2Output = 2100;
+            const day3Input = 2800;
+            const day3Output = 2400;
+            const day4Input = 2200;
+            const day4Output = 2300;
+            const day5Input = 2600;
+            const day5Output = 2200;
+
+            // Manual calculations
+            const balance1 = day1Input - day1Output;
+            const balance2 = day2Input - day2Output;
+            const balance3 = day3Input - day3Output;
+            const balance4 = day4Input - day4Output;
+            const balance5 = day5Input - day5Output;
+
+            // Calculate total balance manually
+            const totalBalance = balance1 + balance2 + balance3 + balance4 + balance5;
+
+            document.write(`
+                <p>Day 1 Balance: ${balance1} mL</p>
+                <p>Day 2 Balance: ${balance2} mL</p>
+                <p>Day 3 Balance: ${balance3} mL</p>
+                <p>Day 4 Balance: ${balance4} mL</p>
+                <p>Day 5 Balance: ${balance5} mL</p>
+                <p class="result">Total Fluid Balance: ${totalBalance} mL</p>
+            `);
+        </script>
+    </div>
+
+    <div class="section">
+        <h2>Method 2: Using Loop</h2>
+        <p>Calculating fluid balance for 5 days using a loop</p>
+        <script>
+            // Arrays for fluid input and output
+            const fluidInputs = [2500, 2300, 2800, 2200, 2600];
+            const fluidOutputs = [2000, 2100, 2400, 2300, 2200];
+            let totalLoopBalance = 0;
+
+            // Using a loop to calculate daily balances
+            for (let i = 0; i < fluidInputs.length; i++) {
+                const dailyBalance = fluidInputs[i] - fluidOutputs[i];
+                totalLoopBalance += dailyBalance;
+                document.write(`<p>Day ${i + 1} Balance: ${dailyBalance} mL</p>`);
+            }
+
+            document.write(`<p class="result">Total Fluid Balance: ${totalLoopBalance} mL</p>`);
+        </script>
+    </div>
+
+    <div class="section">
+        <h3>Comparison</h3>
+        <p>Both methods produce the same results, but the loop method:</p>
+        <ul>
+            <li>Uses less code</li>
+            <li>Is easier to maintain</li>
+            <li>Can be easily modified to handle more days</li>
+            <li>Reduces the chance of errors from manual calculations</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Interactions Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .demo-section {
+            border: 1px solid #ddd;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: white;
+            margin: 15% auto;
+            padding: 20px;
+            width: 70%;
+            border-radius: 5px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #mouseTracker {
+            height: 100px;
+            background-color: #f0f0f0;
+            margin: 10px 0;
+            padding: 10px;
+        }
+        .input-group {
+            margin: 10px 0;
+        }
+        input {
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Modal Demo Section -->
+    <div class="demo-section">
+        <h2>Modal Demo</h2>
+        <button onclick="openModal()">Open Modal</button>
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <h3>Modal Title</h3>
+                <p>This is a modal window. Click anywhere outside to close it.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mouse Tracking Demo -->
+    <div class="demo-section">
+        <h2>Mouse Tracking</h2>
+        <div id="mouseTracker">
+            Move your mouse here to see coordinates
+        </div>
+    </div>
+
+    <!-- Keyboard Events Demo -->
+    <div class="demo-section">
+        <h2>Keyboard Events</h2>
+        <input type="text" id="keyboardInput" placeholder="Type here...">
+        <p id="keyboardOutput">Last key pressed: None</p>
+    </div>
+
+    <!-- Popup Demo -->
+    <div class="demo-section">
+        <h2>Popup Notification</h2>
+        <button onclick="showPopup()">Show Popup</button>
+        <div id="popup" class="popup">
+            This is a popup notification!
+        </div>
+    </div>
+
+    <!-- Form Validation Demo -->
+    <div class="demo-section">
+        <h2>Form Validation</h2>
+        <form id="validationForm" onsubmit="return validateForm(event)">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Username (min 3 characters)">
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" placeholder="Email">
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password (min 6 characters)">
+            </div>
+            <button type="submit">Submit Form</button>
+        </form>
+    </div>
+
+    <script>
+        // Modal functionality
+        function openModal() {
+            document.getElementById('myModal').style.display = 'block';
+        }
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('myModal')) {
+                document.getElementById('myModal').style.display = 'none';
+            }
+        }
+
+        // Mouse tracking
+        const mouseTracker = document.getElementById('mouseTracker');
+        mouseTracker.addEventListener('mousemove', (e) => {
+            const rect = mouseTracker.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            mouseTracker.textContent = `Mouse position - X: ${Math.round(x)}, Y: ${Math.round(y)}`;
+        });
+
+        // Keyboard events
+        const keyboardInput = document.getElementById('keyboardInput');
+        const keyboardOutput = document.getElementById('keyboardOutput');
+        keyboardInput.addEventListener('keyup', (e) => {
+            keyboardOutput.textContent = `Last key pressed: ${e.key}`;
+        });
+
+        // Popup functionality
+        function showPopup() {
+            const popup = document.getElementById('popup');
+            popup.style.display = 'block';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 3000);
+        }
+
+        // Form validation
+        function validateForm(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            let isValid = true;
+            let errorMessage = '';
+
+            if (username.length < 3) {
+                errorMessage += 'Username must be at least 3 characters\n';
+                isValid = false;
+            }
+
+            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+                errorMessage += 'Please enter a valid email address\n';
+                isValid = false;
+            }
+
+            if (password.length < 6) {
+                errorMessage += 'Password must be at least 6 characters\n';
+                isValid = false;
+            }
+
+            if (!isValid) {
+                alert(errorMessage);
+            } else {
+                alert('Form submitted successfully!');
+                event.target.reset();
+            }
+            return isValid;
+        }
+    </script>
+</body>
+</html>
