@@ -16,7 +16,7 @@ https://letsdodigital.org/learn/learn-python/module-0/4-python-basics.html
 
 
 def bmi_calculator(weight, height):
-    # write code to calculate BMI ()
+    # write code to calculate BMI
     # print out the BMI
     return
 

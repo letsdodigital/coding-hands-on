@@ -33,7 +33,7 @@ Run a terminal command to show all files and folders in your current directory.
 Run a terminal command to show what is your current directory path.
 """
 
-"""Finished
+"""Finished 
 Let your tutor know when you have finished the above. We will start the next 
 session when everyone is finished with this exercise.
 """
